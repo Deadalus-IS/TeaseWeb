@@ -268,7 +268,12 @@ export default function Home(data) {
                   let payload = {
                     id: String(Date.now() * 123442456),
                     user: userContext.id
-                      ? userContext
+                      ? {
+                          id: userContext.id,
+                          email: userContext.email,
+                          phone: userContext.phone,
+                          name: userContext.name,
+                        }
                       : {
                           id: "P4I5r7LujihLZFsdbrnLHQX34Ec2",
                           email: email,

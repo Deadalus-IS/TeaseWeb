@@ -150,9 +150,15 @@ export default function Home({ data }) {
             </p>
           </div>
           <div className={styles.imgs}>
-            {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
-            <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
+            {/* <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
               <img src="/playstore.png" className={styles.app1} alt="android" />
+            </Link> */}
+            {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
+            <Link href="/create">
+              <div className={styles.sell}>Sell Ticket</div>
+            </Link>
+            <Link href="/discover">
+              <div className={styles.sell2}>Discover</div>
             </Link>
           </div>
         </div>
@@ -267,6 +273,18 @@ export default function Home({ data }) {
         </marquee> */}
       </div>
 
+      <main className={styles.downloadad}>
+        <text className={styles.dh1} data-aos="fade-up">
+          Get the app now, take control <br />
+          of your events.
+        </text>
+        <div className={styles.dimgs}>
+          <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
+            <img src="/playstore.png" className={styles.app1} alt="android" />
+          </Link>
+          <img src="/ios.png" className={styles.app} alt="ios" />
+        </div>
+      </main>
       <main className={styles.main2}>
         <text className={styles.h1} data-aos="fade-up">
           We give you the right toolkits to manage your events like a PRO.
