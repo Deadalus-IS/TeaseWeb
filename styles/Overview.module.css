@@ -18,87 +18,44 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0% 50%;
-}
-.llogo {
-  display: block;
-  margin-bottom: 5vh;
-  margin-top: 10vh;
-  width: 8vw;
-}
-.dropcon {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
   position: relative;
 }
-.dropdown {
-  width: 2vw;
-  height: 2vw;
-  margin-top: 11.3vh;
-  margin-left: 10px;
-  cursor: pointer;
-}
-.dropdown1 {
-  width: 3.5vw;
-  height: 3.5vw;
-  margin-top: 10vh;
-  margin-left: 10px;
-  cursor: pointer;
-}
-.dropdown:hover + .dropmenu {
-  display: flex;
-}
-.dropmenu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  background-color: #f8f8f8;
-  right: 0;
-  top: 16vh;
-  padding: 1vw;
-  border-bottom-left-radius: 0.9vw;
-  border-bottom-right-radius: 0.9vw;
-  border-top-left-radius: 0.9vw;
-  display: none;
-  box-shadow: 3px 3px 10px #a09e9e5e;
-}
-.dropmenu:hover {
-  display: flex;
+.logo {
+  width: 10vw;
 }
 .mainText {
   margin-top: 40px;
   font-size: 6vw;
   font-weight: 900;
+  /* text-align: center; */
 }
 .subText {
   font-size: 2vw;
   font-weight: 400;
-  width: 35vw;
+  width: 40vw;
+  /* text-align: center; */
 }
 .imgs {
-  margin-top: -5vh;
+  margin-top: 50px;
 }
 .app {
-  width: 10vw;
+  width: 15vw;
   margin-right: 20px;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 .app1 {
-  width: 10vw;
-  height: 3.3vw;
+  width: 15vw;
+  height: 5vw;
   cursor: pointer;
-  margin-top: -2px;
 }
 .main2 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  height: 100vh;
+  height: auto;
   width: 100%;
-  padding: 10vh 10vw;
+  padding: 15vh 10vw;
 }
 .h1 {
   font-size: 4vw;
@@ -133,9 +90,13 @@
 .h2 {
   font-size: 2vw;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
 }
 .text {
+  color: gray;
+  font-size: 1.3vw;
+}
+.text2 {
   color: gray;
   font-size: 1.3vw;
 }
@@ -305,11 +266,14 @@
   margin-bottom: -2px;
 }
 .nav {
-  width: 100%;
+  width: 80vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  top: 0;
+  padding: 8vh 0vw;
 }
 .navitem {
   color: white;
@@ -329,195 +293,6 @@
   display: none;
 }
 
-@keyframes moveTop {
-  0% {
-    margin-top: 0;
-  }
-  100% {
-    margin-top: -2400px;
-  }
-}
-
-.lheading {
-  height: 90vh;
-  overflow: hidden;
-  position: relative;
-  padding-left: 5vw;
-  background-color: white;
-  color: black;
-}
-.lcontent {
-  -ms-flex-align: baseline;
-  align-items: baseline;
-  max-width: 29vw;
-}
-
-.ltxt {
-  margin-bottom: 10vh;
-}
-.lstories {
-  bottom: 0;
-  left: 42vw;
-  position: absolute;
-  top: 0;
-  display: flex;
-  height: 90vh;
-}
-
-.lstoriesholder::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-  scrollbar-width: none;
-  height: 0;
-}
-
-.lstoriesholder {
-  overflow: scroll;
-  margin-right: 2vw;
-  width: 23vw;
-  transform: translate3d(0, 0, 0);
-  -webkit-animation-name: moveTop;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  animation-name: moveTop;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  /* background: chartreuse; */
-}
-.lstoriesholder:hover {
-  animation-play-state: paused;
-}
-.lstoriesholder:nth-child(1) {
-  animation-duration: 45s;
-}
-.lstoriesholder:nth-child(2) {
-  animation-duration: 40s;
-}
-.lstoriesholder:nth-child(3) {
-  animation-duration: 47s;
-}
-.lstoriesholder:nth-child(4) {
-  animation-duration: 42s;
-}
-.lstoriesholder:nth-child(5) {
-  animation-duration: 52s;
-}
-.lstory {
-  background-color: rgba(24, 1, 98, 0.294);
-  border-radius: 1.3vw;
-  height: 35vw;
-  outline: none;
-  overflow: hidden;
-  cursor: pointer;
-  position: relative;
-  margin-bottom: 2vw;
-  transition: all 250ms ease-out;
-  width: 100%;
-}
-.lstory img {
-  width: 100%;
-  object-fit: cover;
-  height: 100%;
-}
-.lstory:hover {
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.45);
-  transform: scale(0.95);
-  background-color: rgba(255, 255, 255, 0.9);
-}
-.lstoryname {
-  bottom: 0;
-  display: -ms-flexbox;
-  display: flex;
-  left: 0;
-  position: absolute;
-  right: 0;
-  z-index: 2;
-  padding: 2vw;
-  color: white;
-}
-.lstoryname img {
-  height: 3.3vw;
-  width: 3.3vw;
-  border-radius: 5vw;
-  background-clip: padding-box;
-  -moz-border-radius: 5vw;
-  -o-border-radius: 5vw;
-  -webkit-border-radius: 5vw;
-  margin-right: 10px;
-}
-.lstoryname strong {
-  margin-bottom: 1px;
-}
-.lstoryname img,
-.lstoryname strong,
-.lstoryname span {
-  position: relative;
-  z-index: 2;
-}
-.lstoryoverlay {
-  background-image: linear-gradient(
-    0deg,
-    #000000 4%,
-    rgba(0, 0, 0, 0.48) 29%,
-    transparent 100%
-  );
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  z-index: 1;
-}
-.h1 {
-  font-size: 4vw;
-  font-weight: 600;
-  letter-spacing: -3px;
-  /* line-height: 1; */
-  margin-bottom: 5vh;
-}
-.subh1 {
-  font-size: 1.3vw;
-  color: gray;
-  letter-spacing: 2;
-  line-height: 1.8;
-  margin-bottom: 5vh;
-}
-.datte {
-  font-size: 1vw;
-  color: rgb(223, 219, 219);
-}
-.lstoriesholdermobile {
-  display: none;
-}
-.section {
-  display: none;
-}
-.date {
-  background-color: white;
-  z-index: 99999;
-  position: absolute;
-  right: 2vw;
-  top: 2vw;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 7px 10px;
-}
-.dateh2 {
-  font-size: 1.5vw;
-  font-weight: 600;
-  margin-bottom: -3px;
-}
-.datetext {
-  font-size: 0.9vw;
-  color: gray;
-}
-.menupic {
-  display: none;
-}
-
 @media only screen and (max-width: 600px) {
   @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600;1,700&display=swap");
   .container {
@@ -531,14 +306,15 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
-    padding: 10vh 7vw;
+    padding: 10vh 10vw;
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5), black),
       url(/background.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
+    margin-bottom: 10vh;
   }
   .logo {
     width: 30vw;
@@ -556,16 +332,16 @@
     width: 82vw;
   }
   .imgs {
-    margin-top: -30px;
+    margin-top: 30px;
   }
   .app {
-    width: 30vw;
+    width: 35vw;
     margin-right: 10px;
     cursor: pointer;
   }
   .app1 {
-    width: 30vw;
-    height: 10vw;
+    width: 35vw;
+    height: 12vw;
     cursor: pointer;
   }
   .main2 {
@@ -619,6 +395,11 @@
   .text {
     color: gray;
     font-size: 4.5vw;
+  }
+  .text2 {
+    color: gray;
+    font-size: 4.5vw;
+    text-align: center;
   }
   .product {
     display: flex;
@@ -787,6 +568,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    /* padding-top: 10vh; */
   }
   .navitem {
     display: none;
@@ -794,11 +577,6 @@
   .menu {
     display: flex;
     width: 6vw;
-    display: flex;
-  }
-  .menupic {
-    display: flex;
-    width: 10vw;
     display: flex;
   }
   .sidemenu {
@@ -811,182 +589,6 @@
     z-index: 999;
     left: -100vw;
     transition: 0.5s;
-    padding: 20vw 10vw;
-  }
-
-  @keyframes moveLeft {
-    0% {
-      margin-left: 0;
-    }
-    100% {
-      margin-left: -2400px;
-    }
-  }
-
-  .lheading {
-    height: auto;
-    min-height: 90vh;
-    overflow: hidden;
-    position: relative;
-    padding-left: 7vw;
-    padding-right: 7vw;
-    padding-bottom: 5vh;
-    background-color: white;
-    color: black;
-  }
-  .lcontent {
-    -ms-flex-align: baseline;
-    align-items: baseline;
-    max-width: 100%;
-  }
-  .llogo {
-    display: block;
-    margin-bottom: 10vh;
-    margin-top: 10vh;
-    width: 25vw;
-  }
-  .ltxt {
-    margin-bottom: 10vh;
-  }
-  .lstories {
-    bottom: 0;
-    left: 42vw;
-    position: absolute;
-    top: 0;
-    display: none;
-    height: 90vh;
-  }
-
-  .lstoriesholder::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-    scrollbar-width: none;
-    height: 0;
-  }
-
-  .mobilescroll {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    background: chartreuse;
-    margin-left: -7vw;
-    height: 50vh;
-  }
-
-  .lstorymobile {
-    background-color: rgba(24, 1, 98, 0.294);
-    border-radius: 1.3vw;
-    height: 35%;
-    outline: none;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    margin-bottom: 2vw;
-    transition: all 250ms ease-out;
-    width: 100%;
-  }
-  .lstory img {
-    width: 100%;
-    object-fit: cover;
-    height: 100%;
-  }
-  .lstory:hover {
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.45);
-    transform: scale(0.95);
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  .lstoryname {
-    bottom: 0;
-    display: -ms-flexbox;
-    display: flex;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 2;
-    padding: 2vw;
-    color: white;
-  }
-  .lstoryname img {
-    height: 3.3vw;
-    width: 3.3vw;
-    border-radius: 5vw;
-    background-clip: padding-box;
-    -moz-border-radius: 5vw;
-    -o-border-radius: 5vw;
-    -webkit-border-radius: 5vw;
-    margin-right: 10px;
-  }
-  .lstoryname strong {
-    margin-bottom: 1px;
-  }
-  .lstoryname img,
-  .lstoryname strong,
-  .lstoryname span {
-    position: relative;
-    z-index: 2;
-  }
-  .lstoryoverlay {
-    background-image: linear-gradient(
-      0deg,
-      #000000 4%,
-      rgba(0, 0, 0, 0.48) 29%,
-      transparent 100%
-    );
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 1;
-  }
-  .h1 {
-    font-size: 12vw;
-    font-weight: 600;
-    letter-spacing: -3px;
-    /* line-height: 1; */
-    margin-bottom: 5vh;
-  }
-  .subh1 {
-    font-size: 4.6vw;
-    color: gray;
-    letter-spacing: 2;
-    line-height: 1.8;
-    margin-bottom: 1vh;
-    width: 90%;
-  }
-  .datte {
-    font-size: 1vw;
-    color: rgb(223, 219, 219);
-  }
-  .lstoriesholdermobile {
-    display: none;
-  }
-  .section {
-    display: none;
-  }
-  .date {
-    background-color: white;
-    z-index: 99999;
-    position: absolute;
-    right: 2vw;
-    top: 2vw;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 7px 10px;
-  }
-  .dateh2 {
-    font-size: 1.5vw;
-    font-weight: 600;
-    margin-bottom: -3px;
-  }
-  .datetext {
-    font-size: 0.9vw;
-    color: gray;
-  }
-  .dropdown {
-    display: none;
+    padding: 0vw 10vw;
   }
 }
