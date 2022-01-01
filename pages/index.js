@@ -274,7 +274,7 @@ export default function Home({ data }) {
       </div>
 
       <main className={styles.downloadad}>
-        <text className={styles.dh1} data-aos="fade-up">
+        <text className={styles.dh1}>
           Get the app now, take control <br />
           of your events.
         </text>

@@ -138,14 +138,14 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   padding: 10vh 15vw;
   background-color: #0154ef;
   background-image: url(/app.png);
   background-repeat: no-repeat;
-  background-position: 90% -19%;
-  background-size: 30vw;
+  background-position: 90% 5vh;
+  background-size: 35vw;
 }
 .dh1 {
   font-size: 3vw;
@@ -615,6 +615,7 @@
     font-size: 13vw;
     font-weight: 900;
     line-height: 13vw;
+    color: red
   }
   .subText {
     font-size: 4.5vw;
@@ -631,8 +632,8 @@
     cursor: pointer;
   }
   .sell {
-    width: 30vw;
-    height: 10vw;
+    width: 35vw;
+    height: 12vw;
     margin-right: 20px;
     cursor: not-allowed;
     background-color: #0155ef;
@@ -640,7 +641,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.8vw;
+    font-size: 3.3vw;
     font-weight: 600;
     color: white;
     cursor: pointer;
@@ -650,8 +651,8 @@
     background-color: #05cfff;
   }
   .sell2 {
-    width: 30vw;
-    height: 10vw;
+    width: 35vw;
+    height: 12vw;
     margin-right: 20px;
     cursor: not-allowed;
     border: #0155ef solid 1.8px;
@@ -659,7 +660,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.8vw;
+    font-size: 3.3vw;
     font-weight: 600;
     color: #0155ef;
     cursor: pointer;
@@ -681,13 +682,13 @@
     align-items: center;
     flex-direction: column;
     height: auto;
-    min-height: 60vh;
+    min-height: 70vh;
     width: 100%;
-    padding: 5vh 2vw;
+    padding: 10vh 2vw;
     background-color: #0154ef;
     background-image: url(/app.png);
     background-repeat: no-repeat;
-    background-position: 50% 28vh;
+    background-position: 50% 32vh;
     background-size: 130vw;
   }
   .dh1 {
