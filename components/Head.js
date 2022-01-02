@@ -47,7 +47,10 @@ export default function Headd({ title, image }) {
         content={title + " | Discover and Manage events"}
       ></meta>
       <meta property="twitter:url" content="https://tease.africa/"></meta>
-      <meta property="twitter:card" content="summary_large_image"></meta>
+      <meta
+        property="twitter:card"
+        content={image ? image : "https://teaseafrica.netlify.app/1.png"}
+      ></meta>
       <meta
         property="twitter:image"
         content={image ? image : "https://teaseafrica.netlify.app/1.png"}
@@ -67,7 +70,7 @@ export default function Headd({ title, image }) {
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-Y5P4TVP212"
       ></script>
-      
+
       <script
         dangerouslySetInnerHTML={{
           __html: `    window.dataLayer = window.dataLayer || [];
