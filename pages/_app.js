@@ -51,31 +51,10 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         {loading ? (
           <main className={styles.body}>
-            <div className={styles.boxes}>
-              <div className={styles.box}>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <div className={styles.box}>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <div className={styles.box}>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-              <div className={styles.box}>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
+            <div className={styles.box}>
+              <img src="/loader/1.png" className={styles.one} />
+              <img src="/loader/2.png" className={styles.two} />
+              <img src="/loader/3.png" className={styles.three} />
             </div>
           </main>
         ) : null}

@@ -1,145 +1,110 @@
 .body {
-  height: 100vh;
-  width: 100vw;
-  font-family: Roboto, Arial;
-  color: #adafb6;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999999;
+  background-color: white;
 }
-
-.boxes {
-  height: 32px;
-  width: 32px;
+.box {
+  width: 100px;
+  height: 100px;
+  /* background-color: rgb(80, 150, 211); */
   position: relative;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  /* margin-top: 32px; */
-  -webkit-transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
-  transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
 }
-.boxes .box {
-  width: 32px;
-  height: 32px;
-  top: 0px;
-  left: 0;
+.one,
+.two,
+.three {
+  width: 50px;
+  height: 50px;
   position: absolute;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
 }
 
-.boxes .box:nth-child(1) {
-  -webkit-transform: translate(100%, 0);
-  transform: translate(100%, 0);
-  -webkit-animation: box1 1s linear infinite;
-  animation: box1 1s linear infinite;
-}
-.boxes .box:nth-child(2) {
-  -webkit-transform: translate(0, 100%);
-  transform: translate(0, 100%);
-  -webkit-animation: box2 1s linear infinite;
-  animation: box2 1s linear infinite;
-}
-.boxes .box:nth-child(3) {
-  -webkit-transform: translate(100%, 100%);
-  transform: translate(100%, 100%);
-  -webkit-animation: box3 1s linear infinite;
-  animation: box3 1s linear infinite;
-}
-.boxes .box:nth-child(4) {
-  -webkit-transform: translate(200%, 0);
-  transform: translate(200%, 0);
-  -webkit-animation: box4 1s linear infinite;
-  animation: box4 1s linear infinite;
-}
-
-.boxes .box > div {
-  background: #5c8df6;
-  --translateZ: 15.5px;
-  --rotateY: 0deg;
-  --rotateX: 0deg;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #5c8df6;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  -webkit-transform: rotateY(var(--rotateY)) rotateX(var(--rotateX))
-    translateZ(var(--translateZ));
-  transform: rotateY(var(--rotateY)) rotateX(var(--rotateX))
-    translateZ(var(--translateZ));
-}
-
-.boxes .box > div:nth-child(1) {
-  top: 0;
+.one {
+  animation: MoveUpDown 5s linear infinite;
+  animation-delay: 3s;
   left: 0;
-  background: #5c8df6;
-}
-.boxes .box > div:nth-child(2) {
-  background: #145af2;
-  right: 0;
-  --rotateY: 90deg;
-}
-.boxes .box > div:nth-child(3) {
-  background: #447cf5;
-  --rotateX: -90deg;
-}
-.boxes .box > div:nth-child(4) {
-  background: #dbe3f4;
   top: 0;
-  left: 0;
-  --translateZ: -90px;
+}
+.two {
+  animation: MoveUpDown2 5s linear infinite;
+  left: 0px;
+  top: 50px;
+  animation-delay: 3s;
+}
+.three {
+  animation: MoveUpDown3 5s linear infinite;
+  left: 50px;
+  top: 50px;
+  animation-delay: 3s;
 }
 
-@keyframes box1 {
-  0%,
-  50% {
-    transform: translate(100%, 0);
+@keyframes MoveUpDown {
+  from {
+    transform: translateX(0px);
   }
-  100% {
-    transform: translate(200%, 0);
+  15% {
+    transform: translateX(50px);
   }
-}
-
-@keyframes box2 {
-  0% {
-    transform: translate(0, 100%);
+  30% {
+    transform: translateY(50px) translateX(50px);
   }
-  50% {
-    transform: translate(0, 0);
+  45% {
+    transform: translateY(50px);
   }
-  100% {
-    transform: translate(100%, 0);
+  60% {
+    transform: translateX(0px);
   }
-}
-
-@keyframes box3 {
-  0%,
-  50% {
-    transform: translate(100%, 100%);
-  }
-  100% {
-    transform: translate(0, 100%);
+  to {
+    transform: translateX(0px);
   }
 }
 
-@keyframes box4 {
-  0% {
-    transform: translate(200%, 0);
+@keyframes MoveUpDown2 {
+  from {
+    transform: translateX(0px);
   }
-  50% {
-    transform: translate(200%, 100%);
+  15% {
+    transform: translateY(-50px);
   }
-  100% {
-    transform: translate(100%, 100%);
+  30% {
+    transform: translateX(50px) translateY(-50px);
+  }
+  45% {
+    transform: translateY(0px) translateX(50px);
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes MoveUpDown3 {
+  from {
+    transform: translateX(0px);
+  }
+  15% {
+    transform: translateX(-50px);
+  }
+  30% {
+    transform: translateY(-50px) translateX(-50px);
+  }
+  45% {
+    transform: translateY(-50px) translateX(0px);
+  }
+  60% {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(0px);
   }
 }
