@@ -47,38 +47,39 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <UserContext.Provider value={{ userContext, setuserContext }}>
-      {loading ? (
-        <main className={styles.body}>
-          <div className={styles.boxes}>
-            <div className={styles.box}>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div className={styles.box}>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div className={styles.box}>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div className={styles.box}>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-          </div>
-        </main>
-      ) : (
+      <div>
         <Component {...pageProps} />
-      )}
+        {loading ? (
+          <main className={styles.body}>
+            <div className={styles.boxes}>
+              <div className={styles.box}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div className={styles.box}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div className={styles.box}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <div className={styles.box}>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+          </main>
+        ) : null}
+      </div>
     </UserContext.Provider>
   );
 }
