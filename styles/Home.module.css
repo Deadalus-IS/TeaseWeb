@@ -391,7 +391,10 @@
   color: #7288a2;
 }
 .menu {
-  display: none;
+  display: flex;
+  width: 2vw;
+  display: flex;
+  margin-top: 3vw;
 }
 .sidemenu {
   display: none;
@@ -583,7 +586,10 @@
   color: gray;
 }
 .menupic {
-  display: none;
+  display: flex;
+  width: 4.5vw;
+  display: flex;
+  margin-top: 3.5vw;
 }
 
 @media only screen and (max-width: 600px) {

@@ -257,10 +257,22 @@
   color: #7288a2;
 }
 .menu {
-  display: none;
+  display: flex;
+  width: 2vw;
+  display: flex;
 }
 .sidemenu {
-  display: none;
+  display: unset;
+  width: 40vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  z-index: 999;
+  left: -100vw;
+  transition: 0.5s;
+  padding: 8vw 8vw;
+  border-right: solid #03b5d2 3px
 }
 .emptycon {
   display: flex;

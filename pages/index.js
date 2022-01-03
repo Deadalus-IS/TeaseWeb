@@ -67,7 +67,7 @@ export default function Home({ data }) {
           <div className={styles.nav}>
             <div className={styles.dropcon}>
               <img className={styles.llogo} src="/logob.png" cl alt="logo" />
-              {fauth.currentUser ? (
+              {/* {fauth.currentUser ? (
                 <img
                   className={`${styles.dropdown} ${styles.dropdown1}`}
                   src={userContext?.organizer?.profileURL}
@@ -79,7 +79,7 @@ export default function Home({ data }) {
                   src={"/menu1.png"}
                   alt="hamburger"
                 />
-              )}
+              )} */}
               <div className={styles.dropmenu}>
                 <text className={styles.quicklink}></text>
 
