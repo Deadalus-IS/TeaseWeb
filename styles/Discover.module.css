@@ -272,7 +272,7 @@
   z-index: 999;
   left: -100vw;
   transition: 0.5s;
-  padding: 8vw 8vw;
+  padding: 5vw 8vw;
   border-right: solid #03b5d2 3px
 }
 .emptycon {
