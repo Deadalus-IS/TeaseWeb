@@ -25,6 +25,7 @@
   margin-bottom: 5vh;
   margin-top: 10vh;
   width: 8vw;
+  cursor: pointer;
 }
 .dropcon {
   display: flex;
@@ -247,6 +248,7 @@
 .logob {
   width: 10vw;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 .quicklink {
   font-size: 2vw;
@@ -393,7 +395,7 @@
 .menu {
   display: flex;
   width: 2vw;
-  display: flex;
+  cursor: pointer;
   margin-top: 3vw;
 }
 .sidemenu {

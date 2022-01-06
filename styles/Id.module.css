@@ -45,6 +45,7 @@
 }
 .logo {
   display: none;
+  cursor: pointer;
 }
 .top {
   width: 100%;

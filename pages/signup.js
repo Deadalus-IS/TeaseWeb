@@ -32,7 +32,7 @@ export default function Signup() {
       }
 
       case "auth/invalid-email": {
-        return "Sorry, invalid email, check and try again."
+        return "Sorry, invalid email, check and try again.";
       }
 
       default: {
@@ -191,6 +191,17 @@ export default function Signup() {
         >
           {loading ? "Loading..." : "Signup"}
         </div>
+        <text style={{marginTop: "-1vw"}} className={styles.label}>
+          *By signing up you have a agreed to our{" "}
+          <Link href="/terms">
+            <a style={{ color: "#03b5d2" }}>Terms & Conditions</a>
+          </Link>{" "}
+          and{" "}
+          <Link href="/privacy">
+            <a style={{ color: "#03b5d2" }}>Privacy Policy</a>
+          </Link>
+          .
+        </text>
       </main>
     </div>
   );

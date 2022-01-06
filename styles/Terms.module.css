@@ -21,6 +21,7 @@
 }
 .logo {
   width: 8vw;
+  cursor: pointer;
 }
 
 .nav {
