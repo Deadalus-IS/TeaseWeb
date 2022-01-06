@@ -260,6 +260,7 @@
   display: flex;
   width: 2vw;
   display: flex;
+  cursor: pointer;
 }
 .sidemenu {
   display: unset;

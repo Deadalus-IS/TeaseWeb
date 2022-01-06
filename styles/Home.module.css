@@ -590,6 +590,7 @@
   width: 4.5vw;
   display: flex;
   margin-top: 3.5vw;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
