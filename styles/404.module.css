@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 .main {
   min-height: 100vh;
   margin: 0px auto;
@@ -19,7 +19,7 @@
   font-size: 1.5vw;
   font-weight: 400;
   width: 35vw;
-  font-family: Rubik;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   margin-top: 5vh;
 }
@@ -27,14 +27,14 @@
   font-size: 1.5vw;
   font-weight: 400;
   width: 35vw;
-  font-family: Rubik;
+  font-family: "Open Sans", sans-serif;
   text-align: center;
   margin-top: 5vh;
   color: rgb(64, 0, 138);
   text-decoration: underline;
 }
 .svg {
-    width: 60vw;
+  width: 60vw;
 }
 .fundo {
   animation: scales 3s alternate infinite;
@@ -143,7 +143,7 @@
     font-size: 5vw;
     font-weight: 400;
     width: 35vw;
-    font-family: Rubik;
+    font-family: "Open Sans", sans-serif;
     text-align: center;
     margin-top: 0vh;
     width: 100%;
@@ -152,7 +152,7 @@
     font-size: 5vw;
     font-weight: 400;
     width: 35vw;
-    font-family: Rubik;
+    font-family: "Open Sans", sans-serif;
     text-align: center;
     margin-top: 3vh;
     color: rgb(64, 0, 138);
@@ -161,5 +161,5 @@
   }
   .svg {
     width: 80vw;
-}
+  }
 }
