@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .container {
   min-height: 100vh;
   background-color: black;
   color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 .main {
   display: flex;
@@ -81,7 +81,7 @@
 }
 .imgs {
   margin-top: -5vh;
-  display: flex;
+  display: flex
 }
 .app {
   width: 10vw;
@@ -102,7 +102,7 @@
   font-weight: 600;
   color: white;
   cursor: pointer;
-  transition: 0.1s;
+  transition: .1s;
 }
 .sell:hover {
   background-color: #05cfff;
@@ -121,12 +121,12 @@
   font-weight: 600;
   color: #0155ef;
   cursor: pointer;
-  transition: 0.1s;
+  transition: .1s;
 }
 .sell2:hover {
   background-color: #05cfff;
   color: white;
-  border: none;
+  border: none
 }
 .app1 {
   width: 10vw;
@@ -155,7 +155,7 @@
 }
 .dimgs {
   margin-top: 2vh;
-  display: flex;
+  display: flex,
 }
 .dimgs img {
   margin-right: 10px;
@@ -384,7 +384,7 @@
 .navitem {
   color: white;
   font-size: 1.2vw;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
@@ -596,11 +596,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
+   .container {
     min-height: 100vh;
     background-color: black;
     color: white;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Rubik', sans-serif;
   }
   .main {
     display: flex;
@@ -624,7 +624,7 @@
     font-size: 13vw;
     font-weight: 900;
     line-height: 13vw;
-    color: red;
+    color: red
   }
   .subText {
     font-size: 4.5vw;
@@ -654,7 +654,7 @@
     font-weight: 600;
     color: white;
     cursor: pointer;
-    transition: 0.1s;
+    transition: .1s;
   }
   .sell:hover {
     background-color: #05cfff;
@@ -673,12 +673,12 @@
     font-weight: 600;
     color: #0155ef;
     cursor: pointer;
-    transition: 0.1s;
+    transition: .1s;
   }
   .sell2:hover {
     background-color: #05cfff;
     color: white;
-    border: none;
+    border: none
   }
   .app1 {
     width: 30vw;
@@ -707,7 +707,7 @@
   }
   .dimgs {
     margin-top: 2vh;
-    display: flex;
+    display: flex,
   }
   .dimgs img {
     margin-right: 10px;

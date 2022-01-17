@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
 .container {
   min-height: 100vh;
   background-color: white;
   color: black;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
 }
 .main {
   display: flex;
@@ -34,7 +33,7 @@
 .navitem {
   color: black;
   font-size: 1.2vw;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
@@ -436,6 +435,77 @@
   margin-right: 10px;
   width: 19px;
 }
+.charge {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2vh 0;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.inputs:checked + .slider {
+  background-color: #2196F3;
+}
+
+.inputs:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.inputs:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 
 @media only screen and (max-width: 600px) {
   @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600;1,700&display=swap");
@@ -443,7 +513,7 @@
     min-height: 100vh;
     background-color: white;
     color: black;
-    font-family: "Open Sans", sans-serif;
+    font-family: Rubik;
     margin-bottom: 30vh;
   }
   .main {
@@ -897,5 +967,8 @@
   .inputdt::-webkit-calendar-picker-indicator {
     display: none;
     -webkit-appearance: none;
+  }
+  .switch {
+    transform: scale(0.8);
   }
 }

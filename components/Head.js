@@ -1,16 +1,17 @@
 import Head from "next/head";
 
 export default function Headd({ title, image }) {
+  const dash = title == "" ? "" : " |";
   return (
     <Head>
-      <title>{title + " | Discover and Manage events"} </title>
+      <title>{title + dash + " Discover and Manage Events"} </title>
       <meta
         name="title"
-        content={title + " | Discover and Manage events"}
+        content={title + dash + " Discover and Manage Events"}
       ></meta>
       <meta
         name="og:title"
-        content={title + " | Discover and Manage events"}
+        content={title + dash + " Discover and Manage Events"}
       ></meta>
 
       <meta property="og:type" content="website"></meta>
@@ -31,7 +32,7 @@ export default function Headd({ title, image }) {
 
       <meta
         name="twitter:title"
-        content={title + " | Discover and Manage events"}
+        content={title + dash + " Discover and Manage Events"}
       ></meta>
       <meta
         content="With Tease you can discover events in your city, buy tickets to music or games, create and manage your own event and sell tickets to other users."

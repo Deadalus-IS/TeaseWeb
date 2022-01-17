@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,900;1,600;1,700&display=swap");
 .container {
   min-height: 100vh;
   background-color: black;
   color: white;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
 }
 .main {
   display: flex;
@@ -67,7 +67,7 @@
   background-color: transparent;
   border: none;
   font-size: 1.3vw;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
   outline: none;
   justify-content: center;
   color: white;
@@ -249,7 +249,7 @@
 .navitem {
   color: white;
   font-size: 1.2vw;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
@@ -274,7 +274,7 @@
   left: -100vw;
   transition: 0.5s;
   padding: 5vw 8vw;
-  border-right: solid #03b5d2 3px;
+  border-right: solid #03b5d2 3px
 }
 .emptycon {
   display: flex;
@@ -289,7 +289,7 @@
   opacity: 0.5;
 }
 .rubber_stamp {
-  font-family: "Vollkorn", serif;
+  font-family: 'Vollkorn', serif;
   font-size: 3.2vw;
   line-height: 3.2vw;
   text-transform: uppercase;
@@ -304,8 +304,8 @@
   -o-transform: rotate(-10deg);
   -moz-transform: rotate(-10deg);
   -ms-transform: rotate(-10deg);
-  position: absolute;
-  top: 32%;
+  position:absolute;
+  top:32%;
   left: 3vw;
   transform: scale(1) rotate(-10deg);
 }
@@ -318,8 +318,7 @@
   top: -10px;
   left: -10px;
   padding: 10px;
-  background: url(https://raw.github.com/domenicosolazzo/css3/master/img/noise.png)
-    repeat;
+  background: url(https://raw.github.com/domenicosolazzo/css3/master/img/noise.png) repeat;
 }
 
 @media only screen and (max-width: 600px) {
@@ -328,7 +327,7 @@
     min-height: 100vh;
     background-color: black;
     color: white;
-    font-family: "Open Sans", sans-serif;
+    font-family: Rubik;
   }
   .main {
     display: flex;
@@ -407,7 +406,7 @@
     background-color: transparent;
     border: none;
     font-size: 3.5vw;
-    font-family: "Open Sans", sans-serif;
+    font-family: Rubik;
     outline: none;
     justify-content: center;
   }
@@ -447,6 +446,7 @@
     transition: 0.2s ease-in-out;
     position: relative;
     background-size: cover;
+
   }
   .point:hover {
     margin-top: -20px;
@@ -579,7 +579,7 @@
     opacity: 0.5;
   }
   .rubber_stamp {
-    font-family: "Vollkorn", serif;
+    font-family: 'Vollkorn', serif;
     font-size: 13vw;
     line-height: 3.2vw;
     text-transform: uppercase;
@@ -594,8 +594,8 @@
     -o-transform: rotate(-10deg);
     -moz-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
-    position: absolute;
-    top: 32%;
+    position:absolute;
+    top:32%;
     left: 3vw;
     transform: scale(0.8) rotate(-10deg);
   }
@@ -608,7 +608,6 @@
     top: -10px;
     left: -10px;
     padding: 10px;
-    background: url(https://raw.github.com/domenicosolazzo/css3/master/img/noise.png)
-      repeat;
+    background: url(https://raw.github.com/domenicosolazzo/css3/master/img/noise.png) repeat;
   }
 }

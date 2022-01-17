@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-.container {
+zz.container {
   min-height: 100vh;
   background-color: white;
   color: black;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
 }
 .main {
   display: flex;
@@ -34,7 +33,7 @@
 .navitem {
   color: black;
   font-size: 1.2vw;
-  font-family: "Open Sans", sans-serif;
+  font-family: Rubik;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
@@ -126,9 +125,9 @@
   margin-bottom: -2px;
 }
 .a {
-  color: rgb(0, 8, 34);
-  text-decoration: underline;
-  padding: 0 8px;
+    color: rgb(0, 8, 34);
+    text-decoration: underline;
+    padding: 0 8px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -137,7 +136,7 @@
     min-height: 100vh;
     background-color: white;
     color: black;
-    font-family: "Open Sans", sans-serif;
+    font-family: Rubik;
   }
   .main {
     display: flex;

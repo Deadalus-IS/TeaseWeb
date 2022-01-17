@@ -56,7 +56,7 @@ export default function Home(data) {
   return (
     <div className={styles.container}>
       <Head
-        title={"Buy " + event.name + " Ticket | Discover and manage events"}
+        title={"Buy tickets for" + event.name + " | Tease"}
         image={event.imageURL}
       />
 

@@ -47,6 +47,7 @@ export default function Create() {
   const [isslugging, setisslugging] = useState(false);
   const [ispaid, setispaid] = useState(true);
   const [hidetix, sethidetix] = useState(false);
+  const [passfee, setpassfee] = useState(false);
 
   const [page, setpage] = useState(1);
   const storage = getStorage();
@@ -318,7 +319,7 @@ export default function Create() {
                     datestring: new Date(value.target.valueAsNumber),
                   };
                   sedate(dateobj);
-                  setfakedate(value.target.value)
+                  setfakedate(value.target.value);
                   // console.log(dateobj);
                 }}
                 type="date"
@@ -558,6 +559,30 @@ export default function Create() {
                     </>
                   )}
 
+                  <div className={styles.charge}>
+                    <text className={styles.chargetext}>
+                      Pass fee to customer?
+                    </text>
+                    <label className={styles.switch}>
+                      <input
+                        onChange={(val) => {
+                          if (passfee == false) {
+                            setpassfee(true)
+                          } else {
+                            setpassfee(false)
+                          }
+                          console.log(passfee);
+                        }}
+                        value={passfee}
+                        className={styles.inputs}
+                        type="checkbox"
+                      />
+                      <span
+                        className={`${styles.slider} ${styles.round}`}
+                      ></span>
+                    </label>
+                  </div>
+
                   <text className={styles.label}>Ticket Quantity</text>
                   <input
                     className={styles.input1}
@@ -630,6 +655,7 @@ export default function Create() {
                       approved: false,
                       country: country,
                       slug: slug,
+                      passfee: passfee
                     };
 
                     // console.log(payload);
@@ -637,7 +663,10 @@ export default function Create() {
                     let response = await func.createEvent(payload);
                     // console.log("USE RES>>>>>>> ", response);
                     if (response.status) {
-                      toaster.success("Your event has been submitted for review.", {duration: 5});
+                      toaster.success(
+                        "Your event has been submitted for review.",
+                        { duration: 5 }
+                      );
                       setloading(false);
                       router.push("/profile");
                     } else {

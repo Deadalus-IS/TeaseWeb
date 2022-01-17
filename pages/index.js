@@ -60,7 +60,7 @@ export default function Home({ data }) {
 
   return (
     <div className={styles.container}>
-      <Head title="Tease" />
+      <Head title="" />
 
       <div className={styles.lheading}>
         <div className={styles.lcontent}>
