@@ -6,8 +6,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
-import fauth from "../firebase";
-import { UserContext } from "../context";
 import { toaster } from "evergreen-ui";
 import func from "../functions";
 
@@ -35,8 +33,6 @@ export default function Home(data) {
   const [modal, setmodal] = useState(false);
   const [imagemodal, setimagemodal] = useState(false);
   const [loading, setloading] = useState(false);
-  // console.log(data);
-  let { userContext, setuserContext } = useContext(UserContext);
 
   var months = [
     "January",
@@ -221,65 +217,48 @@ export default function Home(data) {
                   Number(ticket.price).toFixed(2)}
             </text>
             <text className={styles.about}>Proceed to pay</text>
-            {fauth.currentUser ? (
-              <text>
-                Buy ticket with this account: <br />
-                <br />
-                Name: {userContext.name} <br />
-                Email: {userContext.email} <br />
-                Phone: {userContext.phone} <br />
-              </text>
-            ) : (
-              <>
-                <input
-                  className={styles.input1}
-                  placeholder="Your Name"
-                  onChange={(value) => {
-                    setname(value.target.value);
-                  }}
-                />
-                <input
-                  className={styles.input1}
-                  placeholder="Email Address"
-                  type="email"
-                  onChange={(value) => {
-                    setemail(value.target.value);
-                  }}
-                />
-                <input
-                  className={styles.input}
-                  placeholder="Phone Number"
-                  type="tel"
-                  onChange={(value) => {
-                    setphone(value.target.value);
-                  }}
-                />
-                <text className={styles.head}>
-                  Please note that your ticket will be sent to this email
-                  address. Please provide a valid email address.
-                </text>
-              </>
-            )}
+
+            <input
+              className={styles.input1}
+              placeholder="Your Name"
+              onChange={(value) => {
+                setname(value.target.value);
+              }}
+            />
+            <input
+              className={styles.input1}
+              placeholder="Email Address"
+              type="email"
+              onChange={(value) => {
+                setemail(value.target.value);
+              }}
+            />
+            <input
+              className={styles.input}
+              placeholder="Phone Number"
+              type="tel"
+              onChange={(value) => {
+                setphone(value.target.value);
+              }}
+            />
+            <text className={styles.head}>
+              Please note that your ticket will be sent to this email address.
+              Please provide a valid email address.
+            </text>
+
             <div
               onClick={async () => {
-                if ((ticket && email && phone) || userContext.id) {
+                if (ticket && email && phone) {
                   setloading(true);
 
                   let payload = {
                     id: String(Date.now() * 123442456),
-                    user: userContext.id
-                      ? {
-                          id: userContext.id,
-                          email: userContext.email,
-                          phone: userContext.phone,
-                          name: userContext.name,
-                        }
-                      : {
-                          id: "P4I5r7LujihLZFsdbrnLHQX34Ec2",
-                          email: email,
-                          phone: phone,
-                          name: name,
-                        },
+                    user: {
+                      id: "P4I5r7LujihLZFsdbrnLHQX34Ec2",
+                      email: email,
+                      phone: phone,
+                      name: name,
+                    },
                     ticket: ticket,
                     event: event,
                     timestamp: String(Date.now()),

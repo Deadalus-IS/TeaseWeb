@@ -3,39 +3,15 @@ import styles from "../styles/App.module.css";
 import { useEffect, useState, useContext } from "react";
 import { useRouter } from "next/router";
 import * as gtag from "../lib/gtag";
-import { onAuthStateChanged } from "firebase/auth";
-import fauth from "../firebase";
 import func from "../functions";
-import { UserContext } from "../context";
 import { toaster } from "evergreen-ui";
 
 function MyApp({ Component, pageProps }) {
-  const [userContext, setuserContext] = useState({});
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(false);
 
   const router = useRouter();
 
-  useEffect(() => {
-    onAuthStateChanged(fauth, async (user) => {
-      if (user) {
-        // console.log("user logged in");
-
-        let userRes = await func.getUser({
-          id: user.uid,
-        });
-        // console.log(userRes);
-        if (userRes.status) {
-          setuserContext(userRes.user);
-        } else {
-          toaster.notify("Logging you in, please wait ");
-        }
-        setloading(false);
-      } else {
-        // console.log("no user logged in");
-        setloading(false);
-      }
-    });
-
+  useEffect(async () => {
     const handleRouteChange = (url) => {
       gtag.pageview(url);
     };
@@ -46,20 +22,18 @@ function MyApp({ Component, pageProps }) {
   }, [router.events]);
 
   return (
-    <UserContext.Provider value={{ userContext, setuserContext }}>
-      <div>
-        <Component {...pageProps} />
-        {loading ? (
-          <main className={styles.body}>
-            <div className={styles.box}>
-              <img src="/loader/1.png" className={styles.one} />
-              <img src="/loader/2.png" className={styles.two} />
-              <img src="/loader/3.png" className={styles.three} />
-            </div>
-          </main>
-        ) : null}
-      </div>
-    </UserContext.Provider>
+    <div>
+      <Component {...pageProps} />
+      {loading ? (
+        <main className={styles.body}>
+          <div className={styles.box}>
+            <img src="/loader/1.png" className={styles.one} />
+            <img src="/loader/2.png" className={styles.two} />
+            <img src="/loader/3.png" className={styles.three} />
+          </div>
+        </main>
+      ) : null}
+    </div>
   );
 }
 

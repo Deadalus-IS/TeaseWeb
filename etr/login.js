@@ -4,15 +4,10 @@ import styles from "../styles/Signup.module.css";
 import { useEffect, useState, useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import fauth from "../firebase";
-import func from "../functions";
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
 import { useRouter } from "next/router";
 import { UserContext } from "../context";
-import { toaster} from "evergreen-ui";
+import { toaster } from "evergreen-ui";
+import func from "../functions";
 
 export default function Login() {
   const [email, setemail] = useState("");
@@ -21,52 +16,24 @@ export default function Login() {
   let { userContext, setuserContext } = useContext(UserContext);
   const router = useRouter();
 
-  function convertMessage(code) {
-    // console.log("called");
-    switch (code) {
-      case "auth/user-disabled": {
-        return "Sorry your user is disabled.";
-      }
-      case "auth/user-not-found": {
-        return "Sorry user not found.";
-      }
-
-      case "auth/wrong-password": {
-        return "Sorry, incorrect password entered. Please try again.";
-      }
-
-      default: {
-        return "Login error try again.";
-      }
+  let signIn = async (email, password) => {
+    let userRes = await func.authUser({
+      email: email.toLowerCase(),
+      password: password,
+    });
+    if (userRes.status) {
+      localStorage.setItem("user", JSON.stringify(userRes.user));
+      setuserContext(userRes.user);
+      router.push("/profile");
+      setLoading(false);
+    } else {
+      setLoading(false);
+      toaster.danger(userRes.message);
     }
-  }
-
-  const auth = fauth;
-  let signIn = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then(async (user) => {
-        let userRes = await func.getUser({
-          id: user.user.uid,
-        });
-        if (userRes.status) {
-          setuserContext(userRes.user);
-          router.push("/profile");
-          setLoading(false);
-        } else {
-          setLoading(false);
-          toaster.danger("Something went wrong, Please try again");
-        }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        setLoading(false);
-        toaster.danger(convertMessage(errorCode));
-      });
   };
 
   useEffect(() => {
+    console.log(userContext);
     AOS.init({
       offset: 120,
       delay: 0,
@@ -83,7 +50,7 @@ export default function Login() {
             <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
           </Link>
           <div className={styles.navlinks}>
-            {fauth.currentUser ? (
+            {userContext.name ? (
               <Link href="/profile">
                 <text className={styles.navitem}>Profile</text>
               </Link>
@@ -100,15 +67,15 @@ export default function Login() {
 
         <h1 className={styles.h1}>Login</h1>
 
-        {fauth.currentUser ? (
+        {userContext.name ? (
           <>
             <text className={styles.text}>
-              You&apos;re alreary logged in as {fauth.currentUser.email}
+              You&apos;re alreary logged in as {userContext.email}
             </text>
 
             <div
               onClick={() => {
-                fauth.signOut();
+                func.signOut();
                 router.reload();
               }}
               className={styles.btn}
@@ -116,7 +83,9 @@ export default function Login() {
               Log Out
             </div>
             <Link href="/">
-              <text style={{marginLeft: 0}} className={styles.navitem}>Go Home</text>
+              <text style={{ marginLeft: 0 }} className={styles.navitem}>
+                Go Home
+              </text>
             </Link>
           </>
         ) : (

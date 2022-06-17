@@ -1,15 +1,12 @@
 import Head from "../components/Head";
 import Link from "next/link";
 import styles from "../styles/Signup.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import fauth from "../firebase";
 import func from "../functions";
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { UserContext } from "../context";
+
 import router from "next/router";
 import { toaster } from "evergreen-ui";
 
@@ -21,63 +18,38 @@ export default function Signup() {
   const [password, setpassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  function convertMessage(code) {
-    // console.log("called");
-    switch (code) {
-      case "auth/email-already-exists": {
-        return "Sorry, this email is already in use.";
-      }
-      case "auth/invalid-password": {
-        return "Password must be atleast six(6) characters.";
-      }
+  let { userContext, setuserContext } = useContext(UserContext);
 
-      case "auth/invalid-email": {
-        return "Sorry, invalid email, check and try again.";
-      }
+  let signUp = async (type, name, email, phone, password) => {
+    const ref = func.generateQuickGuid();
 
-      default: {
-        return "Sign up error try again.";
-      }
+    let response = await func.createUser({
+      name: name,
+      email: email.toLowerCase(),
+      phone: phone,
+      password: password,
+      id: ref,
+      isorganizer: true,
+      organizer: {
+        id: ref + "events",
+        name: name,
+        email: email.toLowerCase(),
+        phone: phone,
+        userid: ref,
+        type: type,
+        profileurl: `https://avatars.dicebear.com/api/adventurer/${email}.svg`,
+        balance: 0,
+      },
+    });
+    // console.log(response);
+    if (response?.status) {
+      localStorage.setItem("user", JSON.stringify(response.user));
+      setuserContext(response.user);
+      router.push("/profile");
+      setLoading(false);
+    } else {
+      toaster.notify("Hmm... What went wrong?");
     }
-  }
-
-  let signUp = (type, name, email, phone, password) => {
-    const auth = fauth;
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(async (userCredential) => {
-        setLoading(false);
-        let response = await func.createUser({
-          name: name,
-          email: email,
-          phone: phone,
-          password: password,
-          id: fauth.currentUser.uid,
-          isorganizer: true,
-          organizer: {
-            id: fauth.currentUser.uid + "events",
-            name: name,
-            email: email,
-            phone: phone,
-            userid: fauth.currentUser.uid,
-            type: type,
-            profileurl: `https://avatars.dicebear.com/api/adventurer/${email}.svg`,
-            balance: 0,
-          },
-        });
-        // console.log(response);
-        if (response?.status) {
-          router.push("/create");
-          setLoading(false);
-        } else {
-          toaster.notify("Hmm... What went wrong?");
-        }
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setLoading(false);
-        toaster.danger(convertMessage(errorCode));
-      });
   };
 
   useEffect(() => {
@@ -191,7 +163,7 @@ export default function Signup() {
         >
           {loading ? "Loading..." : "Signup"}
         </div>
-        <text style={{marginTop: "-1vw"}} className={styles.label}>
+        <text style={{ marginTop: "-1vw" }} className={styles.label}>
           *By signing up you have a agreed to our{" "}
           <Link href="/terms">
             <a style={{ color: "#03b5d2" }}>Terms & Conditions</a>

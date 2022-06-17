@@ -1,4 +1,4 @@
-const BASE_URL = "https://passticketgo.herokuapp.com/api"
+const BASE_URL = "https://passticketgo.herokuapp.com/api";
 // const BASE_URL = "http://localhost:39637/api";
 
 const func = {
@@ -14,6 +14,7 @@ const func = {
 
     return response.json();
   },
+
   getUser: async (data = {}) => {
     const response = await fetch(BASE_URL + "/getUser", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -26,6 +27,19 @@ const func = {
 
     return response.json();
   },
+  authUser: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/getAuth", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
   getEvents: async (data = {}) => {
     const response = await fetch(BASE_URL + "/getEvents", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -37,6 +51,7 @@ const func = {
 
     return response.json();
   },
+
   reqOrganizer: async (data = {}) => {
     const response = await fetch(BASE_URL + "/organizerRequest", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -49,6 +64,7 @@ const func = {
 
     return response.json();
   },
+
   createEvent: async (data = {}) => {
     const response = await fetch(BASE_URL + "/createEvent", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -78,7 +94,7 @@ const func = {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
-        "Origin": "*"
+        Origin: "*",
         // "Access-Control-Allow-Origin": "https://passticketgo.herokuapp.com"
       },
       body: JSON.stringify(data),
@@ -115,6 +131,15 @@ const func = {
     });
 
     return response.json();
+  },
+  generateQuickGuid: function () {
+    return (
+      Math.random().toString(36).substring(2, 15) +
+      Math.random().toString(36).substring(2, 15)
+    );
+  },
+  signOut: () => {
+    window.localStorage.clear();
   },
 };
 

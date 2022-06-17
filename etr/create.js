@@ -4,12 +4,12 @@ import styles from "../styles/Signup.module.css";
 import { useEffect, useState, useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import fauth from "../firebase";
 import func from "../functions";
 import Ad from "../components/Ad";
 import { UserContext } from "../context";
 import { useRouter } from "next/router";
 import { toaster, Spinner } from "evergreen-ui";
+import fauth from "../firebase";
 import {
   getStorage,
   ref,
@@ -105,7 +105,10 @@ export default function Create() {
     );
   };
 
-  useEffect(() => {
+  useEffect(async () => {
+    let res = await localStorage.getItem("user");
+    const useRes = JSON.parse(res);
+    setuserContext(useRes);
     AOS.init({
       offset: 120,
       delay: 0,
@@ -122,7 +125,7 @@ export default function Create() {
             <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
           </Link>
           <div className={styles.navlinks}>
-            {fauth.currentUser ? (
+            {userContext.name ? (
               <Link href="/profile">
                 <text className={styles.navitem}>Profile</text>
               </Link>
@@ -139,7 +142,7 @@ export default function Create() {
 
         <h1 className={styles.h1}>Create Event</h1>
 
-        {fauth.currentUser ? (
+        {userContext.name ? (
           page == 1 ? (
             <>
               <text className={styles.text}>Event Information</text>
@@ -567,9 +570,9 @@ export default function Create() {
                       <input
                         onChange={(val) => {
                           if (passfee == false) {
-                            setpassfee(true)
+                            setpassfee(true);
                           } else {
-                            setpassfee(false)
+                            setpassfee(false);
                           }
                           console.log(passfee);
                         }}
@@ -655,7 +658,7 @@ export default function Create() {
                       approved: false,
                       country: country,
                       slug: slug,
-                      passfee: passfee
+                      passfee: passfee,
                     };
 
                     // console.log(payload);

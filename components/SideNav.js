@@ -1,7 +1,7 @@
 import Link from "next/link";
-import fauth from "../firebase";
 import { useRouter } from "next/router";
 import styles from "../styles/Discover.module.css";
+import func from "../functions";
 
 export default function SideNav() {
   const router = useRouter();
@@ -24,36 +24,6 @@ export default function SideNav() {
         <text className={styles.quicklink}></text>
         <text className={styles.quicklink}></text>
 
-        {fauth.currentUser ? (
-          <Link href="/create">
-            <text className={styles.link}>Create Event</text>
-          </Link>
-        ) : (
-          <Link href="/login">
-            <text className={styles.link}>Login</text>
-          </Link>
-        )}
-
-        {fauth.currentUser ? (
-          <Link href="/profile">
-            <text className={styles.link}>Profile</text>
-          </Link>
-        ) : null}
-        {fauth.currentUser ? (
-          <text
-            onClick={() => {
-              fauth.signOut();
-              router.reload();
-            }}
-            className={styles.link}
-          >
-            Log Out
-          </text>
-        ) : (
-          <Link href="/signup">
-            <text className={styles.link}>Sign Up</text>
-          </Link>
-        )}
         <text className={styles.quicklink}></text>
 
         <Link href="/discover">

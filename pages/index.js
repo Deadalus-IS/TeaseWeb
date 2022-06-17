@@ -6,17 +6,13 @@ import { useEffect, useContext } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../components/Footer";
-import { UserContext } from "../context";
-import fauth from "../firebase";
 import { useRouter } from "next/router";
 import SideNav from "../components/SideNav";
+import func from "../functions";
 
 export default function Home({ data }) {
   const events = data.events;
-  let { userContext, setuserContext } = useContext(UserContext);
   const router = useRouter();
-  // console.log(userContext);
-
   function truncateString(str, num) {
     if (str.length > num) {
       return str.slice(0, num) + "...";
@@ -50,7 +46,9 @@ export default function Home({ data }) {
     ...events,
   ];
 
-  useEffect(() => {
+  useEffect(async () => {
+    let res = await localStorage.getItem("user");
+    const useRes = JSON.parse(res);
     AOS.init({
       offset: 120,
       delay: 0,
@@ -67,76 +65,24 @@ export default function Home({ data }) {
           <div className={styles.nav}>
             <div className={styles.dropcon}>
               <img className={styles.llogo} src="/logob.png" cl alt="logo" />
-              {/* {fauth.currentUser ? (
-                <img
-                  className={`${styles.dropdown} ${styles.dropdown1}`}
-                  src={userContext?.organizer?.profileURL}
-                  alt="logo"
-                />
-              ) : (
-                <img
-                  className={styles.dropdown}
-                  src={"/menu1.png"}
-                  alt="hamburger"
-                />
-              )} */}
               <div className={styles.dropmenu}>
                 <text className={styles.quicklink}></text>
 
                 <Link href="/discover">
                   <text className={styles.link}>Discover</text>
                 </Link>
-                {fauth.currentUser ? (
-                  <Link href="/create">
-                    <text className={styles.link}>Create Event</text>
-                  </Link>
-                ) : (
-                  <Link href="/login">
-                    <text className={styles.link}>Login</text>
-                  </Link>
-                )}
 
-                {fauth.currentUser ? (
-                  <Link href="/profile">
-                    <text className={styles.link}>Profile</text>
-                  </Link>
-                ) : null}
-                {fauth.currentUser ? (
-                  <text
-                    onClick={() => {
-                      fauth.signOut();
-                      router.reload();
-                    }}
-                    className={styles.link}
-                  >
-                    Log Out
-                  </text>
-                ) : (
-                  <Link href="/signup">
-                    <text className={styles.link}>Sign Up</text>
-                  </Link>
-                )}
                 <text className={styles.quicklink}></text>
               </div>
             </div>
-            {fauth.currentUser ? (
-              <img
-                onClick={() => {
-                  document.getElementById("sidemenu").style.left = "0";
-                }}
-                className={styles.menupic}
-                src={userContext?.organizer?.profileURL}
-                alt="profile-picture"
-              />
-            ) : (
-              <img
-                onClick={() => {
-                  document.getElementById("sidemenu").style.left = "0";
-                }}
-                src="/menu1.png"
-                className={styles.menu}
-              />
-            )}
+
+            <img
+              onClick={() => {
+                document.getElementById("sidemenu").style.left = "0";
+              }}
+              src="/menu1.png"
+              className={styles.menu}
+            />
           </div>
 
           <div className={styles.ltxt}>
