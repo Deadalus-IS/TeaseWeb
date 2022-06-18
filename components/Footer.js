@@ -69,12 +69,12 @@ export default function Footer({ styles, ligth }) {
               <img src="/ig2.png" className={styles.soc} />
             </Link>
             <img style={{ width: 30, height: 0 }} />
-            <Link href="https://www.instagram.com/teaseafrica/">
+            <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
               <img src="/google.png" className={styles.soc} />
             </Link>
-            <Link href="https://www.instagram.com/teaseafrica/">
+            {/* <Link href="https://www.instagram.com/teaseafrica/">
               <img src="/appstore.png" className={styles.soc} />
-            </Link>
+            </Link> */}
           </div>
         ) : (
           <div className={styles.socials}>

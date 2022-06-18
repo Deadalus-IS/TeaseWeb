@@ -137,7 +137,7 @@ export default function Home({ data }) {
             </div>
           )}
         </div>
-        <div className={styles.more}>View more</div>
+        {/* <div className={styles.more}>View more</div> */}
       </main>
 
       <Footer styles={styles} />

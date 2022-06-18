@@ -68,7 +68,7 @@ export default function Home(data) {
           </>
 
           <div className={styles.imgs}>
-            <img src="/ios.png" className={styles.app} />
+            {/* <img src="/ios.png" className={styles.app} /> */}
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
               <img src="/playstore.png" className={styles.app1} />
             </Link>

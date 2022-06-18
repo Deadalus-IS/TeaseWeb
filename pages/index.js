@@ -100,7 +100,7 @@ export default function Home({ data }) {
               <img src="/playstore.png" className={styles.app1} alt="android" />
             </Link> */}
             {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
-            <Link href="/create">
+            <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
               <div className={styles.sell}>Sell Ticket</div>
             </Link>
             <Link href="/discover">
@@ -228,7 +228,7 @@ export default function Home({ data }) {
           <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
             <img src="/playstore.png" className={styles.app1} alt="android" />
           </Link>
-          <img src="/ios.png" className={styles.app} alt="ios" />
+          {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
         </div>
       </main>
       <main className={styles.main2}>
