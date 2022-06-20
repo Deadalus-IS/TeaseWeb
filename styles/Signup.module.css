@@ -2,7 +2,7 @@
   min-height: 100vh;
   background-color: white;
   color: black;
-  font-family: Rubik;
+   font-family: "Space Grotesk", sans-serif;
 }
 .main {
   display: flex;
@@ -33,7 +33,7 @@
 .navitem {
   color: black;
   font-size: 1.2vw;
-  font-family: Rubik;
+   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
@@ -513,7 +513,7 @@
     min-height: 100vh;
     background-color: white;
     color: black;
-    font-family: Rubik;
+     font-family: "Space Grotesk", sans-serif;
     margin-bottom: 30vh;
   }
   .main {

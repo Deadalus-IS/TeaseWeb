@@ -11,7 +11,7 @@ export default function Footer({ styles, ligth }) {
           <img src="/logob.png" className={styles.logob} />
         )}
         <text className={styles.text}>
-          All-in-one event management and ticketing system.
+          All-in-one event ticketing system.
           <br />
           We give organizers the toolkit needed to manage, promote and sell
           tickets for any type of event - All for free.

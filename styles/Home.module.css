@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 .container {
   min-height: 100vh;
   background-color: black;
   color: white;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 .main {
   display: flex;
@@ -80,8 +78,8 @@
   width: 35vw;
 }
 .imgs {
-  margin-top: -5vh;
-  display: flex
+  margin-top: -8vh;
+  display: flex;
 }
 .app {
   width: 10vw;
@@ -102,7 +100,7 @@
   font-weight: 600;
   color: white;
   cursor: pointer;
-  transition: .1s;
+  transition: 0.1s;
 }
 .sell:hover {
   background-color: #05cfff;
@@ -121,12 +119,12 @@
   font-weight: 600;
   color: #0155ef;
   cursor: pointer;
-  transition: .1s;
+  transition: 0.1s;
 }
 .sell2:hover {
   background-color: #05cfff;
   color: white;
-  border: none
+  border: none;
 }
 .app1 {
   width: 10vw;
@@ -155,7 +153,7 @@
 }
 .dimgs {
   margin-top: 2vh;
-  display: flex,
+  display: flex;
 }
 .dimgs img {
   margin-right: 10px;
@@ -168,11 +166,6 @@
   height: 100vh;
   width: 100%;
   padding: 10vh 10vw;
-}
-.h1 {
-  font-size: 4vw;
-  font-weight: 700;
-  text-align: center;
 }
 .points {
   display: flex;
@@ -384,7 +377,7 @@
 .navitem {
   color: white;
   font-size: 1.2vw;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
@@ -541,19 +534,25 @@
   right: 0;
   z-index: 1;
 }
+.deco {
+  border-bottom: #0154ef solid 5px;
+  padding-bottom: 0;
+  font-style: italic;
+}
+.blue {
+  color: #0154ef;
+}
 .h1 {
-  font-size: 4vw;
-  font-weight: 600;
+  font-size: 4.5vw;
+  font-weight: bold;
   letter-spacing: -3px;
-  /* line-height: 1; */
+  line-height: 1;
   margin-bottom: 5vh;
 }
 .subh1 {
-  font-size: 1.3vw;
+  font-size: 1.1vw;
   color: gray;
-  letter-spacing: 2;
-  line-height: 1.8;
-  margin-bottom: 5vh;
+  line-height: 1.5;
 }
 .datte {
   font-size: 1vw;
@@ -596,11 +595,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-   .container {
+  .container {
     min-height: 100vh;
     background-color: black;
     color: white;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Space Grotesk", sans-serif;
   }
   .main {
     display: flex;
@@ -624,7 +623,7 @@
     font-size: 13vw;
     font-weight: 900;
     line-height: 13vw;
-    color: red
+    color: red;
   }
   .subText {
     font-size: 4.5vw;
@@ -633,7 +632,7 @@
     width: 82vw;
   }
   .imgs {
-    margin-top: -30px;
+    margin-top: -60px;
   }
   .app {
     width: 30vw;
@@ -654,7 +653,7 @@
     font-weight: 600;
     color: white;
     cursor: pointer;
-    transition: .1s;
+    transition: 0.1s;
   }
   .sell:hover {
     background-color: #05cfff;
@@ -673,12 +672,12 @@
     font-weight: 600;
     color: #0155ef;
     cursor: pointer;
-    transition: .1s;
+    transition: 0.1s;
   }
   .sell2:hover {
     background-color: #05cfff;
     color: white;
-    border: none
+    border: none;
   }
   .app1 {
     width: 30vw;
@@ -707,7 +706,7 @@
   }
   .dimgs {
     margin-top: 2vh;
-    display: flex,
+    display: flex;
   }
   .dimgs img {
     margin-right: 10px;
@@ -932,6 +931,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 5vh 0 8vh 0;
   }
   .navitem {
     display: none;
@@ -939,7 +939,13 @@
   .menu {
     display: flex;
     width: 6vw;
-    display: flex;
+    margin-top: 0vh;
+  }
+  .llogo {
+    display: block;
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 25vw;
   }
   .menupic {
     display: flex;
@@ -984,15 +990,11 @@
     align-items: baseline;
     max-width: 100%;
   }
-  .llogo {
-    display: block;
-    margin-bottom: 10vh;
-    margin-top: 10vh;
-    width: 25vw;
-  }
+
   .ltxt {
     margin-bottom: 10vh;
   }
+
   .lstories {
     bottom: 0;
     left: 42vw;
@@ -1084,19 +1086,30 @@
     right: 0;
     z-index: 1;
   }
+  .ltxt h1 {
+    margin: 0;
+  }
   .h1 {
-    font-size: 12vw;
+    font-size: 20vw;
     font-weight: 600;
     letter-spacing: -3px;
     /* line-height: 1; */
     margin-bottom: 5vh;
+  }
+  .h1m {
+    font-size: 10vw;
+    font-weight: 600;
+    letter-spacing: -3px;
+    /* line-height: 1; */
+    margin-bottom: 5vh;
+    text-align: center;
   }
   .subh1 {
     font-size: 4.6vw;
     color: gray;
     letter-spacing: 2;
     line-height: 1.8;
-    margin-bottom: 1vh;
+    margin-top: 5vh;
     width: 90%;
   }
   .datte {

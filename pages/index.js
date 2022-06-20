@@ -9,10 +9,12 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import SideNav from "../components/SideNav";
 import func from "../functions";
+import { useState } from "react";
 
 export default function Home({ data }) {
   const events = data.events;
   const router = useRouter();
+  const [width, setwidth] = useState("");
   function truncateString(str, num) {
     if (str.length > num) {
       return str.slice(0, num) + "...";
@@ -20,6 +22,20 @@ export default function Home({ data }) {
       return str;
     }
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      width =
+        document.body.clientWidth ||
+        window.innerHeight ||
+        document.documentElement.clientHeigh;
+
+      setwidth(width);
+    }
+  }, []);
+
+  console.log(width);
+
   var months = [
     "Jan",
     "Feb",
@@ -87,12 +103,13 @@ export default function Home({ data }) {
 
           <div className={styles.ltxt}>
             <h1 style={{ textAlign: "left" }} className={styles.h1}>
-              Event ticketing for you.
+              Make money with your{" "}
+              <text className={styles.deco}>
+                tickets<text className={styles.blue}>.</text>
+              </text>
             </h1>
             <p className={styles.subh1}>
-              All-in-one event management and ticketing system for promoting,
-              managing, buying & selling your event tickets online ‐ all for
-              free!
+              List them, sell them and make awesome money!
             </p>
           </div>
           <div className={styles.imgs}>
@@ -220,10 +237,17 @@ export default function Home({ data }) {
       </div>
 
       <main className={styles.downloadad}>
-        <text className={styles.dh1}>
-          Get the app now, take control <br />
-          of your events.
-        </text>
+        {width <= 600 ? (
+          <text className={styles.h1m}>
+            Get the app now, <br />
+            take control of your events.
+          </text>
+        ) : (
+          <text className={styles.dh1}>
+            Get the app now, take control <br />
+            of your events.
+          </text>
+        )}
         <div className={styles.dimgs}>
           <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
             <img src="/playstore.png" className={styles.app1} alt="android" />
@@ -232,9 +256,15 @@ export default function Home({ data }) {
         </div>
       </main>
       <main className={styles.main2}>
-        <text className={styles.h1} data-aos="fade-up">
-          We give you the right toolkits to manage your events like a PRO.
-        </text>
+        {width <= 600 ? (
+          <text className={styles.h1m} data-aos="fade-up">
+            We give you the right tools to manage your events like a PRO.
+          </text>
+        ) : (
+          <text className={styles.h1} data-aos="fade-up">
+            We give you the right tools to manage your events like a PRO.
+          </text>
+        )}
         <div className={styles.points} data-aos="fade-up">
           <div className={styles.point}>
             <div className={styles.head}>
