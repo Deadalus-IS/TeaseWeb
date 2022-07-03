@@ -51,16 +51,18 @@ export default function Home({ data }) {
     "Dec",
   ];
 
-  let arrevents = [
-    ...events,
-    ...events,
-    ...events,
-    ...events,
-    ...events,
-    ...events,
-    ...events,
-    ...events,
-  ];
+  let arrevents = events
+    ? [
+        ...events,
+        ...events,
+        ...events,
+        ...events,
+        ...events,
+        ...events,
+        ...events,
+        ...events,
+      ]
+    : null;
 
   useEffect(async () => {
     let res = await localStorage.getItem("user");
@@ -129,96 +131,114 @@ export default function Home({ data }) {
         <SideNav />
         <div className={styles.lstories}>
           <div className={styles.lstoriesholder}>
-            {arrevents.map((item) => {
-              return (
-                <Link href={"/" + item.slug}>
-                  <div className={styles.lstory}>
-                    <img src={item.imageURL} className={styles.image} />
-                    <div className={styles.lstoryoverlay}>
-                      <div className={styles.date}>
-                        <text className={styles.dateh2}>{item.date.day}</text>
-                        <text className={styles.datetext}>
-                          {months[item.date.month - 1]}
-                        </text>
+            {arrevents !== null
+              ? arrevents.map((item) => {
+                  return (
+                    <Link href={"/" + item.slug}>
+                      <div className={styles.lstory}>
+                        <img src={item.imageURL} className={styles.image} />
+                        <div className={styles.lstoryoverlay}>
+                          <div className={styles.date}>
+                            <text className={styles.dateh2}>
+                              {item.date.day}
+                            </text>
+                            <text className={styles.datetext}>
+                              {months[item.date.month - 1]}
+                            </text>
+                          </div>
+                        </div>
+                        <div className={styles.lstoryname}>
+                          <div className={styles.eventdetails}>
+                            <strong className={styles.strong}>
+                              {item.name}
+                            </strong>
+                            <br />
+                            <span className={styles.datte}>
+                              {truncateString(item.about, 50)}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles.lstoryname}>
-                      <div className={styles.eventdetails}>
-                        <strong className={styles.strong}>{item.name}</strong>
-                        <br />
-                        <span className={styles.datte}>
-                          {truncateString(item.about, 50)}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                    </Link>
+                  );
+                })
+              : null}
           </div>
           <div className={styles.lstoriesholder}>
-            {arrevents.map((item) => {
-              return (
-                <Link href={"/" + item.slug}>
-                  <div className={styles.lstory}>
-                    <img
-                      src={item.imageURL}
-                      className={styles.image}
-                      alt="event-image"
-                    />
-                    <div className={styles.lstoryoverlay}>
-                      <div className={styles.date}>
-                        <text className={styles.dateh2}>{item.date.day}</text>
-                        <text className={styles.datetext}>
-                          {months[item.date.month - 1]}
-                        </text>
+            {arrevents !== null
+              ? arrevents.map((item) => {
+                  return (
+                    <Link href={"/" + item.slug}>
+                      <div className={styles.lstory}>
+                        <img
+                          src={item.imageURL}
+                          className={styles.image}
+                          alt="event-image"
+                        />
+                        <div className={styles.lstoryoverlay}>
+                          <div className={styles.date}>
+                            <text className={styles.dateh2}>
+                              {item.date.day}
+                            </text>
+                            <text className={styles.datetext}>
+                              {months[item.date.month - 1]}
+                            </text>
+                          </div>
+                        </div>
+                        <div className={styles.lstoryname}>
+                          <div className={styles.eventdetails}>
+                            <strong className={styles.strong}>
+                              {item.name}
+                            </strong>
+                            <br />
+                            <span className={styles.datte}>
+                              {truncateString(item.about, 50)}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles.lstoryname}>
-                      <div className={styles.eventdetails}>
-                        <strong className={styles.strong}>{item.name}</strong>
-                        <br />
-                        <span className={styles.datte}>
-                          {truncateString(item.about, 50)}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                    </Link>
+                  );
+                })
+              : null}
           </div>
           <div className={styles.lstoriesholder}>
-            {arrevents.map((item) => {
-              return (
-                <Link href={"/" + item.slug}>
-                  <div className={styles.lstory}>
-                    <img
-                      src={item.imageURL}
-                      className={styles.image}
-                      alt="event-image"
-                    />
-                    <div className={styles.lstoryoverlay}>
-                      <div className={styles.date}>
-                        <text className={styles.dateh2}>{item.date.day}</text>
-                        <text className={styles.datetext}>
-                          {months[item.date.month - 1]}
-                        </text>
+            {arrevents !== null
+              ? arrevents.map((item) => {
+                  return (
+                    <Link href={"/" + item.slug}>
+                      <div className={styles.lstory}>
+                        <img
+                          src={item.imageURL}
+                          className={styles.image}
+                          alt="event-image"
+                        />
+                        <div className={styles.lstoryoverlay}>
+                          <div className={styles.date}>
+                            <text className={styles.dateh2}>
+                              {item.date.day}
+                            </text>
+                            <text className={styles.datetext}>
+                              {months[item.date.month - 1]}
+                            </text>
+                          </div>
+                        </div>
+                        <div className={styles.lstoryname}>
+                          <div className={styles.eventdetails}>
+                            <strong className={styles.strong}>
+                              {item.name}
+                            </strong>
+                            <br />
+                            <span className={styles.datte}>
+                              {truncateString(item.about, 50)}
+                            </span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className={styles.lstoryname}>
-                      <div className={styles.eventdetails}>
-                        <strong className={styles.strong}>{item.name}</strong>
-                        <br />
-                        <span className={styles.datte}>
-                          {truncateString(item.about, 50)}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                    </Link>
+                  );
+                })
+              : null}
           </div>
         </div>
 
@@ -510,7 +530,10 @@ export async function getServerSideProps(context) {
       "Content-Type": "application/json",
     },
   });
+
+  console.log(res);
   let data = [];
   data = await res.json();
+  console.log(data);
   return { props: { data: data } };
 }
