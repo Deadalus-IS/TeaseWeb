@@ -9,6 +9,7 @@ import { UserContext } from "../context";
 
 import router from "next/router";
 import { toaster } from "evergreen-ui";
+import Footer from "../components/Footer";
 
 export default function Signup() {
   const [type, setype] = useState("individual");
@@ -67,14 +68,6 @@ export default function Signup() {
         <div className={styles.nav}>
           <Link href="/">
             <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
-          </Link>
-          <div className={styles.navlinks}>
-            <Link href="/login">
-              <text className={styles.navitem}>Login</text>
-            </Link>
-          </div>
-          <Link href="/">
-            <img src="/back.png" className={styles.menu} />
           </Link>
         </div>
 
@@ -175,6 +168,8 @@ export default function Signup() {
           .
         </text>
       </main>
+
+      <Footer />
     </div>
   );
 }

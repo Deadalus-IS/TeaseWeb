@@ -20,10 +20,11 @@
 }
 .llogo {
   display: block;
-  margin-bottom: 5vh;
-  margin-top: 10vh;
+  /* margin-bottom: 5vh;
+  margin-top: 10vh; */
   width: 8vw;
   cursor: pointer;
+  z-index: 1;
 }
 .dropcon {
   display: flex;
@@ -103,7 +104,8 @@
   transition: 0.1s;
 }
 .sell:hover {
-  background-color: #05cfff;
+  background-color: #fff;
+  color: #0154ef;
 }
 .sell2 {
   width: 10vw;
@@ -125,6 +127,26 @@
   background-color: #05cfff;
   color: white;
   border: none;
+}
+.sell3 {
+  height: 3.3vw;
+  margin-right: 30px;
+  cursor: not-allowed;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+  font-weight: 600;
+  color: #0155ef;
+  cursor: pointer;
+  transition: 0.1s;
+  padding: 0 10px;
+}
+.sell3:hover {
+  background-color: rgba(255, 255, 255, 0.34);
+  color: #0154ef;
+
 }
 .app1 {
   width: 10vw;
@@ -373,14 +395,37 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 0vh 5vw;
+  position: absolute;
+  z-index: 1;
+  height: 12vh;
 }
-.navitem {
+.blur {
+  width: 100%;
+  height: 12vh;
+  backdrop-filter: blur(50px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.523);
+
+}
+.rightbtn {
   color: white;
   font-size: 1.2vw;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   margin-left: 2vw;
   cursor: pointer;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+}
+.rightbtn img {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 30px;
+  background-color: #ffffff78;
 }
 .navitem:hover {
   color: #7288a2;
@@ -389,7 +434,8 @@
   display: flex;
   width: 2vw;
   cursor: pointer;
-  margin-top: 3vw;
+  z-index: 1;
+  display: none;
 }
 .sidemenu {
   display: none;
@@ -405,7 +451,7 @@
 }
 
 .lheading {
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   padding-left: 5vw;
@@ -416,6 +462,7 @@
   -ms-flex-align: baseline;
   align-items: baseline;
   max-width: 29vw;
+  margin-top: 30vh;
 }
 
 .ltxt {
@@ -427,7 +474,7 @@
   position: absolute;
   top: 0;
   display: flex;
-  height: 90vh;
+  height: 100vh;
 }
 
 .lstoriesholder::-webkit-scrollbar {

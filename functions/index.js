@@ -1,5 +1,5 @@
-const BASE_URL = "https://passticketgo.herokuapp.com/api";
-// const BASE_URL = "http://localhost:39637/api";
+import BASE_URL from "../config/api";
+import { eraseCookie } from "./cookies";
 
 const func = {
   createUser: async (data = {}) => {
@@ -27,6 +27,7 @@ const func = {
 
     return response.json();
   },
+
   authUser: async (data = {}) => {
     const response = await fetch(BASE_URL + "/getAuth", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
@@ -138,8 +139,73 @@ const func = {
       Math.random().toString(36).substring(2, 15)
     );
   },
+
   signOut: () => {
     window.localStorage.clear();
+    eraseCookie("auth");
+  },
+
+  getPolls: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/getPolls", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    return response.json();
+  },
+
+  createPoll: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/createPolls", {
+      method: "Post", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  addNominee: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/addNominee", {
+      method: "Post", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  getNomineesBy: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/getNomineesBy", {
+      method: "Post", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+  castVote: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/castVote", {
+      method: "Post", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
   },
 };
 

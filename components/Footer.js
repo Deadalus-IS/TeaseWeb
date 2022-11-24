@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
+import styles2 from "../styles/Home.module.css";
 
-export default function Footer({ styles, ligth }) {
+export default function Footer({ styles = styles2, ligth }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.left}>

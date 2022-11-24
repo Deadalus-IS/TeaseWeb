@@ -35,7 +35,7 @@
   font-size: 1.2vw;
    font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
-  margin-left: 2vw;
+  /* margin-left: 2vw; */
   cursor: pointer;
   text-decoration: underline;
 }
@@ -51,6 +51,7 @@
 .h1 {
   font-size: 4.5vw;
   margin-top: 50px;
+  color: black
 }
 .h2 {
   font-size: 3vw;
@@ -70,21 +71,22 @@
 }
 .label1 {
   margin-top: 0vw;
-  font-size: 0.8vw;
+  font-size: 0.9vw;
   color: gray;
 }
 .input1 {
-  height: 50px;
+  height: 65px;
   margin-top: 5px;
   margin-bottom: 5px;
   border: none;
   outline: none;
   background-color: rgb(245, 245, 245);
-  padding-left: 10px;
+  padding-left: 20px;
   font-weight: 600;
   border-radius: 3px;
   width: 40vw;
   outline-color: #0099ff62;
+  font-size: 1.0vw;
 }
 .fcon {
   height: 50px;
@@ -125,7 +127,7 @@
   cursor: pointer;
   font-weight: 700;
   font-size: 1vw;
-  height: 50px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,7 +140,7 @@
   background-color: rgb(245, 245, 245);
 }
 .inputd {
-  height: 50px;
+  height: 65px;
   margin-top: 5px;
   margin-bottom: 5px;
   border: none;
@@ -154,6 +156,7 @@
   background-repeat: no-repeat;
   background-size: 13px;
   background-position: 97% 50%;
+  font-size: 1.0vw;
 }
 .inputdd {
   height: 50px;
@@ -414,11 +417,13 @@
   font-size: 1.2vw;
   font-weight: 600;
 }
+
 .removeticket {
   width: 2vw;
   height: 2vw;
   margin-left: 10px;
-}
+} 
+
 .inputdd::-webkit-calendar-picker-indicator {
   background-image: url(/calendar.png);
   background-repeat: no-repeat;
@@ -427,6 +432,7 @@
   margin-right: 10px;
   width: 19px;
 }
+
 .inputdt::-webkit-calendar-picker-indicator {
   background-image: url(/clock.png);
   background-repeat: no-repeat;
@@ -435,6 +441,7 @@
   margin-right: 10px;
   width: 19px;
 }
+
 .charge {
   width: 100%;
   display: flex;
@@ -443,6 +450,7 @@
   align-items: center;
   margin: 2vh 0;
 }
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -505,6 +513,34 @@
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.prices {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.price {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  /* background-color: #0155ef; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 10px;
+  /* border: #0155ef 2px solid;
+  background-color: #a6b9eb; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -691,7 +727,6 @@
     align-items: center;
     font-size: 3.5vw;
     cursor: pointer;
-    /* border: #015cef solid 2px; */
   }
   .btn {
     width: 100%;

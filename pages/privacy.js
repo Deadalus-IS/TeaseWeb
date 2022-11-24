@@ -23,14 +23,6 @@ export default function Privacy() {
           <Link href="/">
             <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
           </Link>
-          <div className={styles.navlinks}>
-            <Link href="/">
-              <text className={styles.navitem}>Go Home</text>
-            </Link>
-          </div>
-          <Link href="/">
-            <img src="/back.png" className={styles.menu} />
-          </Link>
         </div>
 
         <h1 className={styles.h1}>Privacy Policy</h1>
