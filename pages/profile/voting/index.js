@@ -19,7 +19,7 @@ export default function Profile() {
   useEffect(async () => {
     let res = localStorage.getItem("user");
     const useRes = JSON.parse(res);
-    // setuserContext(useRes);
+    // setuserContext(useRes); dd
 
     if (userContext) {
       let response = await func.getPolls();
