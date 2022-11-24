@@ -5,19 +5,33 @@ import "aos/dist/aos.css";
 import func from "../../../functions";
 import { UserContext } from "../../../context";
 import dynamic from "next/dynamic";
-import { Dialog, FileCard, FileUploader, toaster } from "evergreen-ui";
+import {
+  Dialog,
+  FileCard,
+  FileUploader,
+  TextInputField,
+  toaster,
+} from "evergreen-ui";
 import DashboardLayout from "../../../components/DashboardLayout";
 import Link from "next/link";
 const DChart = dynamic(() => import("../../../components/Graph"), {
   ssr: false,
 });
 import { useRouter } from "next/router";
+import Transactions from "../../../components/Transactions";
 
 export default function PollID({ data }) {
   const [events, setevents] = useState([]);
   let { userContext, setuserContext } = useContext(UserContext);
   const router = useRouter();
+  const [bank, setbank] = useState("");
+  const [name, setname] = useState("");
+  const [account, setaccount] = useState("");
+  const [comment, setcomment] = useState("");
+  const [loading, setloading] = useState(false);
+
   const [isShown, setIsShown] = useState(false);
+  const [isShownWithdraw, setisShownWithdraw] = useState(false);
   const [addmode, setaddmode] = useState(0);
   const [csv, setcsv] = useState(false);
 
@@ -60,6 +74,37 @@ export default function PollID({ data }) {
       duration: 400,
     });
   }, [poll]);
+
+  const handleWithdraw = async () => {
+    if (loading) {
+      return;
+    }
+    if (!name && !bank && !account) {
+      toaster.danger("Enter your details");
+      return;
+    }
+    setloading(true);
+    let response = await func.voteWithdraw({
+      bank: bank,
+      name: name,
+      accountnumber: account,
+      comment: comment,
+      user: useContext,
+      status: false,
+      id: poll?.id,
+      timestamp: String(Date.now()),
+      amount: poll?.balance,
+    });
+    console.log(response);
+    if (response.status) {
+      toaster.success("Withdrawal request sent successfully.");
+      setisShownWithdraw(false);
+      setloading(false);
+    } else {
+      toaster.danger("Something went wrong, Please try again");
+      setloading(false);
+    }
+  };
 
   return (
     <DashboardLayout sidebar={false}>
@@ -167,10 +212,19 @@ export default function PollID({ data }) {
 
         <div className={styles.card}>
           <text className={styles.cardtitle}>Balance</text>
-          <text className={styles.balance}>GHS 60,000.00</text>
+          <text className={styles.balance}>
+            GHS {Number(poll?.balance).toFixed(2)}
+          </text>
 
-          <div className={styles.withdraw}>Withdraw</div>
+          <div
+            onClick={() => setisShownWithdraw(true)}
+            className={styles.withdraw}
+          >
+            Withdraw
+          </div>
         </div>
+
+        <Transactions poll={poll} />
       </section>
 
       <Dialog
@@ -280,6 +334,71 @@ export default function PollID({ data }) {
             )}
           </div>
         )}
+      </Dialog>
+
+      <Dialog
+        isShown={isShownWithdraw}
+        onCloseComplete={() => {
+          setisShownWithdraw(false);
+        }}
+        hasFooter={false}
+        hasHeader={false}
+        width="60%"
+      >
+        <div className={styles.dialogcon}>
+          <text className={styles.dialogtext}>Withdrawal Request</text>
+          <text className={styles.dialogtext2}>
+            Funds will be sent to the account provided in less than 2 hours
+          </text>
+          <TextInputField
+            borderColor={"gray"}
+            borderWidth={0.4}
+            width="50vw"
+            label="Provider"
+            required
+            description="Mobile Money Network or Bank"
+            value={bank}
+            onChange={(e) => setbank(e.target.value)}
+            marginTop={20}
+            autoFocus={true}
+          />
+          <TextInputField
+            borderColor={"gray"}
+            borderWidth={0.4}
+            width="50vw"
+            label="Account Number"
+            required={true}
+            description="Mobile Money or Bank Account Number"
+            value={account}
+            onChange={(e) => setaccount(e.target.value)}
+          />
+          <TextInputField
+            borderColor={"gray"}
+            borderWidth={0.4}
+            width="50vw"
+            label="Account Name"
+            required
+            description="Name on the account"
+            value={name}
+            onChange={(e) => setname(e.target.value)}
+          />
+          <TextInputField
+            borderColor={"gray"}
+            borderWidth={0.4}
+            width="50vw"
+            label="Comment"
+            description="Any comment or instruction"
+            value={comment}
+            onChange={(e) => setcomment(e.target.value)}
+          />
+
+          <text className={styles.dialogtext2}>
+            *We take 10% fee on withdrawal
+          </text>
+          <div onClick={handleWithdraw} className={styles.infobtn2}>
+            {loading ? "Loading..." : "Withdraw"}
+          </div>
+        </div>
       </Dialog>
     </DashboardLayout>
   );

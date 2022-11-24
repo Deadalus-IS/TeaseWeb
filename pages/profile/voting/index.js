@@ -39,7 +39,7 @@ export default function Profile() {
   }, []);
 
   return (
-    <DashboardLayout>
+    <DashboardLayout sidebar={false}>
       <main className={styles.main}>
         <div className={styles.top}>
           <text className={styles.toptxt1}>Hello {userContext?.name}</text>
@@ -54,21 +54,23 @@ export default function Profile() {
               <img src="/poll.png" />
               <text className={styles.hlistitemtext}>Polls</text>
             </div>
-            <text className={styles.hlistitemtext1}>10</text>
+            <text className={styles.hlistitemtext1}>{polls?.length}</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
               <img src="/badge.png" />
               <text className={styles.hlistitemtext}>Total Votes</text>
             </div>
-            <text className={styles.hlistitemtext1}>GHC 3026</text>
+            <text className={styles.hlistitemtext1}>
+              {polls.reduce((n, a) => n + (a.totalVotes || 0), 0)}
+            </text>
           </div>
           <div className={styles.hlistitem}>
             <div>
               <img src="/users.png" />
               <text className={styles.hlistitemtext}>Nominees</text>
             </div>
-            <text className={styles.hlistitemtext1}>1360</text>
+            <text className={styles.hlistitemtext1}>~</text>
           </div>
         </div>
 
@@ -138,6 +140,22 @@ export default function Profile() {
           </div>
         )}
       </main>
+      <section className={styles.rightbar}>
+        <div className={styles.searchcon}>
+          <input placeholder="Search for your events" />
+          <img src="/loupe.png" />
+        </div>
+
+        <div className={styles.card}>
+          <text className={styles.cardtitle}>Balance</text>
+          <text className={styles.balance}>
+            GHS{" "}
+            {Number(polls.reduce((n, a) => n + (a.balance || 0), 0)).toFixed(2)}
+          </text>
+
+          <div className={styles.withdraw}>Withdraw</div>
+        </div>
+      </section>
     </DashboardLayout>
   );
 }

@@ -207,6 +207,31 @@ const func = {
 
     return response.json();
   },
+  getTransactions: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/transactions/" + data?.id, {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  voteWithdraw: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/withdrawalRequestVote", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
 };
 
 export default func;
