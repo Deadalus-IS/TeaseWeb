@@ -123,7 +123,7 @@ export default function PollID({ data }) {
           <div className={styles.hlistitem}>
             <div>
               <img src="/poll.png" />
-              <text className={styles.hlistitemtext}>Balance</text>
+              <text className={styles.hlistitemtext}>Revenue</text>
             </div>
             <text className={styles.hlistitemtext1}>
               GHS {Number(poll?.balance).toFixed(2)}
