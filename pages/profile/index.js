@@ -57,21 +57,21 @@ export default function Profile() {
               <img src="calendar2.png" />
               <text className={styles.hlistitemtext}>Events</text>
             </div>
-            <text className={styles.hlistitemtext1}>10</text>
+            <text className={styles.hlistitemtext1}>0</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
               <img src="ticket.png" />
               <text className={styles.hlistitemtext}>Tickets Sold</text>
             </div>
-            <text className={styles.hlistitemtext1}>GHC 3026</text>
+            <text className={styles.hlistitemtext1}>0</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
               <img src="users.png" />
               <text className={styles.hlistitemtext}>Customers</text>
             </div>
-            <text className={styles.hlistitemtext1}>1360</text>
+            <text className={styles.hlistitemtext1}>0</text>
           </div>
         </div>
 
