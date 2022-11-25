@@ -96,9 +96,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
 
           <div className={styles.card}>
             <text className={styles.cardtitle}>Balance</text>
-            <text className={styles.balance}>GHS 60,000.00</text>
+            <text className={styles.balance}>GHS 0.00</text>
 
-            <div className={styles.withdraw}>Withdraw</div>
+            {/* <div className={styles.withdraw}>Withdraw</div> */}
           </div>
         </section>
       )}
