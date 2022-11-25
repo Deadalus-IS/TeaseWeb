@@ -53,7 +53,7 @@ export default function Footer({ styles = styles2, ligth }) {
         </Link>
         <text className={styles.quicklink}></text>
         <Link href="mailto:teaseafrica@gmail.com">
-          <text className={styles.link}>hello@teaseafrica.xyz</text>
+          <text className={styles.link}>teaseafrica@gmail.com</text>
         </Link>
         <Link href="tel:+233208589528">
           <text className={styles.link}>+233208589528</text>

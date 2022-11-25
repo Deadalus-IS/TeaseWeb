@@ -1,3 +1,19 @@
+.p {
+  color:black;
+}
+.p:after {
+  content:"";
+  animation: spin 20s linear infinite;
+}
+@keyframes spin {
+  0% { content:"Events";}
+  20% { content:"Tickets";}
+  40% { content:"Polls";}
+  60% { content:"Votes";}
+  80% { content:"Votes";}
+  100% { content:"Polls";}
+}
+
 .container {
   min-height: 100vh;
   background-color: black;
@@ -185,7 +201,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   padding: 10vh 10vw;
 }
@@ -420,6 +436,7 @@
   z-index: 1;
   display: flex;
   flex-direction: row;
+  display: flex;
 }
 .rightbtn img {
   width: 3vw;
@@ -642,6 +659,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .rightbtn {
+    display: none;
+  }
   .container {
     min-height: 100vh;
     background-color: black;
@@ -978,7 +998,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 5vh 0 8vh 0;
+    padding: 5vh 3vh 8vh 3vh;
   }
   .navitem {
     display: none;

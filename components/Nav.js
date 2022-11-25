@@ -35,12 +35,12 @@ export default function Nav({ data }) {
 
       {userContext ? (
         <div className={styles.rightbtn}>
-          <Link href="/signup">
+          {/* <Link href="/signup">
             <div className={styles.sell3}>Contact Us</div>
           </Link>
           <Link href="/signup">
             <div className={styles.sell3}>FAQ</div>
-          </Link>
+          </Link> */}
           <Link href="/profile">
             <div className={styles.sell}>Dashboard</div>
           </Link>
@@ -50,15 +50,15 @@ export default function Nav({ data }) {
             content={
               <Menu>
                 <Menu.Group>
-                  <Menu.Item icon={PeopleIcon}>Events</Menu.Item>
+                  {/* <Menu.Item icon={PeopleIcon}>Events</Menu.Item>
                   <Menu.Item icon={PeopleIcon}>Voting</Menu.Item>
-                  <Menu.Item icon={PeopleIcon}>Create Poll</Menu.Item>
+                  <Menu.Item icon={PeopleIcon}>Create Poll</Menu.Item> */}
                   {/* <Menu.Item icon={CircleArrowRightIcon}>Move...</Menu.Item>
                   <Menu.Item icon={EditIcon} secondaryText="⌘R">
                     Rename...
                   </Menu.Item> */}
                 </Menu.Group>
-                <Menu.Divider />
+                {/* <Menu.Divider /> */}
                 <Menu.Group>
                   <Menu.Item
                     onClick={() => {

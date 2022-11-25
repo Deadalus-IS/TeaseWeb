@@ -83,9 +83,10 @@ export default function Home({ data }) {
           <div className={styles.lcontent}>
             <div className={styles.ltxt}>
               <h1 style={{ textAlign: "left" }} className={styles.h1}>
-                Make money with your{" "}
+                Make money with{" "}
                 <text className={styles.deco}>
-                  tickets<text className={styles.blue}>.</text>
+                  <span id="spin" className={styles.p}></span>
+                  <text className={styles.blue}>.</text>
                 </text>
               </h1>
               <p className={styles.subh1}>
@@ -97,8 +98,8 @@ export default function Home({ data }) {
               <img src="/playstore.png" className={styles.app1} alt="android" />
             </Link> */}
               {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
-              <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-                <div className={styles.sell}>Sell Ticket</div>
+              <Link href="/login">
+                <div className={styles.sell}>Get Started</div>
               </Link>
               <Link href="/discover">
                 <div className={styles.sell2}>Discover</div>
@@ -113,7 +114,7 @@ export default function Home({ data }) {
                 ? arrevents.map((item) => {
                     return (
                       <Link href={"/" + item.slug}>
-                        <div className={styles.lstory}>
+                        <div key={item?.id} className={styles.lstory}>
                           <img src={item.imageURL} className={styles.image} />
                           <div className={styles.lstoryoverlay}>
                             <div className={styles.date}>
@@ -147,7 +148,7 @@ export default function Home({ data }) {
                 ? arrevents.map((item) => {
                     return (
                       <Link href={"/" + item.slug}>
-                        <div className={styles.lstory}>
+                        <div key={item?.id} className={styles.lstory}>
                           <img
                             src={item.imageURL}
                             className={styles.image}
@@ -185,7 +186,7 @@ export default function Home({ data }) {
                 ? arrevents.map((item) => {
                     return (
                       <Link href={"/" + item.slug}>
-                        <div className={styles.lstory}>
+                        <div key={item?.id} className={styles.lstory}>
                           <img
                             src={item.imageURL}
                             className={styles.image}
@@ -315,11 +316,11 @@ export default function Home({ data }) {
                   className={styles.check}
                   alt="event-image"
                 />
-                <text className={styles.h2}>Ticket scanning</text>
+                <text className={styles.h2}>Unlimited events</text>
               </div>
               <text className={styles.text}>
-                Intuisive and fast ticket scanner to verify tickets. Easy to use
-                and can handle any kind of event.
+                Create unlimited events and we will help you manage, promote and
+                sell them with our PRO tools for FREE.
               </text>
             </div>
             <div className={styles.point}>
@@ -329,11 +330,11 @@ export default function Home({ data }) {
                   className={styles.check}
                   alt="event-image"
                 />
-                <text className={styles.h2}>Payment</text>
+                <text className={styles.h2}>Mobile ticketing</text>
               </div>
               <text className={styles.text}>
-                Receive payment from Tease anytime you need, you don't have to
-                wait till end of week to get your cash.
+                Easy and convenient ticketing for both you and your customers on
+                our mobile app.
               </text>
             </div>
             <div className={styles.point}>
@@ -343,11 +344,54 @@ export default function Home({ data }) {
                   className={styles.check}
                   alt="event-image"
                 />
-                <text className={styles.h2}>Promotion</text>
+                <text className={styles.h2}>Analytics & report</text>
               </div>
               <text className={styles.text}>
-                We give every event social media promotion on Facebook, Twitter
-                and Instagram free of charge.
+                Real time reports of how customers are engaging with your events
+                and sales.
+              </text>
+            </div>
+          </div>
+          <div className={styles.points} data-aos="fade-up">
+            <div className={styles.point}>
+              <div className={styles.head}>
+                <img
+                  src="/mark.png"
+                  className={styles.check}
+                  alt="event-image"
+                />
+                <text className={styles.h2}>Organize Poll</text>
+              </div>
+              <text className={styles.text}>
+                Organizers poll for award events and let users vote for your
+                nominees.
+              </text>
+            </div>
+            <div className={styles.point}>
+              <div className={styles.head}>
+                <img
+                  src="/mark.png"
+                  className={styles.check}
+                  alt="event-image"
+                />
+                <text className={styles.h2}>Realtime Dashboard</text>
+              </div>
+              <text className={styles.text}>
+                Monitor incoming votes and revenue from our realtime dashboard,
+                manage your polls here to.
+              </text>
+            </div>
+            <div className={styles.point}>
+              <div className={styles.head}>
+                <img
+                  src="/mark.png"
+                  className={styles.check}
+                  alt="event-image"
+                />
+                <text className={styles.h2}>Cheaper</text>
+              </div>
+              <text className={styles.text}>
+                We have the cheapest rate in the market, only 10%
               </text>
             </div>
           </div>
