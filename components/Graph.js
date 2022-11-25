@@ -1,20 +1,17 @@
 import ReactApexChart from "react-apexcharts";
 
-import { useEffect, useState, useContext } from "react";
-// import getArray from "../functions/getArray";
-
-export default function Graph() {
+export default function Graph({ data = [], categories = [] }) {
   const series = [
     {
-      name: "Sales",
-      data: [4, 2, 3, 2, 3, 6, 2, 3, 1.5],
+      name: "Votes",
+      data: data,
     },
   ];
 
   const options = {
     chart: {
       height: 350,
-      type: "area",
+      type: "bar",
       toolbar: {
         show: false,
       },
@@ -43,7 +40,7 @@ export default function Graph() {
     },
     xaxis: {
       type: "category",
-
+      categories: categories,
       labels: {
         show: true,
         rotate: -45,
@@ -102,7 +99,7 @@ export default function Graph() {
     <ReactApexChart
       options={options}
       series={series}
-      type="area"
+      type="bar"
       height={"85%"}
     />
   );

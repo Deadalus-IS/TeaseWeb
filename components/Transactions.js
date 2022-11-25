@@ -17,7 +17,7 @@ export default function Transactions({ poll }) {
       let response = await func.getTransactions({
         id: poll.id,
       });
-      console.log(response);
+      // console.log(response);
       if (response.status) {
         setpolls(response.transactions ? response.transactions : []);
       } else {

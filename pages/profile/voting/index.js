@@ -8,12 +8,15 @@ import dynamic from "next/dynamic";
 import { toaster } from "evergreen-ui";
 import DashboardLayout from "../../../components/DashboardLayout";
 import Link from "next/link";
+import Head from "../../../components/Head";
 const DChart = dynamic(() => import("../../../components/Graph"), {
   ssr: false,
 });
 
 export default function Profile() {
   const [polls, setpolls] = useState([]);
+  const [data, setdata] = useState([]);
+  const [categories, setcategories] = useState([]);
   let { userContext, setuserContext } = useContext(UserContext);
 
   useEffect(async () => {
@@ -23,7 +26,7 @@ export default function Profile() {
 
     if (userContext) {
       let response = await func.getPolls();
-      console.log(response);
+      // console.log(response);
       if (response.status) {
         setpolls(response.polls ? response.polls : []);
       } else {
@@ -38,14 +41,27 @@ export default function Profile() {
     });
   }, []);
 
+  useEffect(() => {
+    let tempData = [];
+    let tempCat = [];
+    polls.map((item) => {
+      // console.log(item?.name);
+
+      tempData.push(item?.totalVotes);
+      tempCat.push(item?.name);
+
+      setdata(tempData);
+      setcategories(tempCat);
+    });
+  }, [polls]);
+
   return (
     <DashboardLayout sidebar={false}>
+      <Head title="Dashboard" />
       <main className={styles.main}>
         <div className={styles.top}>
           <text className={styles.toptxt1}>Hello {userContext?.name}</text>
-          <text className={styles.toptxt}>
-            Here you can manage your tickets
-          </text>
+          <text className={styles.toptxt}>Here you can manage your polls</text>
         </div>
 
         <div className={styles.hlist}>
@@ -78,7 +94,7 @@ export default function Profile() {
           <div className={styles.graph}>
             <text>Total Votes</text>
           </div>
-          <DChart />
+          <DChart data={data} categories={categories} />
         </div>
 
         {polls.length > 0 ? (
@@ -98,7 +114,6 @@ export default function Profile() {
             </div>
 
             {polls.map((item, index) => {
-              console.log(item);
               return (
                 <div className={styles.tableitems}>
                   <div className={styles.one}>
@@ -109,7 +124,16 @@ export default function Profile() {
                     </div>
                   </div>
                   <div className={styles.two}>
-                    <text className={styles.pollstatus}>ACTIVE</text>
+                    <text
+                      style={{
+                        backgroundColor: item?.available
+                          ? "#4beb88bb"
+                          : "#eb4b76bb",
+                      }}
+                      className={styles.pollstatus}
+                    >
+                      {item?.available ? "ACTIVE" : "CLOSED"}
+                    </text>
                   </div>
                   <div className={styles.three}>
                     <text className={styles.eventsold}>{item?.totalVotes}</text>
@@ -153,7 +177,7 @@ export default function Profile() {
             {Number(polls.reduce((n, a) => n + (a.balance || 0), 0)).toFixed(2)}
           </text>
 
-          <div className={styles.withdraw}>Withdraw</div>
+          {/* <div className={styles.withdraw}>Withdraw</div> */}
         </div>
       </section>
     </DashboardLayout>

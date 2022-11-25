@@ -2,13 +2,13 @@ import Link from "next/link";
 import styles from "../styles/Dashboard.module.scss";
 import { useRouter } from "next/router";
 import "aos/dist/aos.css";
-import Head from "next/head";
+import Head from "../components/Head";
 
 export default function DashboardLayout({ children, sidebar = true }) {
   const router = useRouter();
   let pathname = router.pathname;
 
-  console.log(pathname);
+  // console.log(pathname);
 
   return (
     <div className={styles.container}>
@@ -52,7 +52,7 @@ export default function DashboardLayout({ children, sidebar = true }) {
               <text>Voting</text>
             </div>
           </Link>
-          <Link href="/profile/notification">
+          {/* <Link href="/profile/notification">
             <div
               className={`${
                 pathname == "notification" ? styles.menuitem : styles.menuitem2
@@ -81,7 +81,7 @@ export default function DashboardLayout({ children, sidebar = true }) {
               )}
               <text>Settings</text>
             </div>
-          </Link>
+          </Link> */}
         </div>
       </section>
 

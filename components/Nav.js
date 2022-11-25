@@ -17,7 +17,7 @@ import func from "../functions";
 export default function Nav({ data }) {
   const { userContext, setuserContext } = useContext(UserContext);
 
-  console.log(userContext);
+  // console.log(userContext);
 
   return (
     <div className={styles.nav}>

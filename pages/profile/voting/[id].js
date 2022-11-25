@@ -47,7 +47,7 @@ export default function PollID({ data }) {
     setFileRejections([]);
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   let poll = data ? data?.poll : {};
 
@@ -60,7 +60,7 @@ export default function PollID({ data }) {
       let response = await func.getNomineesBy({
         id: poll?.id,
       });
-      console.log(response);
+      // console.log(response);
       if (response.status) {
         setevents(response.nominees ? response.nominees : []);
       } else {
@@ -95,7 +95,7 @@ export default function PollID({ data }) {
       timestamp: String(Date.now()),
       amount: poll?.balance,
     });
-    console.log(response);
+    // console.log(response);
     if (response.status) {
       toaster.success("Withdrawal request sent successfully.");
       setisShownWithdraw(false);
@@ -416,10 +416,10 @@ export async function getServerSideProps(context) {
     }),
   });
 
-  console.log(res);
+  // console.log(res);
   let data = [];
   data = await res.json();
 
-  console.log(data);
+  // console.log(data);
   return { props: { data: data ? data : null } };
 }

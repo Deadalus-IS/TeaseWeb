@@ -34,7 +34,7 @@ export default function Home({ data }) {
     }
   }, []);
 
-  console.log(width);
+  // console.log(width);
 
   var months = [
     "Jan",
@@ -533,10 +533,10 @@ export async function getServerSideProps(context) {
     },
   });
 
-  console.log(res);
+  // console.log(res);
   let data = [];
   data = await res.json();
 
-  console.log(data);
+  // console.log(data);
   return { props: { data: data ? data : [] } };
 }

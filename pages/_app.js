@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import styles from "../styles/App.module.css";
+import styles from "../styles/App.module.scss";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { UserContext } from "../context";
@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
     const run = async () => {
       setloading(true);
       let token = getCookie("auth");
-      console.log("auth" + token);
+      // console.log("auth" + token);
 
       if (!token) {
         if (path.includes("profile")) {
@@ -44,7 +44,7 @@ function MyApp({ Component, pageProps }) {
 
       if (data.status) {
         setIsLogged(true);
-        console.log(data.user);
+        // console.log(data.user);
         setuserContext(data.user);
         if (
           path.includes("profile") ||
@@ -89,6 +89,14 @@ function MyApp({ Component, pageProps }) {
     <UserContext.Provider value={{ userContext, setuserContext }}>
       <div>
         <Component {...pageProps} />
+        {path.includes("profile") ? (
+          <main className={styles.body2}>
+            <img src="/smartphone.png" className={styles.phone} />
+            <text className={styles.infotxt}>
+              {`Sorry! You can't use the Dashboard on a mobile phone, \npleasechange to desktop view or use a larger display`}
+            </text>
+          </main>
+        ) : null}
       </div>
     </UserContext.Provider>
   );

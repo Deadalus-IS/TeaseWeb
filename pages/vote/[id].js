@@ -33,7 +33,7 @@ export default function Vote({ data }) {
       timestamp: String(Date.now()),
     });
 
-    console.log(response);
+    // console.log(response);
     let url = await response?.data?.data?.authorization_url;
     if (response.status) {
       if (response.data?.status) {
@@ -51,7 +51,7 @@ export default function Vote({ data }) {
     }
   };
 
-  console.log(data);
+  // console.log(data);
   useEffect(async () => {
     AOS.init({
       offset: 120,
@@ -131,10 +131,10 @@ export async function getServerSideProps(context) {
     }),
   });
 
-  console.log(res);
+  // console.log(res);
   let data = [];
   data = await res.json();
 
-  console.log(data);
+  // console.log(data);
   return { props: { data: data ? data : null } };
 }

@@ -144,7 +144,7 @@ $vw-viewport: 1920;
 .toptxt1 {
   font-size: get-vw(26px);
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: get-vw(5px);
 }
 .toptxt {
   font-size: get-vw(15px);
@@ -190,7 +190,7 @@ $vw-viewport: 1920;
 .hlistitem img {
   width: get-vw(30px);
   height: get-vw(30px);
-  margin-right: 5px;
+  margin-right: get-vw(5px);
 }
 .hlistitemtext {
   font-size: get-vw(15px);
@@ -209,7 +209,7 @@ $vw-viewport: 1920;
   background-color: white;
   margin-top: get-vw(40px);
   border-radius: get-vw(10px);
-  padding: get-vw(20px) get-vw(20px) 5px get-vw(20px);
+  padding: get-vw(20px) get-vw(20px) get-vw(5px) get-vw(20px);
 }
 .graph {
   display: flex;
@@ -246,7 +246,7 @@ $vw-viewport: 1920;
 .main::-webkit-scrollbar-thumb {
   background-color: #e1ecff;
   border-radius: get-vw(50px);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 get-vw(6px) rgba(0, 0, 0, 0.3);
 }
 
 .searchcon {
@@ -346,11 +346,10 @@ $vw-viewport: 1920;
   font-weight: normal;
   color: gray;
 }
-.eventstatus {
+.pollstatus {
   font-size: get-vw(13px);
   font-weight: bold;
   color: white;
-  background-color: #4beb88bb;
   padding: get-vw(10px) get-vw(15px);
   border-radius: get-vw(20px);
 }
@@ -359,6 +358,7 @@ $vw-viewport: 1920;
   font-weight: bold;
   color: black;
 }
+
 .fouritem {
   width: 100%;
   height: get-vw(50px);

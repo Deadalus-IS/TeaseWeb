@@ -238,7 +238,7 @@ export default function CreatePoll() {
                     // approved: false,
                   };
 
-                  console.log(payload);
+                  // console.log(payload);
 
                   let response = await func.createPoll(payload);
                   // console.log("USE RES>>>>>>> ", response);

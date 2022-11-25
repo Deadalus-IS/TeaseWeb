@@ -15,6 +15,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
+import Headd from "../../components/Head";
 
 export default function Create() {
   // Page 1
@@ -116,6 +117,7 @@ export default function Create() {
   }, []);
   return (
     <main className={styles.main}>
+      <Headd title="Dashboard" />
       <div className={styles.nav}>
         <Link href="/">
           <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />

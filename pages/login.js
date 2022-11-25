@@ -23,7 +23,7 @@ export default function Login() {
       password: password,
     });
     if (userRes.status) {
-      console.log(userRes);
+      // console.log(userRes);
       setCookie("auth", userRes.user.id, 7);
       setuserContext(userRes.user);
       router.push("/profile");

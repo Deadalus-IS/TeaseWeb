@@ -7,6 +7,7 @@ import func from "../../functions";
 import { UserContext } from "../../context";
 import { useRouter } from "next/router";
 import { toaster, Spinner } from "evergreen-ui";
+import Headd from "../../components/Head";
 
 export default function AddNominee({ data }) {
   // Page 1
@@ -16,7 +17,7 @@ export default function AddNominee({ data }) {
   let { userContext, setuserContext } = useContext(UserContext);
   const router = useRouter();
 
-  console.log(router.query.id);
+  // console.log(router.query.id);
 
   useEffect(async () => {
     let res = await localStorage.getItem("user");
@@ -31,10 +32,11 @@ export default function AddNominee({ data }) {
 
   let poll = data ? data?.poll : {};
 
-  console.log(poll);
+  // console.log(poll);
 
   return (
     <main className={styles.main}>
+      <Headd title="Dashboard" />
       <div className={styles.nav}>
         <Link href="/">
           <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
@@ -98,7 +100,7 @@ export default function AddNominee({ data }) {
                   pollID: poll?.id,
                 };
 
-                console.log(payload);
+                // console.log(payload);
 
                 let response = await func.addNominee(payload);
                 // console.log("USE RES>>>>>>> ", response);
@@ -146,10 +148,10 @@ export async function getServerSideProps(context) {
     }),
   });
 
-  console.log(res);
+  // console.log(res);
   let data = [];
   data = await res.json();
 
-  console.log(data);
+  // console.log(data);
   return { props: { data: data ? data : null } };
 }

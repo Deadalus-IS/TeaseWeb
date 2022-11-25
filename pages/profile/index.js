@@ -13,12 +13,12 @@ export default function Profile() {
   const [events, setevents] = useState([]);
   let { userContext, setuserContext } = useContext(UserContext);
 
-  console.log(userContext);
+  // console.log(userContext);
 
   useEffect(async () => {
     let res = localStorage.getItem("user");
     const useRes = JSON.parse(res);
-    console.log(useRes);
+    // console.log(useRes);
 
     // setuserContext(useRes);
 
@@ -26,7 +26,7 @@ export default function Profile() {
       let response = await func.getEventsBy({
         id: userContext?.organizer?.id,
       });
-      console.log(response);
+      // console.log(response);
       if (response.status) {
         setevents(response.events ? response.events : []);
       } else {

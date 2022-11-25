@@ -1,5 +1,12 @@
+$vw-viewport: 1920;
+@function get-vw($font) {
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return $font / $vw-context * 1vw;
+  @return $font;
+}
 .body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -44,6 +51,46 @@
   left: 50px;
   top: 50px;
   animation-delay: 3s;
+}
+
+.phone,
+.infotxt,
+.body2 {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .body2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+  }
+  .phone {
+    width: get-vw(450px);
+    height: get-vw(450px);
+    display: flex;
+  }
+  .infotxt {
+    font-size: get-vw(60px);
+    font-weight: normal;
+    color: #a5a5a5;
+    margin-bottom: get-vw(40px);
+    display: flex;
+    margin-top: get-vw(40px);
+    padding: 0 get-vw(20px);
+    text-align: center;
+  }
 }
 
 @keyframes MoveUpDown {
