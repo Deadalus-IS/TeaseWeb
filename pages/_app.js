@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { UserContext } from "../context";
 import { getCookie } from "../functions/cookies";
 import func from "../functions";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 function MyApp({ Component, pageProps }) {
   const [userContext, setuserContext] = useState(null);
@@ -97,6 +98,13 @@ function MyApp({ Component, pageProps }) {
             </text>
           </main>
         ) : null}
+
+        <FloatingWhatsApp
+          phoneNumber="+233593152134"
+          accountName="Selorm"
+          statusMessage="We reply instantly"
+          avatar="https://pbs.twimg.com/profile_images/1589367199344517120/XmRb9tT5_400x400.jpg"
+        />
       </div>
     </UserContext.Provider>
   );
