@@ -3,8 +3,13 @@ import styles from "../styles/Dashboard.module.scss";
 import { useRouter } from "next/router";
 import "aos/dist/aos.css";
 import Head from "../components/Head";
+import { UserContext } from "../context";
+import { useContext } from "react";
+import { Badge } from "evergreen-ui";
 
 export default function DashboardLayout({ children, sidebar = true }) {
+  let { userContext, setuserContext } = useContext(UserContext);
+
   const router = useRouter();
   let pathname = router.pathname;
 
@@ -33,7 +38,12 @@ export default function DashboardLayout({ children, sidebar = true }) {
               ) : (
                 <img src="/dashboard1.png" />
               )}
-              <text>Events</text>
+              <text>
+                Events{" "}
+                <Badge color="red" marginRight={8}>
+                  Unavailble
+                </Badge>
+              </text>
             </div>
           </Link>
           <Link href="/profile/voting">
@@ -52,6 +62,24 @@ export default function DashboardLayout({ children, sidebar = true }) {
               <text>Voting</text>
             </div>
           </Link>
+          {userContext?.admin ? (
+            <Link href="/profile/super">
+              <div
+                className={`${
+                  pathname.includes("profile/super")
+                    ? styles.menuitem
+                    : styles.menuitem2
+                }`}
+              >
+                {pathname.includes("profile/super") ? (
+                  <img src="/admin.png" />
+                ) : (
+                  <img src="/admin2.png" />
+                )}
+                <text>Super Admin</text>
+              </div>
+            </Link>
+          ) : null}
           {/* <Link href="/profile/notification">
             <div
               className={`${

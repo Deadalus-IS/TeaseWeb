@@ -4,7 +4,7 @@ import { UserContext } from "../context";
 import func from "../functions";
 import styles from "../styles/Dashboard.module.scss";
 
-export default function Transactions({ poll }) {
+export default function Transactions({ poll = "all" }) {
   const [polls, setpolls] = useState([]);
   let { userContext, setuserContext } = useContext(UserContext);
 
@@ -14,9 +14,12 @@ export default function Transactions({ poll }) {
     // setuserContext(useRes); dd
 
     if (userContext) {
-      let response = await func.getTransactions({
-        id: poll.id,
-      });
+      let response =
+        poll == "all"
+          ? await func.getTransactionsAdmin()
+          : await func.getTransactions({
+              id: poll.id,
+            });
       // console.log(response);
       if (response.status) {
         setpolls(response.transactions ? response.transactions : []);

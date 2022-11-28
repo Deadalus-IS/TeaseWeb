@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import func from "../../functions";
 import { UserContext } from "../../context";
 import dynamic from "next/dynamic";
-import { Link, toaster } from "evergreen-ui";
+import { Alert, Link, toaster } from "evergreen-ui";
 import DashboardLayout from "../../components/DashboardLayout";
 const DChart = dynamic(() => import("../../components/Graph"), { ssr: false });
 
@@ -44,6 +44,15 @@ export default function Profile() {
   return (
     <DashboardLayout>
       <main className={styles.main}>
+        <Alert
+          marginBottom={30}
+          intent="danger"
+          title="Sorry, Event Ticketing is currently under maintainance"
+        >
+          Please check out our other services like USSD and Online voting for
+          your events. Events Ticketing will be back soon.
+        </Alert>
+
         <div className={styles.top}>
           <text className={styles.toptxt1}>Hello {userContext?.name}</text>
           <text className={styles.toptxt}>
@@ -136,9 +145,9 @@ export default function Profile() {
               <text className={styles.infotxt}>
                 You have no events, create a new event
               </text>
-              <Link href="/profile/create">
+              {/* <Link href="/profile/create">
                 <div className={styles.infobtn}>Create Event</div>
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}

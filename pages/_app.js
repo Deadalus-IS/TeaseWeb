@@ -47,6 +47,11 @@ function MyApp({ Component, pageProps }) {
         setIsLogged(true);
         // console.log(data.user);
         setuserContext(data.user);
+
+        if (!data.user?.admin && path.includes("profile/super")) {
+          router.push("/profile");
+          setloading(false);
+        }
         if (
           path.includes("profile") ||
           path.includes("create") ||

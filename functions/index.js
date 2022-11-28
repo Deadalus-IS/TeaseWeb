@@ -1,4 +1,5 @@
-import BASE_URL from "../config/api";
+import { BASE_URL } from "../config/api";
+import { BASE_URL_ADMIN } from "../config/api";
 import { eraseCookie } from "./cookies";
 
 const func = {
@@ -228,6 +229,70 @@ const func = {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  getTransactionsAdmin: async (data = {}) => {
+    const response = await fetch(BASE_URL_ADMIN + "/getTransactions/", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  getPollsAdmin: async (data = {}) => {
+    const response = await fetch(BASE_URL_ADMIN + "/getPolls/", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  getEventsAdmin: async (data = {}) => {
+    const response = await fetch(BASE_URL_ADMIN + "/getEvents/", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+
+  getUsersAdmin: async (data = {}) => {
+    const response = await fetch(BASE_URL_ADMIN + "/getUsers/", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+  getApprovalsAdmin: async (data = {}) => {
+    const response = await fetch(BASE_URL_ADMIN + "/getApprovals/", {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // body: JSON.stringify(data),
     });
 
     return response.json();
