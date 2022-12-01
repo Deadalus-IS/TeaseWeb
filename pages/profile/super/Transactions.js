@@ -82,10 +82,13 @@ export default function Transactions() {
                 <div className={styles.one}>
                   <img src={item?.imageURL ? item?.imageURL : "/photo.png"} />
                   <div className={styles.oneitem}>
-                    <text className={styles.eventname}>
-                      {item?.accountnumber}
+                    <text className={styles.eventname}>{item?.poll?.name}</text>
+                    <text className={styles.eventdate}>
+                      Account: {item?.accountnumber}
                     </text>
-                    <text className={styles.eventdate}>{item?.bank}</text>
+                    <text className={styles.eventdate}>
+                      Provider: {item?.bank}
+                    </text>
                   </div>
                 </div>
                 <div className={styles.two}>

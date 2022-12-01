@@ -89,11 +89,12 @@ export default function PollID({ data }) {
       name: name,
       accountnumber: account,
       comment: comment,
-      user: useContext,
+      user: userContext,
       status: false,
       id: poll?.id,
       timestamp: String(Date.now()),
       amount: poll?.balance,
+      poll: poll,
     });
     // console.log(response);
     if (response.status) {

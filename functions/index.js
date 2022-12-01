@@ -147,7 +147,7 @@ const func = {
   },
 
   getPolls: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getPolls", {
+    const response = await fetch(BASE_URL + "/getPolls/" + data?.id, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {

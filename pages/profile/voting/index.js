@@ -25,7 +25,9 @@ export default function Profile() {
     // setuserContext(useRes); dd
 
     if (userContext) {
-      let response = await func.getPolls();
+      let response = await func.getPolls({
+        id: userContext?.id,
+      });
       // console.log(response);
       if (response.status) {
         setpolls(response.polls ? response.polls : []);
