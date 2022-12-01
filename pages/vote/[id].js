@@ -84,6 +84,7 @@ export default function Vote({ data }) {
             onChange={(value) => {
               setNumOfVotes(value.target.value);
             }}
+            type="number"
           />
           <input
             className={stylesid.input1}
