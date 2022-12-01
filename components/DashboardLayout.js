@@ -40,8 +40,8 @@ export default function DashboardLayout({ children, sidebar = true }) {
               )}
               <text>
                 Events{" "}
-                <Badge color="red" marginRight={8}>
-                  Unavailble
+                <Badge color="yellow" marginRight={8}>
+                  BETA
                 </Badge>
               </text>
             </div>
