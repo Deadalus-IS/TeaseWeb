@@ -138,7 +138,7 @@ export default function AddNominee({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.query.id;
-  let res = await fetch("https://passticketgo.herokuapp.com/api/getPoll", {
+  let res = await fetch("https://tease-backend.onrender.com/api/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

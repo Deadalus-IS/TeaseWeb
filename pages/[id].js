@@ -340,7 +340,7 @@ export async function getServerSideProps(context) {
   //   console.log(id);
 
   let res = await fetch(
-    "https://passticketgo.herokuapp.com/api/getEventsById",
+    "https://tease-backend.onrender.com/api/getEventsById",
     {
       method: "POST",
       headers: {

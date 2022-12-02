@@ -122,7 +122,7 @@ export default function Vote({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch("https://passticketgo.herokuapp.com/api/getNominee", {
+  let res = await fetch("https://tease-backend.onrender.com/api/getNominee", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

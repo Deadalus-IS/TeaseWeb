@@ -97,7 +97,7 @@ const func = {
       headers: {
         "Content-Type": "application/json",
         Origin: "*",
-        // "Access-Control-Allow-Origin": "https://passticketgo.herokuapp.com"
+        // "Access-Control-Allow-Origin": "https://tease-backend.onrender.com"
       },
       body: JSON.stringify(data),
     });

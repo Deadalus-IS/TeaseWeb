@@ -570,7 +570,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("https://passticketgo.herokuapp.com/api/getEvents", {
+  let res = await fetch("https://tease-backend.onrender.com/api/getEvents", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
