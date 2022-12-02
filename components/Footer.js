@@ -42,6 +42,9 @@ export default function Footer({ styles = styles2, ligth }) {
         <Link href="/discover">
           <text className={styles.link}>Discover</text>
         </Link>
+        <Link href="/stats">
+          <text className={styles.link}>Results</text>
+        </Link>
         <Link href="/overview">
           <text className={styles.link}>How it works</text>
         </Link>

@@ -55,7 +55,8 @@ function MyApp({ Component, pageProps }) {
         if (
           path.includes("profile") ||
           path.includes("create") ||
-          path.includes("vote")
+          path.includes("vote") ||
+          path.includes("stat")
         ) {
           setloading(false);
         } else if (path.includes("login") || path.includes("signup")) {

@@ -83,13 +83,22 @@ export default function Profile() {
               {polls.reduce((n, a) => n + (a.totalVotes || 0), 0)}
             </text>
           </div>
-          <div className={styles.hlistitem}>
-            <div>
-              <img src="/users.png" />
-              <text className={styles.hlistitemtext}>Nominees</text>
+          <Link href="/stats">
+            <div className={styles.hlistitem}>
+              <div>
+                <img src="/pie-chart.png" />
+                <text className={styles.hlistitemtext}>Results</text>
+              </div>
+              <text
+                style={{
+                  cursor: "pointer",
+                }}
+                className={styles.hlistitemtext1}
+              >
+                View
+              </text>
             </div>
-            <text className={styles.hlistitemtext1}>~</text>
-          </div>
+          </Link>
         </div>
 
         <div className={styles.graphcon}>

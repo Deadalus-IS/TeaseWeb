@@ -37,10 +37,10 @@ export default function Nav({ data }) {
         <div className={styles.rightbtn}>
           {/* <Link href="/signup">
             <div className={styles.sell3}>Contact Us</div>
-          </Link>
-          <Link href="/signup">
-            <div className={styles.sell3}>FAQ</div>
           </Link> */}
+          <Link href="/stats">
+            <div className={styles.sell3}>Results</div>
+          </Link>
           <Link href="/profile">
             <div className={styles.sell}>Dashboard</div>
           </Link>

@@ -187,18 +187,21 @@ export default function Profile() {
                       </text>
                     </div>
                   </div>
-                  <div className={styles.two}>
-                    <text
-                      style={{
-                        backgroundColor: item?.approved
-                          ? "#4beb88bb"
-                          : "#eb4b76bb",
-                      }}
-                      className={styles.pollstatus}
-                    >
-                      {item?.approved ? "LIVE" : "PENDING"}
-                    </text>
-                  </div>
+                  <Link href="/stats">
+                    <div className={styles.two}>
+                      <text
+                        style={{
+                          backgroundColor: item?.approved
+                            ? "#4beb88bb"
+                            : "#eb4b76bb",
+                          cursor: "pointer",
+                        }}
+                        className={styles.pollstatus}
+                      >
+                        {item?.approved ? "LIVE" : "PENDING"}
+                      </text>
+                    </div>
+                  </Link>
                   <div className={styles.three}>
                     <text className={styles.eventsold}>
                       {item?.ticketsBought + "/" + item?.totalTickets}
