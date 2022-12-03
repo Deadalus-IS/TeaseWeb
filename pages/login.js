@@ -86,6 +86,10 @@ export default function Login() {
         </div>
 
         <Link href="/signup">
+          <text className={{}}>New? Create an account</text>
+        </Link>
+
+        <Link href="/signup">
           <text className={styles.navitem}>Create an account</text>
         </Link>
       </main>
