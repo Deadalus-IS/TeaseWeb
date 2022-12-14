@@ -40,7 +40,12 @@ export default function CreatePoll() {
     <main className={styles.main}>
       <div className={styles.nav}>
         <Link href="/">
-          <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
+          <img
+            alt="tease africa"
+            data-aos="zoom-in"
+            src="/logob.png"
+            className={styles.logo}
+          />
         </Link>
         <div className={styles.navlinks}>
           {userContext?.name ? (
@@ -54,7 +59,7 @@ export default function CreatePoll() {
           )}
         </div>
         <Link href="/">
-          <img src="/back.png" className={styles.menu} />
+          <img alt="tease africa" src="/back.png" className={styles.menu} />
         </Link>
       </div>
 
@@ -141,6 +146,7 @@ export default function CreatePoll() {
             <div className={styles.head}>
               <text className={styles.text}>Add Categories</text>
               <img
+                alt="tease africa"
                 onClick={() => {
                   setpage(page - 1);
                 }}
@@ -163,6 +169,7 @@ export default function CreatePoll() {
                     </div>
 
                     <img
+                      alt="tease africa"
                       src="/close.png"
                       alt="remove"
                       className={styles.removeticket}

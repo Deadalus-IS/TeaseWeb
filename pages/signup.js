@@ -67,7 +67,12 @@ export default function Signup() {
       <main className={styles.main}>
         <div className={styles.nav}>
           <Link href="/">
-            <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
+            <img
+              alt="tease africa"
+              data-aos="zoom-in"
+              src="/logob.png"
+              className={styles.logo}
+            />
           </Link>
         </div>
 

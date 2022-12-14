@@ -9,10 +9,16 @@ export default function SideNav() {
     <div id="sidemenu" className={styles.sidemenu}>
       <div className={styles.nav}>
         <Link href="/">
-          <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
+          <img
+            alt="tease africa"
+            data-aos="zoom-in"
+            src="/logob.png"
+            className={styles.logo}
+          />
         </Link>
 
         <img
+          alt="tease africa"
           onClick={() => {
             document.getElementById("sidemenu").style.left = "-100vw";
           }}
@@ -51,20 +57,20 @@ export default function SideNav() {
         </Link>
         <div className={styles.socials}>
           <Link href="https://twitter.com/teaseafrica">
-            <img src="/tw.png" className={styles.soc} />
+            <img alt="tease africa" src="/tw.png" className={styles.soc} />
           </Link>
           <Link href="https://facebook.com/teaseafrica">
-            <img src="/fb.png" className={styles.soc} />
+            <img alt="tease africa" src="/fb.png" className={styles.soc} />
           </Link>
           <Link href="https://www.instagram.com/teaseafrica/">
-            <img src="/ig.png" className={styles.soc} />
+            <img alt="tease africa" src="/ig.png" className={styles.soc} />
           </Link>
-          <img style={{ width: 30, height: 0 }} />
+          <img alt="tease africa" style={{ width: 30, height: 0 }} />
           <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-            <img src="/google.png" className={styles.soc} />
+            <img alt="tease africa" src="/google.png" className={styles.soc} />
           </Link>
           {/* <Link href="https://www.instagram.com/teaseafrica/">
-            <img src="/appstore.png" className={styles.soc} />
+            <img alt="tease africa" src="/appstore.png" className={styles.soc} />
           </Link> */}
         </div>
       </div>

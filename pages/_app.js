@@ -84,9 +84,13 @@ function MyApp({ Component, pageProps }) {
     return (
       <main className={styles.body}>
         <div className={styles.box}>
-          <img src="/loader/1.png" className={styles.one} />
-          <img src="/loader/2.png" className={styles.two} />
-          <img src="/loader/3.png" className={styles.three} />
+          <img alt="tease africa" src="/loader/1.png" className={styles.one} />
+          <img alt="tease africa" src="/loader/2.png" className={styles.two} />
+          <img
+            alt="tease africa"
+            src="/loader/3.png"
+            className={styles.three}
+          />
         </div>
       </main>
     );
@@ -98,7 +102,11 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
         {path.includes("profile") ? (
           <main className={styles.body2}>
-            <img src="/smartphone.png" className={styles.phone} />
+            <img
+              alt="tease africa"
+              src="/smartphone.png"
+              className={styles.phone}
+            />
             <text className={styles.infotxt}>
               {`Sorry! You can't use the Dashboard on a mobile phone, \npleasechange to desktop view or use a larger display`}
             </text>

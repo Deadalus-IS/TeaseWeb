@@ -21,7 +21,7 @@ export default function DashboardLayout({ children, sidebar = true }) {
       <section className={styles.sidebar}>
         <Link href="/">
           <div className={styles.logo}>
-            <img src="/logob.png" />
+            <img alt="tease africa" src="/logob.png" />
             <text>| Organizer</text>
           </div>
         </Link>
@@ -34,9 +34,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname == "/profile" ? (
-                <img src="/dashboard.png" />
+                <img alt="tease africa" src="/dashboard.png" />
               ) : (
-                <img src="/dashboard1.png" />
+                <img alt="tease africa" src="/dashboard1.png" />
               )}
               <text>
                 Events{" "}
@@ -55,9 +55,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname.includes("/profile/voting") ? (
-                <img src="/vote.png" />
+                <img alt="tease africa" src="/vote.png" />
               ) : (
-                <img src="/vote1.png" />
+                <img alt="tease africa" src="/vote1.png" />
               )}
               <text>Voting</text>
             </div>
@@ -72,9 +72,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
                 }`}
               >
                 {pathname.includes("profile/super") ? (
-                  <img src="/admin.png" />
+                  <img alt="tease africa" src="/admin.png" />
                 ) : (
-                  <img src="/admin2.png" />
+                  <img alt="tease africa" src="/admin2.png" />
                 )}
                 <text>Super Admin</text>
               </div>
@@ -87,9 +87,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname == "/profile/notification" ? (
-                <img src="/notification1.png" />
+                <img alt="tease africa" src="/notification1.png" />
               ) : (
-                <img src="/notification.png" />
+                <img alt="tease africa" src="/notification.png" />
               )}
               <text>Notifications</text>
             </div>
@@ -103,9 +103,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname == "/profile/setting" ? (
-                <img src="/setting1.png" />
+                <img alt="tease africa" src="/setting1.png" />
               ) : (
-                <img src="/setting.png" />
+                <img alt="tease africa" src="/setting.png" />
               )}
               <text>Settings</text>
             </div>
@@ -119,7 +119,7 @@ export default function DashboardLayout({ children, sidebar = true }) {
         <section className={styles.rightbar}>
           <div className={styles.searchcon}>
             <input placeholder="Search for your events" />
-            <img src="/loupe.png" />
+            <img alt="tease africa" src="/loupe.png" />
           </div>
 
           <div className={styles.card}>

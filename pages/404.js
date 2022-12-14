@@ -5,7 +5,7 @@ export default function Custom404() {
   return (
     <div className={styles.main}>
       <Link href="/">
-        <img src="/logob.png" className={styles.logo} />
+        <img alt="tease africa" src="/logob.png" className={styles.logo} />
       </Link>
       <div className={styles.svg}>
         <svg

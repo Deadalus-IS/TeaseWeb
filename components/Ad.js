@@ -7,6 +7,7 @@ export default function Ad() {
   return (
     <div style={{ display: show ? "flex" : "none" }} className={styles.ad}>
       <img
+        alt="tease africa"
         onClick={() => {
           setShow(false);
         }}
@@ -19,10 +20,14 @@ export default function Ad() {
         and ticket sales.
       </text>
       <div className={styles.imgs}>
-        {/* <img src="/ios.png" className={styles.app} /> */}
+        {/* <img alt="tease africa" src="/ios.png" className={styles.app} /> */}
 
         <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-          <img src="/playstore.png" className={styles.app1} />
+          <img
+            alt="tease africa"
+            src="/playstore.png"
+            className={styles.app1}
+          />
         </Link>
       </div>
     </div>

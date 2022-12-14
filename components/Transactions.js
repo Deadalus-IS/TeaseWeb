@@ -44,7 +44,7 @@ export default function Transactions({ poll = "all" }) {
           <div className={styles.transaction}>
             <div className={styles.row}>
               <div className={styles.transactionimg}>
-                <img src="/send-money.png" />
+                <img alt="tease africa" src="/send-money.png" />
               </div>
               <div className={styles.transactiontxt}>
                 <div className={styles.hlistitemtext1}>

@@ -39,7 +39,12 @@ export default function AddNominee({ data }) {
       <Headd title="Dashboard" />
       <div className={styles.nav}>
         <Link href="/">
-          <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
+          <img
+            alt="tease africa"
+            data-aos="zoom-in"
+            src="/logob.png"
+            className={styles.logo}
+          />
         </Link>
         <div className={styles.navlinks}>
           {userContext?.name ? (
@@ -53,7 +58,7 @@ export default function AddNominee({ data }) {
           )}
         </div>
         <Link href="/">
-          <img src="/back.png" className={styles.menu} />
+          <img alt="tease africa" src="/back.png" className={styles.menu} />
         </Link>
       </div>
 

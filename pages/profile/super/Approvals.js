@@ -81,7 +81,10 @@ export default function Approvals() {
             return (
               <div className={styles.tableitems}>
                 <div className={styles.one}>
-                  <img src={item?.imageURL ? item?.imageURL : "/photo.png"} />
+                  <img
+                    alt="tease africa"
+                    src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                  />
                   <div className={styles.oneitem}>
                     <text className={styles.eventname}>{item?.name}</text>
                     <text className={styles.eventdate}></text>
@@ -117,7 +120,7 @@ export default function Approvals() {
         <div className={styles.sales}>
           {/* No events, create a new event */}
           <div className={styles.info}>
-            <img src="/emptyf.png" />
+            <img alt="tease africa" src="/emptyf.png" />
             <text className={styles.infotxt}>No Polls for approval</text>
           </div>
         </div>

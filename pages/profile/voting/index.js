@@ -69,14 +69,14 @@ export default function Profile() {
         <div className={styles.hlist}>
           <div className={styles.hlistitem}>
             <div>
-              <img src="/poll.png" />
+              <img alt="tease africa" src="/poll.png" />
               <text className={styles.hlistitemtext}>Polls</text>
             </div>
             <text className={styles.hlistitemtext1}>{polls?.length}</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
-              <img src="/badge.png" />
+              <img alt="tease africa" src="/badge.png" />
               <text className={styles.hlistitemtext}>Total Votes</text>
             </div>
             <text className={styles.hlistitemtext1}>
@@ -86,7 +86,7 @@ export default function Profile() {
           <Link href="/stats">
             <div className={styles.hlistitem}>
               <div>
-                <img src="/pie-chart.png" />
+                <img alt="tease africa" src="/pie-chart.png" />
                 <text className={styles.hlistitemtext}>Results</text>
               </div>
               <text
@@ -128,7 +128,10 @@ export default function Profile() {
               return (
                 <div className={styles.tableitems}>
                   <div className={styles.one}>
-                    <img src={item?.imageURL ? item?.imageURL : "/photo.png"} />
+                    <img
+                      alt="tease africa"
+                      src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                    />
                     <div className={styles.oneitem}>
                       <text className={styles.eventname}>{item?.name}</text>
                       <text className={styles.eventdate}></text>
@@ -164,7 +167,7 @@ export default function Profile() {
           <div className={styles.sales}>
             {/* No events, create a new event */}
             <div className={styles.info}>
-              <img src="/emptyf.png" />
+              <img alt="tease africa" src="/emptyf.png" />
               <text className={styles.infotxt}>
                 You have no polls, create a new poll
               </text>
@@ -178,7 +181,7 @@ export default function Profile() {
       <section className={styles.rightbar}>
         <div className={styles.searchcon}>
           <input placeholder="Search for your events" />
-          <img src="/loupe.png" />
+          <img alt="tease africa" src="/loupe.png" />
         </div>
 
         <div className={styles.card}>

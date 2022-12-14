@@ -102,7 +102,7 @@ export default function Super() {
       <section className={styles.rightbar}>
         <div className={styles.searchcon}>
           <input placeholder="Search for your events" />
-          <img src="/loupe.png" />
+          <img alt="tease africa" src="/loupe.png" />
         </div>
 
         <div className={styles.card}>

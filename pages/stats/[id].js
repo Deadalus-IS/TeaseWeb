@@ -60,13 +60,19 @@ export default function StatID({ data }) {
       <main className={styles.main}>
         <div className={styles.nav}>
           <Link href="/">
-            <img data-aos="zoom-in" src="/logow.png" className={styles.logo} />
+            <img
+              alt="tease africa"
+              data-aos="zoom-in"
+              src="/logow.png"
+              className={styles.logo}
+            />
           </Link>
 
           <div className={styles.navlinks}>
             {/* <text className={styles.navitem}>Download</text> */}
           </div>
           <img
+            alt="tease africa"
             onClick={() => {
               document.getElementById("sidemenu").style.left = "0";
             }}
@@ -88,7 +94,7 @@ export default function StatID({ data }) {
       <main className={styles.main2}>
         <div className={styles.search}>
           <div>
-            <img src="/searchw.png" />
+            <img alt="tease africa" src="/searchw.png" />
             <input
               onChange={(e) => {
                 setquery(e.target.value);
@@ -123,6 +129,7 @@ export default function StatID({ data }) {
                   <div className={styles2.tableitems}>
                     <div className={styles2.one}>
                       <img
+                        alt="tease africa"
                         src={item?.imageURL ? item?.imageURL : "/photo.png"}
                       />
                       <div className={styles2.oneitem}>
@@ -151,7 +158,11 @@ export default function StatID({ data }) {
           </div>
         ) : (
           <div className={styles.emptycon}>
-            <img src="/empty.png" className={styles.emptyimg} />
+            <img
+              alt="tease africa"
+              src="/empty.png"
+              className={styles.emptyimg}
+            />
             <text className={styles.empty}>No Nominees Available</text>
           </div>
         )}

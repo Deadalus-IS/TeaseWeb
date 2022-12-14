@@ -95,9 +95,9 @@ export default function Home({ data }) {
             </div>
             <div className={styles.imgs}>
               {/* <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img src="/playstore.png" className={styles.app1} alt="android" />
+              <img alt="tease africa" src="/playstore.png" className={styles.app1} alt="android" />
             </Link> */}
-              {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
+              {/* <img alt="tease africa" src="/ios.png" className={styles.app} alt="ios" /> */}
               <Link href="/login">
                 <div className={styles.sell}>Get Started</div>
               </Link>
@@ -115,7 +115,11 @@ export default function Home({ data }) {
                     return (
                       <Link href={"/" + item.slug}>
                         <div key={item?.id} className={styles.lstory}>
-                          <img src={item.imageURL} className={styles.image} />
+                          <img
+                            alt="tease africa"
+                            src={item.imageURL}
+                            className={styles.image}
+                          />
                           <div className={styles.lstoryoverlay}>
                             <div className={styles.date}>
                               <text className={styles.dateh2}>
@@ -150,6 +154,7 @@ export default function Home({ data }) {
                       <Link href={"/" + item.slug}>
                         <div key={item?.id} className={styles.lstory}>
                           <img
+                            alt="tease africa"
                             src={item.imageURL}
                             className={styles.image}
                             alt="event-image"
@@ -188,6 +193,7 @@ export default function Home({ data }) {
                       <Link href={"/" + item.slug}>
                         <div key={item?.id} className={styles.lstory}>
                           <img
+                            alt="tease africa"
                             src={item.imageURL}
                             className={styles.image}
                             alt="event-image"
@@ -249,9 +255,14 @@ export default function Home({ data }) {
           )}
           <div className={styles.dimgs}>
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img src="/playstore.png" className={styles.app1} alt="android" />
+              <img
+                alt="tease africa"
+                src="/playstore.png"
+                className={styles.app1}
+                alt="android"
+              />
             </Link>
-            {/* <img src="/ios.png" className={styles.app} alt="ios" /> */}
+            {/* <img alt="tease africa" src="/ios.png" className={styles.app} alt="ios" /> */}
           </div>
         </main>
         <main className={styles.main2}>
@@ -268,6 +279,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -282,6 +294,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -296,6 +309,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -312,6 +326,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -326,6 +341,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -340,6 +356,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -356,6 +373,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -370,6 +388,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"
@@ -384,6 +403,7 @@ export default function Home({ data }) {
             <div className={styles.point}>
               <div className={styles.head}>
                 <img
+                  alt="tease africa"
                   src="/mark.png"
                   className={styles.check}
                   alt="event-image"

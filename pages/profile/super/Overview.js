@@ -58,14 +58,14 @@ export default function Overview() {
       <div className={styles.hlist}>
         <div className={styles.hlistitem}>
           <div>
-            <img src="/poll.png" />
+            <img alt="tease africa" src="/poll.png" />
             <text className={styles.hlistitemtext}>Polls</text>
           </div>
           <text className={styles.hlistitemtext1}>{polls?.length}</text>
         </div>
         <div className={styles.hlistitem}>
           <div>
-            <img src="/badge.png" />
+            <img alt="tease africa" src="/badge.png" />
             <text className={styles.hlistitemtext}>Total Votes</text>
           </div>
           <text className={styles.hlistitemtext1}>
@@ -74,7 +74,7 @@ export default function Overview() {
         </div>
         <div className={styles.hlistitem}>
           <div>
-            <img src="/users.png" />
+            <img alt="tease africa" src="/users.png" />
             <text className={styles.hlistitemtext}>Nominees</text>
           </div>
           <text className={styles.hlistitemtext1}>~</text>
@@ -108,7 +108,10 @@ export default function Overview() {
             return (
               <div className={styles.tableitems}>
                 <div className={styles.one}>
-                  <img src={item?.imageURL ? item?.imageURL : "/photo.png"} />
+                  <img
+                    alt="tease africa"
+                    src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                  />
                   <div className={styles.oneitem}>
                     <text className={styles.eventname}>{item?.name}</text>
                     <text className={styles.eventdate}></text>
@@ -144,7 +147,7 @@ export default function Overview() {
         <div className={styles.sales}>
           {/* No events, create a new event */}
           <div className={styles.info}>
-            <img src="/emptyf.png" />
+            <img alt="tease africa" src="/emptyf.png" />
             <text className={styles.infotxt}>
               No Polls in the system right now.
             </text>

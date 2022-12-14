@@ -42,13 +42,19 @@ export default function Home({ data }) {
       <main className={styles.main}>
         <div className={styles.nav}>
           <Link href="/">
-            <img data-aos="zoom-in" src="/logow.png" className={styles.logo} />
+            <img
+              alt="tease africa"
+              data-aos="zoom-in"
+              src="/logow.png"
+              className={styles.logo}
+            />
           </Link>
 
           <div className={styles.navlinks}>
             {/* <text className={styles.navitem}>Download</text> */}
           </div>
           <img
+            alt="tease africa"
             onClick={() => {
               document.getElementById("sidemenu").style.left = "0";
             }}
@@ -71,7 +77,7 @@ export default function Home({ data }) {
       <main className={styles.main2}>
         <div className={styles.search}>
           <div>
-            <img src="/searchw.png" />
+            <img alt="tease africa" src="/searchw.png" />
             <input
               onChange={(e) => {
                 setquery(e.target.value);
@@ -112,7 +118,7 @@ export default function Home({ data }) {
                       }}
                       className={styles.point}
                     >
-                      {/* <img src={item.imageURL} /> */}
+                      {/* <img alt="tease africa" src={item.imageURL} /> */}
                       <div className={styles.head}>
                         <text className={styles.h2}>{item.date.day}</text>
                         <text className={styles.text}>
@@ -132,7 +138,11 @@ export default function Home({ data }) {
               })
           ) : (
             <div className={styles.emptycon}>
-              <img src="/empty.png" className={styles.emptyimg} />
+              <img
+                alt="tease africa"
+                src="/empty.png"
+                className={styles.emptyimg}
+              />
               <text className={styles.empty}>No Events Available</text>
             </div>
           )}

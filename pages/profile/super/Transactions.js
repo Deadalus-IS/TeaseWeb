@@ -80,7 +80,10 @@ export default function Transactions() {
             return (
               <div className={styles.tableitems}>
                 <div className={styles.one}>
-                  <img src={item?.imageURL ? item?.imageURL : "/photo.png"} />
+                  <img
+                    alt="tease africa"
+                    src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                  />
                   <div className={styles.oneitem}>
                     <text className={styles.eventname}>{item?.poll?.name}</text>
                     <text className={styles.eventdate}>
@@ -120,7 +123,7 @@ export default function Transactions() {
         <div className={styles.sales}>
           {/* No events, create a new event */}
           <div className={styles.info}>
-            <img src="/emptyf.png" />
+            <img alt="tease africa" src="/emptyf.png" />
             <text className={styles.infotxt}>No Transactions</text>
           </div>
         </div>

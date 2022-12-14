@@ -120,7 +120,12 @@ export default function Create() {
       <Headd title="Dashboard" />
       <div className={styles.nav}>
         <Link href="/">
-          <img data-aos="zoom-in" src="/logob.png" className={styles.logo} />
+          <img
+            alt="tease africa"
+            data-aos="zoom-in"
+            src="/logob.png"
+            className={styles.logo}
+          />
         </Link>
         <div className={styles.navlinks}>
           {userContext?.name ? (
@@ -134,7 +139,7 @@ export default function Create() {
           )}
         </div>
         <Link href="/">
-          <img src="/back.png" className={styles.menu} />
+          <img alt="tease africa" src="/back.png" className={styles.menu} />
         </Link>
       </div>
 
@@ -291,6 +296,7 @@ export default function Create() {
             <div className={styles.head}>
               <text className={styles.text}>Event Time & Date</text>
               <img
+                alt="tease africa"
                 onClick={() => {
                   setpage(page - 1);
                 }}
@@ -349,6 +355,7 @@ export default function Create() {
             <div className={styles.head}>
               <text className={styles.text}>Cover Image & URL</text>
               <img
+                alt="tease africa"
                 onClick={() => {
                   setpage(page - 1);
                 }}
@@ -373,7 +380,7 @@ export default function Create() {
               {progress < 100 && progress > 0 ? (
                 <Spinner size={30} />
               ) : image ? (
-                <img src={image} className={styles.upimg} />
+                <img alt="tease africa" src={image} className={styles.upimg} />
               ) : null}
             </div>
             <text className={styles.label1}>
@@ -431,6 +438,7 @@ export default function Create() {
             <div className={styles.head}>
               <text className={styles.text}>Add Tickets</text>
               <img
+                alt="tease africa"
                 onClick={() => {
                   setpage(page - 1);
                 }}
@@ -487,6 +495,7 @@ export default function Create() {
                     </div>
 
                     <img
+                      alt="tease africa"
                       src="/close.png"
                       alt="remove"
                       className={styles.removeticket}
