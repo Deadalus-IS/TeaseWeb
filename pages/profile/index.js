@@ -108,7 +108,7 @@ export default function Profile() {
   return (
     <DashboardLayout sidebar={false}>
       <main className={styles.main}>
-        <Alert
+        {/* <Alert
           marginBottom={30}
           intent="warning"
           title="This is a Beta version for Event Ticketing"
@@ -116,7 +116,7 @@ export default function Profile() {
           Please note that Our Event Ticketing Platform is currently in Beta.
           Somethings may not work as expected. Please give us feedback on what
           should be improved on teaseafrica@gmail.com
-        </Alert>
+        </Alert> */}
 
         <div className={styles.top}>
           <text className={styles.toptxt1}>Hello {userContext?.name}</text>

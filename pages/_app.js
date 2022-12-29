@@ -100,7 +100,7 @@ function MyApp({ Component, pageProps }) {
     <UserContext.Provider value={{ userContext, setuserContext }}>
       <div>
         <Component {...pageProps} />
-        {path.includes("profile") ? (
+        {/* {path.includes("profile") ? (
           <main className={styles.body2}>
             <img
               alt="tease africa"
@@ -111,7 +111,7 @@ function MyApp({ Component, pageProps }) {
               {`Sorry! You can't use the Dashboard on a mobile phone, \npleasechange to desktop view or use a larger display`}
             </text>
           </main>
-        ) : null}
+        ) : null} */}
 
         <FloatingWhatsApp
           phoneNumber="+233593152134"
