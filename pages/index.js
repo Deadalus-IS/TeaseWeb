@@ -101,8 +101,11 @@ export default function Home({ data }) {
               <Link href="/login">
                 <div className={styles.sell}>Get Started</div>
               </Link>
-              <Link href="/discover">
+              {/* <Link href="/discover">
                 <div className={styles.sell2}>Discover</div>
+              </Link> */}
+              <Link href="/vote">
+                <div className={styles.sell2}>Vote</div>
               </Link>
             </div>
           </div>

@@ -11,6 +11,7 @@ import { toaster, Spinner } from "evergreen-ui";
 export default function CreatePoll() {
   // Page 1
   const [name, setname] = useState("");
+  const [initials, setinitials] = useState("");
   const [about, setabout] = useState("");
 
   // Page 2
@@ -78,6 +79,17 @@ export default function CreatePoll() {
                 setname(value.target.value);
               }}
               value={name}
+            />
+
+            <text className={styles.label}>Initials</text>
+            <input
+              className={styles.input1}
+              placeholder="Enter event initials"
+              onChange={(value) => {
+                setinitials(value.target.value);
+              }}
+              value={initials}
+              maxLength={2}
             />
 
             <text className={styles.label}>About</text>
@@ -243,6 +255,7 @@ export default function CreatePoll() {
                     categories: categories,
                     costPerVote: voteprice,
                     // approved: false,
+                    initials: initials.toUpperCase(),
                   };
 
                   // console.log(payload);

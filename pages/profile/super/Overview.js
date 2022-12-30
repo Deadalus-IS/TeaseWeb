@@ -120,13 +120,13 @@ export default function Overview() {
                 <div className={styles.two}>
                   <text
                     style={{
-                      backgroundColor: item?.available
+                      backgroundColor: item?.avaliable
                         ? "#4beb88bb"
                         : "#eb4b76bb",
                     }}
                     className={styles.pollstatus}
                   >
-                    {item?.available ? "ACTIVE" : "CLOSED"}
+                    {item?.avaliable ? "ACTIVE" : "CLOSED"}
                   </text>
                 </div>
                 <div className={styles.three}>
