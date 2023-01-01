@@ -62,6 +62,34 @@ export default function DashboardLayout({ children, sidebar = true }) {
               <text>Voting</text>
             </div>
           </Link>
+          <Link href="/profile/sms">
+            <div
+              className={`${
+                pathname.includes("/profile/sms")
+                  ? styles.menuitem
+                  : styles.menuitem2
+              }`}
+            >
+              {pathname.includes("/profile/sms") ? (
+                <img
+                  style={{
+                    transform: "scale(1.3)",
+                  }}
+                  alt="tease africa"
+                  src="/chatting.png"
+                />
+              ) : (
+                <img
+                  style={{
+                    transform: "scale(1.3)",
+                  }}
+                  alt="tease africa"
+                  src="/chatting2.png"
+                />
+              )}
+              <text>SMS</text>
+            </div>
+          </Link>
           {userContext?.admin ? (
             <Link href="/profile/super">
               <div
