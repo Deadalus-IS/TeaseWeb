@@ -161,35 +161,37 @@ export default function PollID({ data }) {
               <text className={styles.four}>Share Code</text>
             </div>
 
-            {events.map((item, index) => {
-              return (
-                <div className={styles.tableitems}>
-                  <div className={styles.one}>
-                    <img
-                      alt="tease africa"
-                      src={item?.imageURL ? item?.imageURL : "/photo.png"}
-                    />
-                    <div className={styles.oneitem}>
-                      <text className={styles.eventname}>{item?.name}</text>
-                      <text className={styles.eventdate}></text>
+            {events
+              .sort((a, b) => b.votes - a.votes)
+              .map((item, index) => {
+                return (
+                  <div className={styles.tableitems}>
+                    <div className={styles.one}>
+                      <img
+                        alt="tease africa"
+                        src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                      />
+                      <div className={styles.oneitem}>
+                        <text className={styles.eventname}>{item?.name}</text>
+                        <text className={styles.eventdate}></text>
+                      </div>
+                    </div>
+                    <div className={styles.two}>
+                      <text className={styles.eventname}>{item?.category}</text>
+                    </div>
+                    <div className={styles.three}>
+                      <text className={styles.eventsold}>{item?.votes}</text>
+                    </div>
+                    <div className={styles.four}>
+                      <Link href={`/vote/${item?.code}`}>
+                        <div onClick={() => {}} className={styles.fouritem}>
+                          {item?.code}
+                        </div>
+                      </Link>
                     </div>
                   </div>
-                  <div className={styles.two}>
-                    <text className={styles.eventname}>{item?.category}</text>
-                  </div>
-                  <div className={styles.three}>
-                    <text className={styles.eventsold}>{item?.votes}</text>
-                  </div>
-                  <div className={styles.four}>
-                    <Link href={`/vote/${item?.code}`}>
-                      <div onClick={() => {}} className={styles.fouritem}>
-                        {item?.code}
-                      </div>
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         ) : (
           <div className={styles.sales}>
