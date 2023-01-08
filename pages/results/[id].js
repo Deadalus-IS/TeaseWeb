@@ -35,7 +35,7 @@ export default function StatID({ data }) {
     const useRes = JSON.parse(res);
     // setuserContext(useRes);
 
-    if (userContext) {
+    if (true) {
       let response = await func.getNomineesBy({
         id: poll?.id,
       });

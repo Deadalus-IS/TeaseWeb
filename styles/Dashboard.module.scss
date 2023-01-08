@@ -365,7 +365,6 @@ $vw-viewport: 1920;
   font-weight: bold;
   color: black;
 }
-
 .fouritem {
   width: 100%;
   height: get-vw(50px);
@@ -434,7 +433,7 @@ $vw-viewport: 1920;
   margin-bottom: get-vw(20px);
 }
 .infobtn {
-  width: get-vw(200px);
+  min-width: get-vw(100px);
   height: get-vw(60px);
   border-radius: get-vw(50px);
   background-color: #0155ef;
@@ -446,6 +445,7 @@ $vw-viewport: 1920;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
+  padding: 0 get-vw(20px);
 }
 .dialogcon {
   width: 100%;
@@ -549,4 +549,9 @@ $vw-viewport: 1920;
 .transactionimg img {
   width: get-vw(40px);
   height: get-vw(40px);
+}
+.menud {
+  width: get-vw(40px);
+  height: get-vw(40px);
+  margin: 0 get-vw(-20px);
 }

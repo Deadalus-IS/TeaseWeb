@@ -39,7 +39,7 @@ export default function Nav({ data }) {
           {/* <Link href="/signup">
             <div className={styles.sell3}>Contact Us</div>
           </Link> */}
-          <Link href="/stats">
+          <Link href="/results">
             <div className={styles.sell3}>Results</div>
           </Link>
           <Link href="/profile">

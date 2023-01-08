@@ -83,7 +83,7 @@ export default function Profile() {
               {polls.reduce((n, a) => n + (a.totalVotes || 0), 0)}
             </text>
           </div>
-          <Link href="/stats">
+          <Link href="/results">
             <div className={styles.hlistitem}>
               <div>
                 <img alt="tease africa" src="/pie-chart.png" />

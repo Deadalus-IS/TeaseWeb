@@ -35,7 +35,7 @@ export default function SideNav() {
         <Link href="/discover">
           <text className={styles.link}>Discover</text>
         </Link>
-        <Link href="/stats">
+        <Link href="/results">
           <text className={styles.link}>Results</text>
         </Link>
         <Link href="/vote">

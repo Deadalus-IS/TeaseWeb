@@ -96,7 +96,7 @@ export default function Stat({ data }) {
               })
               .map((item) => {
                 return (
-                  <Link href={"/stats/" + item?.slug}>
+                  <Link href={"/results/" + item?.slug}>
                     <div
                       onClick={() => {
                         gtag.event({

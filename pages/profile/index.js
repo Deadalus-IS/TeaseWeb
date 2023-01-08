@@ -187,7 +187,7 @@ export default function Profile() {
                       </text>
                     </div>
                   </div>
-                  <Link href="/stats">
+                  <Link href="/results">
                     <div className={styles.two}>
                       <text
                         style={{

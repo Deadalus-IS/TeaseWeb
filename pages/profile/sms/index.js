@@ -148,7 +148,7 @@ export default function SMS() {
               {polls.reduce((n, a) => n + (a.recipients.length || 0), 0) * 0.03}
             </text>
           </div>
-          <Link href="/stats">
+          <Link href="/results">
             <div className={styles.hlistitem}>
               <div>
                 <img alt="tease africa" src="/pie-chart.png" />
@@ -195,7 +195,9 @@ export default function SMS() {
                   <div className={styles.one}>
                     <div className={styles.oneitem}>
                       <text className={styles.eventname}>
-                        {item?.recipients[0]},...
+                        {item?.recipients.length > 1
+                          ? item?.recipients.length + " contacts"
+                          : item?.recipients[0]}
                       </text>
                     </div>
                   </div>

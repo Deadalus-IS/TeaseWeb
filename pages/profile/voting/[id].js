@@ -4,19 +4,27 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import func from "../../../functions";
 import { UserContext } from "../../../context";
-import dynamic from "next/dynamic";
 import {
+  Button,
+  CircleArrowRightIcon,
   Dialog,
+  EditIcon,
   FileCard,
   FileUploader,
+  Menu,
+  Pane,
+  PeopleIcon,
+  Popover,
+  Position,
+  PowerIcon,
   TextInputField,
+  TimelineBarChartIcon,
+  TrashIcon,
   toaster,
 } from "evergreen-ui";
 import DashboardLayout from "../../../components/DashboardLayout";
 import Link from "next/link";
-const DChart = dynamic(() => import("../../../components/Graph"), {
-  ssr: false,
-});
+
 import { useRouter } from "next/router";
 import Transactions from "../../../components/Transactions";
 
@@ -48,7 +56,6 @@ export default function PollID({ data }) {
   }, []);
 
   // console.log(data);
-
   let poll = data ? data?.poll : {};
 
   useEffect(async () => {
@@ -60,7 +67,7 @@ export default function PollID({ data }) {
       let response = await func.getNomineesBy({
         id: poll?.id,
       });
-      // console.log(response);
+      console.log(response);
       if (response.status) {
         setevents(response.nominees ? response.nominees : []);
       } else {
@@ -150,8 +157,56 @@ export default function PollID({ data }) {
           <div className={styles.sales}>
             <div className={styles.graph}>
               <text>Your Nominees</text>
-              <div onClick={() => setIsShown(true)} className={styles.infobtn}>
-                Add Nominee
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  onClick={() => setIsShown(true)}
+                  className={styles.infobtn}
+                  style={{
+                    marginRight: 10,
+                  }}
+                >
+                  Add Nominee
+                </div>
+                <Popover
+                  content={
+                    <Menu>
+                      <Menu.Group>
+                        <Menu.Item
+                          icon={TimelineBarChartIcon}
+                          secondaryText="On"
+                        >
+                          Show Results
+                        </Menu.Item>
+                        <Menu.Item disabled icon={EditIcon}>
+                          Edit
+                        </Menu.Item>
+                      </Menu.Group>
+                      <Menu.Divider />
+                      <Menu.Group>
+                        <Menu.Item icon={PowerIcon} intent="danger">
+                          Stop Event
+                        </Menu.Item>
+                        <Menu.Item disabled icon={TrashIcon} intent="danger">
+                          Delete...
+                        </Menu.Item>
+                      </Menu.Group>
+                    </Menu>
+                  }
+                  position={Position.BOTTOM_RIGHT}
+                >
+                  <div
+                    onClick={() => setIsShown(true)}
+                    className={styles.infobtn}
+                  >
+                    <img src="/menud.png" className={styles.menud} />
+                  </div>
+                </Popover>
               </div>
             </div>
             <div className={styles.table}>
