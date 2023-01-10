@@ -100,7 +100,7 @@ export default function PollID({ data }) {
       status: false,
       id: poll?.id,
       timestamp: String(Date.now()),
-      amount: poll?.balance,
+      amount: Number(poll?.balance - 0.1 * poll?.balance).toFixed(2),
       poll: poll,
     });
     // console.log(response);
@@ -134,7 +134,9 @@ export default function PollID({ data }) {
               <text className={styles.hlistitemtext}>Revenue</text>
             </div>
             <text className={styles.hlistitemtext1}>
-              GHS {Number(poll?.balance).toFixed(2)}
+              GHS{" "}
+              {Number(poll?.totalVotes).toFixed(2) *
+                Number(poll?.costPerVote).toFixed(2)}
             </text>
           </div>
           <div className={styles.hlistitem}>
@@ -272,10 +274,21 @@ export default function PollID({ data }) {
         </div>
 
         <div className={styles.card}>
-          <text className={styles.cardtitle}>Balance</text>
-          <text className={styles.balance}>
-            GHS {Number(poll?.balance).toFixed(2)}
-          </text>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+            }}
+          >
+            <text className={styles.cardtitle}>Withdrawable Balance</text>
+            <text className={styles.balance}>
+              GHS {Number(poll?.balance - 0.1 * poll?.balance).toFixed(2)}
+            </text>
+            <text className={styles.cardtitle2}>
+              Actual Bal: GHS {Number(poll?.balance).toFixed(2)}
+            </text>
+          </div>
 
           <div
             onClick={() => setisShownWithdraw(true)}
