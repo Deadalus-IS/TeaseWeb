@@ -91,6 +91,7 @@ export default function Stat({ data }) {
             polls
               .filter((item) => {
                 return (
+                  item?.showresults == true &&
                   item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
                 );
               })

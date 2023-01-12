@@ -333,6 +333,30 @@ const func = {
 
     return response.json();
   },
+  showResults: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/showResults", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+  stopEvent: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/stopEvent", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
 };
 
 export default func;

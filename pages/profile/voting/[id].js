@@ -55,7 +55,7 @@ export default function PollID({ data }) {
     setFileRejections([]);
   }, []);
 
-  // console.log(data);
+  console.log(data);
   let poll = data ? data?.poll : {};
 
   useEffect(async () => {
@@ -181,9 +181,22 @@ export default function PollID({ data }) {
                       <Menu.Group>
                         <Menu.Item
                           icon={TimelineBarChartIcon}
-                          secondaryText="On"
+                          secondaryText={poll?.showresults ? "On" : "Off"}
+                          onClick={async () => {
+                            let response = await func.showResults(poll);
+                            console.log(response);
+                            if (response.status) {
+                              location.reload();
+                            } else {
+                              toaster.danger(
+                                "Something went wrong, Please try again"
+                              );
+                            }
+                          }}
                         >
-                          Show Results
+                          {poll?.showresults
+                            ? " Hide Results"
+                            : " Show Results"}
                         </Menu.Item>
                         <Menu.Item disabled icon={EditIcon}>
                           Edit
@@ -191,8 +204,22 @@ export default function PollID({ data }) {
                       </Menu.Group>
                       <Menu.Divider />
                       <Menu.Group>
-                        <Menu.Item icon={PowerIcon} intent="danger">
-                          Stop Event
+                        <Menu.Item
+                          icon={PowerIcon}
+                          intent={poll?.avaliable ? "danger" : "success"}
+                          onClick={async () => {
+                            let response = await func.stopEvent(poll);
+                            console.log(response);
+                            if (response.status) {
+                              location.reload();
+                            } else {
+                              toaster.danger(
+                                "Something went wrong, Please try again"
+                              );
+                            }
+                          }}
+                        >
+                          {poll?.avaliable ? " Stop Event" : " Resume Event"}
                         </Menu.Item>
                         <Menu.Item disabled icon={TrashIcon} intent="danger">
                           Delete...

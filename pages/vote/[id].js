@@ -73,47 +73,52 @@ export default function Vote({ data }) {
 
         {/* <text className={styles.h2}>General</text> */}
         <text className={styles.text}></text>
-        <div className={stylesid.modal}>
-          <text className={stylesid.about}>
-            Cast Vote ({poll?.costPerVote}GHC per vote)
-          </text>
 
-          <input
-            className={stylesid.input1}
-            placeholder="Number of Votes"
-            onChange={(value) => {
-              setNumOfVotes(value.target.value);
-            }}
-            type="number"
-          />
-          <input
-            className={stylesid.input1}
-            placeholder="Your email"
-            type="email"
-            onChange={(value) => {
-              setphoneNumber(value.target.value);
-            }}
-          />
+        {poll?.avaliable ? (
+          <div className={stylesid.modal}>
+            <text className={stylesid.about}>
+              Cast Vote ({poll?.costPerVote}GHC per vote)
+            </text>
 
-          <div onClick={handleVote} className={stylesid.buy}>
-            {loading ? "Loading..." : "Vote"}
+            <input
+              className={stylesid.input1}
+              placeholder="Number of Votes"
+              onChange={(value) => {
+                setNumOfVotes(value.target.value);
+              }}
+              type="number"
+            />
+            <input
+              className={stylesid.input1}
+              placeholder="Your email"
+              type="email"
+              onChange={(value) => {
+                setphoneNumber(value.target.value);
+              }}
+            />
+
+            <div onClick={handleVote} className={stylesid.buy}>
+              {loading ? "Loading..." : "Vote"}
+            </div>
+
+            <text className={stylesid.head}>
+              Payment Secured by <strong>Paystack</strong>{" "}
+            </text>
+            <div className={styles.nav}>
+              <text className={styles.text}>Powered by:</text>
+              <Link href="/">
+                <img
+                  alt="tease africa"
+                  data-aos="zoom-in"
+                  src="/logob.png"
+                  className={styles.logo}
+                />
+              </Link>
+            </div>
           </div>
-
-          <text className={stylesid.head}>
-            Payment Secured by <strong>Paystack</strong>{" "}
-          </text>
-          <div className={styles.nav}>
-            <text className={styles.text}>Powered by:</text>
-            <Link href="/">
-              <img
-                alt="tease africa"
-                data-aos="zoom-in"
-                src="/logob.png"
-                className={styles.logo}
-              />
-            </Link>
-          </div>
-        </div>
+        ) : (
+          <text className={styles.text2}>This event is closed</text>
+        )}
       </main>
 
       <Footer styles={styles} />
