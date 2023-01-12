@@ -100,7 +100,7 @@ export default function PollID({ data }) {
       status: false,
       id: poll?.id,
       timestamp: String(Date.now()),
-      amount: Number(poll?.balance - 0.1 * poll?.balance).toFixed(2),
+      amount: Number(poll?.balance - poll?.balance * 0.1).toFixed(2),
       poll: poll,
     });
     // console.log(response);
@@ -310,7 +310,7 @@ export default function PollID({ data }) {
           >
             <text className={styles.cardtitle}>Withdrawable Balance</text>
             <text className={styles.balance}>
-              GHS {Number(poll?.balance - 0.1 * poll?.balance).toFixed(2)}
+              GHS {Number(poll?.balance - poll?.balance * 0.1).toFixed(2)}
             </text>
             <text className={styles.cardtitle2}>
               Actual Bal: GHS {Number(poll?.balance).toFixed(2)}
