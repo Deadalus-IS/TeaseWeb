@@ -40,9 +40,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               )}
               <text>
                 Events{" "}
-                <Badge color="yellow" marginRight={8}>
+                {/* <Badge color="yellow" marginRight={8}>
                   BETA
-                </Badge>
+                </Badge> */}
               </text>
             </div>
           </Link>
