@@ -91,6 +91,7 @@ export default function PollID({ data }) {
       return;
     }
     setloading(true);
+    // commit
     let response = await func.voteWithdraw({
       bank: bank,
       name: name,
