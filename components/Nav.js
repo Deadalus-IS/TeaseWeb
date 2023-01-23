@@ -87,6 +87,9 @@ export default function Nav({ data }) {
         </div>
       ) : (
         <div className={styles.rightbtn}>
+          <Link href="/results">
+            <div className={styles.sell3}>Results</div>
+          </Link>
           <Link href="/signup">
             <div className={styles.sell2}>Sign up</div>
           </Link>
