@@ -18,7 +18,7 @@ export default function Footer({ styles = styles2, ligth }) {
           tickets for any type of event - All for free.
           <br />
           <br />
-          &copy; Tease Africa 2022
+          &copy; Tease Africa 2023
           <br />
           Deadalus Intelligence & Systems
           <br />
@@ -64,8 +64,8 @@ export default function Footer({ styles = styles2, ligth }) {
         <Link href="mailto:teaseafrica@gmail.com">
           <text className={styles.link}>teaseafrica@gmail.com</text>
         </Link>
-        <Link href="tel:+233208589528">
-          <text className={styles.link}>+233208589528</text>
+        <Link href="tel:+233504277427">
+          <text className={styles.link}>+233504277427</text>
         </Link>
         {ligth ? (
           <div className={styles.socials}>
@@ -78,7 +78,7 @@ export default function Footer({ styles = styles2, ligth }) {
             <Link href="https://www.instagram.com/teaseafrica/">
               <img alt="tease africa" src="/ig2.png" className={styles.soc} />
             </Link>
-            <img alt="tease africa" style={{ width: 30, height: 0 }} />
+            {/* <img alt="tease africa" style={{ width: 30, height: 0 }} /> */}
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
               <img
                 alt="tease africa"
@@ -101,7 +101,7 @@ export default function Footer({ styles = styles2, ligth }) {
             <Link href="https://www.instagram.com/teaseafrica/">
               <img alt="tease africa" src="/ig.png" className={styles.soc} />
             </Link>
-            <img alt="tease africa" style={{ width: 30, height: 0 }} />
+            {/* <img alt="tease africa" style={{ width: 30, height: 0 }} /> */}
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
               <img
                 alt="tease africa"

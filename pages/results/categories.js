@@ -12,7 +12,6 @@ import "aos/dist/aos.css";
 
 export default function Stat({ data }) {
   const router = useRouter();
-  const { id } = router.query;
   console.log(data);
   const [query, setquery] = useState("");
   useEffect(() => {
@@ -106,7 +105,7 @@ export default function Stat({ data }) {
                     key={item.id}
                     style={{
                       background: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.9)), url(${
-                        item.imageURL ? item.imageURL : "/img.png"
+                        item.coverImage ? item.coverImage : "/img.png"
                       })`,
                       backgroundSize: "100%",
                       backgroundRepeat: "no-repeat",

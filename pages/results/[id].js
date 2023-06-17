@@ -142,7 +142,7 @@ export default function StatID({ data }) {
                     <div className={styles2.one}>
                       <img
                         alt="tease africa"
-                        src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                        src={item?.coverImage ? item?.coverImage : "/photo.png"}
                       />
                       <div className={styles2.oneitem}>
                         <text className={styles2.eventname}>{item?.name}</text>

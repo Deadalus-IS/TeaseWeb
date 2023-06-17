@@ -177,7 +177,7 @@ export default function Profile() {
               return (
                 <div className={styles.tableitems}>
                   <div className={styles.one}>
-                    <img alt="tease africa" src={item?.imageURL} />
+                    <img alt="tease africa" src={item?.coverImage} />
                     <div className={styles.oneitem}>
                       <text className={styles.eventname}>{item?.name}</text>
                       <text className={styles.eventdate}>

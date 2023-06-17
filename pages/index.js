@@ -120,7 +120,7 @@ export default function Home({ data }) {
                         <div key={item?.id} className={styles.lstory}>
                           <img
                             alt="tease africa"
-                            src={item.imageURL}
+                            src={item.coverImage}
                             className={styles.image}
                           />
                           <div className={styles.lstoryoverlay}>
@@ -158,7 +158,7 @@ export default function Home({ data }) {
                         <div key={item?.id} className={styles.lstory}>
                           <img
                             alt="tease africa"
-                            src={item.imageURL}
+                            src={item.coverImage}
                             className={styles.image}
                             alt="event-image"
                           />
@@ -197,7 +197,7 @@ export default function Home({ data }) {
                         <div key={item?.id} className={styles.lstory}>
                           <img
                             alt="tease africa"
-                            src={item.imageURL}
+                            src={item.coverImage}
                             className={styles.image}
                             alt="event-image"
                           />

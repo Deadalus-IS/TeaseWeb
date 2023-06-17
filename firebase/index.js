@@ -11,9 +11,10 @@ var firebaseConfig = {
   measurementId: "G-183MJ7TVPR",
 };
 
+let fapp = initializeApp(firebaseConfig);
+
 if (getApps.length == 0) {
-  initializeApp(firebaseConfig);
+  fapp = initializeApp(firebaseConfig);
 }
 
-const fauth = getAuth();
-export default fauth;
+export default fapp;

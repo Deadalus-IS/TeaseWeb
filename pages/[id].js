@@ -53,7 +53,7 @@ export default function Home(data) {
     <div className={styles.container}>
       <Head
         title={"Buy tickets for" + event.name + " | Tease"}
-        image={event.imageURL}
+        image={event.coverImage}
       />
 
       <div className={styles.top}>
@@ -90,13 +90,13 @@ export default function Home(data) {
           <img
             alt="tease africa"
             data-aos="zoom-in"
-            src={event.imageURL}
+            src={event.coverImage}
             className={styles.imagebg}
           />
           <img
             alt="tease africa"
             // data-aos="zoom-in"
-            src={event.imageURL}
+            src={event.coverImage}
             className={styles.image}
           />
           <div className={styles.overlay} />
@@ -348,7 +348,7 @@ export default function Home(data) {
                 setmodal(false);
               }}
               className={styles.imgm}
-              src={event.imageURL}
+              src={event.coverImage}
             />
           </div>
         </div>

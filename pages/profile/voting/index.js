@@ -130,7 +130,7 @@ export default function Profile() {
                   <div className={styles.one}>
                     <img
                       alt="tease africa"
-                      src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                      src={item?.coverImage ? item?.coverImage : "/photo.png"}
                     />
                     <div className={styles.oneitem}>
                       <text className={styles.eventname}>{item?.name}</text>

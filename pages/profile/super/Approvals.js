@@ -5,7 +5,12 @@ import "aos/dist/aos.css";
 import func from "../../../functions";
 import { UserContext } from "../../../context";
 import dynamic from "next/dynamic";
-import { SegmentedControl, toaster } from "evergreen-ui";
+import {
+  Dialog,
+  SegmentedControl,
+  TextInputField,
+  toaster,
+} from "evergreen-ui";
 import DashboardLayout from "../../../components/DashboardLayout";
 import Link from "next/link";
 import Head from "../../../components/Head";
@@ -18,6 +23,36 @@ export default function Approvals() {
   const [data, setdata] = useState([]);
   const [categories, setcategories] = useState([]);
   let { userContext, setuserContext } = useContext(UserContext);
+  const [isShownWithdraw, setisShownWithdraw] = useState(false);
+  const [bank, setbank] = useState("");
+  const [loading, setloading] = useState(false);
+  const [openEvent, setopenEvent] = useState("");
+
+  const handleWithdraw = async () => {
+    console.log({ id: openEvent, percentage: bank });
+    if (loading) {
+      return;
+    }
+    if (!name && !bank && !account) {
+      toaster.danger("Enter your details");
+      return;
+    }
+    setloading(true);
+    let response = await func.approveEvent({
+      id: openEvent,
+      percentage: parseInt(bank),
+    });
+    console.log(response);
+    if (response.status) {
+      toaster.success("Event Approved");
+      setisShownWithdraw(false);
+      setloading(false);
+      location.reload();
+    } else {
+      toaster.danger("Something went wrong, Please try again");
+      setloading(false);
+    }
+  };
 
   useEffect(async () => {
     let res = localStorage.getItem("user");
@@ -82,8 +117,8 @@ export default function Approvals() {
               <div className={styles.tableitems}>
                 <div className={styles.one}>
                   <img
-                    alt="tease africa"
-                    src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                    alt="citsa vote"
+                    src={item?.coverImage ? item?.coverImage : "/photo.png"}
                   />
                   <div className={styles.oneitem}>
                     <text className={styles.eventname}>{item?.name}</text>
@@ -106,11 +141,15 @@ export default function Approvals() {
                   <text className={styles.eventsold}>{item?.totalVotes}</text>
                 </div>
                 <div className={styles.four}>
-                  <Link href={`/profile/voting/${item?.id}`}>
-                    <div onClick={() => {}} className={styles.fouritem}>
-                      open
-                    </div>
-                  </Link>
+                  <div
+                    onClick={() => {
+                      setisShownWithdraw(true);
+                      setopenEvent(item?.id);
+                    }}
+                    className={styles.fouritem}
+                  >
+                    Approve
+                  </div>
                 </div>
               </div>
             );
@@ -120,11 +159,47 @@ export default function Approvals() {
         <div className={styles.sales}>
           {/* No events, create a new event */}
           <div className={styles.info}>
-            <img alt="tease africa" src="/emptyf.png" />
+            <img alt="citsa vote" src="/emptyf.png" />
             <text className={styles.infotxt}>No Polls for approval</text>
           </div>
         </div>
       )}
+
+      <Dialog
+        isShown={isShownWithdraw}
+        onCloseComplete={() => {
+          setisShownWithdraw(false);
+        }}
+        hasFooter={false}
+        hasHeader={false}
+        width="60%"
+      >
+        <div className={styles.dialogcon}>
+          <text className={styles.dialogtext}>Approve this event</text>
+          <text className={styles.dialogtext2}>
+            Set the percentage for this event and approve
+          </text>
+
+          <TextInputField
+            borderColor={"gray"}
+            borderWidth={0.4}
+            width="50vw"
+            label="Percentage"
+            required
+            description="Example: 10, 20, 30"
+            value={bank}
+            onChange={(e) => setbank(e.target.value)}
+            marginTop={20}
+            autoFocus={true}
+            type="number"
+          />
+
+          <text className={styles.dialogtext2}>*About to approve</text>
+          <div onClick={handleWithdraw} className={styles.infobtn2}>
+            {loading ? "Loading..." : "Approve"}
+          </div>
+        </div>
+      </Dialog>
     </>
   );
 }

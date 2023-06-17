@@ -357,6 +357,25 @@ const func = {
 
     return response.json();
   },
+  approveEvent: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/approveEvent", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    return response.json();
+  },
+  deletePoll: async (data = {}) => {
+    const response = await fetch(BASE_URL + "/deletePoll/" + data.id, {
+      method: "GET",
+    });
+
+    return response.json();
+  },
 };
 
 export default func;

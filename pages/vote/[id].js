@@ -10,6 +10,7 @@ import { UserContext } from "../../context";
 import func from "../../functions";
 import { useRouter } from "next/router";
 import { toaster } from "evergreen-ui";
+import { BASE_URL } from "../../config/api";
 
 export default function Vote({ data }) {
   let { userContext, setuserContext } = useContext(UserContext);
@@ -17,6 +18,8 @@ export default function Vote({ data }) {
   const [phoneNumber, setphoneNumber] = useState("");
   const [loading, setloading] = useState(false);
   const router = useRouter();
+
+  console.log(data);
 
   let nominee = data ? data?.nominee[0] : {};
   let poll = data ? data?.poll : {};
@@ -80,6 +83,11 @@ export default function Vote({ data }) {
               Cast Vote ({poll?.costPerVote}GHC per vote)
             </text>
 
+            <img
+              src={nominee.nomineeImage ? nominee.nomineeImage : "/photo.png"}
+              className={styles.nomineeImage}
+            />
+
             <input
               className={stylesid.input1}
               placeholder="Number of Votes"
@@ -128,7 +136,7 @@ export default function Vote({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch("https://tease-backend.onrender.com/api/getNominee", {
+  let res = await fetch(BASE_URL + "/getNominee", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

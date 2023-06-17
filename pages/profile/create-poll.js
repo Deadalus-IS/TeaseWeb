@@ -7,6 +7,13 @@ import func from "../../functions";
 import { UserContext } from "../../context";
 import { useRouter } from "next/router";
 import { toaster, Spinner } from "evergreen-ui";
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+import fapp from "../../firebase";
 
 export default function CreatePoll() {
   // Page 1
@@ -23,9 +30,75 @@ export default function CreatePoll() {
   const [loading, setloading] = useState(false);
   const [hidetix, sethidetix] = useState(false);
 
+  const [image, setimage] = useState(null);
+  const [isUploading, setisUploading] = useState(false);
+  const [upImage, setupImage] = useState(null);
+
+  const storage = getStorage(fapp);
+  const imagesRef = ref(storage, "tease");
+
   const [page, setpage] = useState(1);
   let { userContext, setuserContext } = useContext(UserContext);
   const router = useRouter();
+
+  useEffect(() => {
+    if (image) {
+      // Create the file metadata
+      /** @type {any} */
+      const metadata = {
+        contentType: "image/*",
+      };
+
+      // Upload file and metadata to the object 'images/mountains.jpg'
+      const storageRef = ref(storage, "tease/" + image.name);
+      const uploadTask = uploadBytesResumable(storageRef, image, metadata);
+
+      // Listen for state changes, errors, and completion of the upload.
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+          const progress =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log("Upload is " + progress + "% done");
+          switch (snapshot.state) {
+            case "paused":
+              console.log("Upload is paused");
+              break;
+            case "running":
+              console.log("Upload is running");
+              break;
+          }
+        },
+        (error) => {
+          // A full list of error codes is available at
+          // https://firebase.google.com/docs/storage/web/handle-errors
+          switch (error.code) {
+            case "storage/unauthorized":
+              // User doesn't have permission to access the object
+              break;
+            case "storage/canceled":
+              // User canceled the upload
+              break;
+
+            // ...
+
+            case "storage/unknown":
+              // Unknown error occurred, inspect error.serverResponse
+              break;
+          }
+        },
+        () => {
+          // Upload completed successfully, now we can get the download URL
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            console.log("File available at", downloadURL);
+            setupImage(downloadURL);
+            setimage(null);
+          });
+        }
+      );
+    }
+  }, [image]);
 
   useEffect(async () => {
     let res = await localStorage.getItem("user");
@@ -60,7 +133,7 @@ export default function CreatePoll() {
           )}
         </div>
         <Link href="/">
-          <img alt="tease africa" src="/back.png" className={styles.menu} />
+          <img alt="tease vote" src="/back.png" className={styles.menu} />
         </Link>
       </div>
 
@@ -70,6 +143,32 @@ export default function CreatePoll() {
         page == 1 ? (
           <>
             <text className={styles.text}>Poll Information</text>
+
+            <text className={styles.label}>Upload a cover image</text>
+            {image ? null : (
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(v) => {
+                  console.log(v.target.files[0]);
+                  setimage(v.target.files[0]);
+                }}
+              />
+            )}
+
+            {upImage ? (
+              <img
+                style={{
+                  objectFit: "cover",
+                }}
+                src={upImage}
+                className={styles.upimg}
+              />
+            ) : (
+              <div onClick={() => {}} className={styles.upimg}>
+                {image ? <Spinner /> : <img src="/imageupload.png" />}
+              </div>
+            )}
 
             <text className={styles.label}>Event Name</text>
             <input
@@ -142,7 +241,7 @@ export default function CreatePoll() {
 
             <div
               onClick={() => {
-                if (name && about && voteprice) {
+                if (name && about && voteprice && initials) {
                   setpage(2);
                 } else {
                   toaster.notify("Fill all fields");
@@ -158,7 +257,7 @@ export default function CreatePoll() {
             <div className={styles.head}>
               <text className={styles.text}>Add Categories</text>
               <img
-                alt="tease africa"
+                alt="tease vote"
                 onClick={() => {
                   setpage(page - 1);
                 }}
@@ -181,9 +280,8 @@ export default function CreatePoll() {
                     </div>
 
                     <img
-                      alt="tease africa"
+                      alt="tease vote"
                       src="/close.png"
-                      alt="remove"
                       className={styles.removeticket}
                       onClick={() => {
                         let arr = categories;
@@ -256,6 +354,7 @@ export default function CreatePoll() {
                     costPerVote: voteprice,
                     // approved: false,
                     initials: initials.toUpperCase(),
+                    coverImage: upImage ? upImage : null,
                   };
 
                   // console.log(payload);

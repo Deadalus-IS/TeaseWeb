@@ -113,12 +113,12 @@ export default function Home({ data }) {
                       }}
                       key={item.id}
                       style={{
-                        background: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.9)), url(${item.imageURL})`,
+                        background: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.9)), url(${item.coverImage})`,
                         backgroundSize: "cover",
                       }}
                       className={styles.point}
                     >
-                      {/* <img alt="tease africa" src={item.imageURL} /> */}
+                      {/* <img alt="tease africa" src={item.coverImage} /> */}
                       <div className={styles.head}>
                         <text className={styles.h2}>{item.date.day}</text>
                         <text className={styles.text}>

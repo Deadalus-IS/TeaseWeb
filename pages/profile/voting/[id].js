@@ -92,6 +92,23 @@ export default function PollID({ data }) {
     }
     setloading(true);
     // commit
+
+    console.log({
+      bank: bank,
+      name: name,
+      accountnumber: account,
+      comment: comment,
+      user: userContext,
+      status: false,
+      id: poll?.id,
+      timestamp: String(Date.now()),
+      amount: Number(
+        poll?.balance -
+          poll?.balance *
+            (Number(poll?.percentage ? poll?.percentage : 10) / 100)
+      ).toFixed(2),
+      poll: poll,
+    });
     let response = await func.voteWithdraw({
       bank: bank,
       name: name,
@@ -101,10 +118,14 @@ export default function PollID({ data }) {
       status: false,
       id: poll?.id,
       timestamp: String(Date.now()),
-      amount: Number(poll?.balance - poll?.balance * 0.1).toFixed(2),
+      amount: Number(
+        poll?.balance -
+          poll?.balance *
+            (Number(poll?.percentage ? poll?.percentage : 10) / 100)
+      ).toFixed(2),
       poll: poll,
     });
-    // console.log(response);
+    console.log(response);
     if (response.status) {
       toaster.success("Withdrawal request sent successfully.");
       setisShownWithdraw(false);
@@ -254,7 +275,9 @@ export default function PollID({ data }) {
                     <div className={styles.one}>
                       <img
                         alt="tease africa"
-                        src={item?.imageURL ? item?.imageURL : "/photo.png"}
+                        src={
+                          item?.nomineeImage ? item?.nomineeImage : "/photo.png"
+                        }
                       />
                       <div className={styles.oneitem}>
                         <text className={styles.eventname}>{item?.name}</text>
@@ -311,7 +334,12 @@ export default function PollID({ data }) {
           >
             <text className={styles.cardtitle}>Withdrawable Balance</text>
             <text className={styles.balance}>
-              GHS {Number(poll?.balance - poll?.balance * 0.1).toFixed(2)}
+              GHS{" "}
+              {Number(
+                poll?.balance -
+                  poll?.balance *
+                    (Number(poll?.percentage ? poll?.percentage : 10) / 100)
+              ).toFixed(2)}
             </text>
             <text className={styles.cardtitle2}>
               Actual Bal: GHS {Number(poll?.balance).toFixed(2)}
@@ -495,7 +523,7 @@ export default function PollID({ data }) {
           />
 
           <text className={styles.dialogtext2}>
-            *We take 10% fee on withdrawal
+            *Terms and Conditions Apply
           </text>
           <div onClick={handleWithdraw} className={styles.infobtn2}>
             {loading ? "Loading..." : "Withdraw"}
