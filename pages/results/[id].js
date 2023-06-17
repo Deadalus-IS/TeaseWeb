@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import * as gtag from "../../lib/gtag";
 import SideNav from "../../components/SideNav";
+import { useRouter } from "next/router";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,6 +15,8 @@ import { useContext } from "react";
 import func from "../../functions";
 
 export default function StatID({ data }) {
+  const router = useRouter();
+  const { category } = router.query;
   console.log(data);
   const [query, setquery] = useState("");
   const [nominees, setnominees] = useState([]);
@@ -87,22 +90,23 @@ export default function StatID({ data }) {
           Results: {poll.name}
         </text>
         <text data-aos="zoom-in" className={styles.subText}>
-          View realtime results and positions of your nominees
+          <br />
+          {category}
           <br />
         </text>
       </main>
       <main className={styles.main2}>
-        <div className={styles.search}>
+        {/* <div className={styles.search}>
           <div>
             <img alt="tease africa" src="/searchw.png" />
             <input
               onChange={(e) => {
                 setquery(e.target.value);
               }}
-              placeholder="Search by nominee name or category"
+              placeholder="Search by nominee name"
             />
           </div>
-        </div>
+        </div> */}
         {/* <div className={styles2.points}> */}
         {nominees?.length > 0 ? (
           <div className={styles2.sales}>
@@ -119,10 +123,18 @@ export default function StatID({ data }) {
             {nominees
               .filter((item) => {
                 return (
-                  item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
-                  item.category.toLowerCase().indexOf(query.toLowerCase()) !==
-                    -1
+                  // item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1 ||
+                  item.category.toLowerCase() == category.toLowerCase()
                 );
+              })
+              .sort((a, b) => {
+                if (a.votes > b.votes) {
+                  return -1;
+                }
+                if (a.votes < b.votes) {
+                  return 1;
+                }
+                return 0;
               })
               .map((item, index) => {
                 return (

@@ -18,7 +18,7 @@
   background-repeat: no-repeat;
   background-position: 0% 50%;
   /* background-color: #e5e5e5; */
-  margin-bottom: 10vh;
+  margin-bottom: -5vh;
 }
 .logo {
   width: 10vw;
@@ -26,7 +26,7 @@
 }
 .mainText {
   margin-top: 40px;
-  font-size: 6vw;
+  font-size: 4vw;
   font-weight: 900;
 }
 .subText {
@@ -89,7 +89,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, 32%);
+  /* grid-template-rows: repeat(auto-fill, 32%); */
   grid-row-gap: 15vh;
   grid-column-gap: 1vh;
 }
@@ -343,16 +343,16 @@
     background-repeat: no-repeat;
     background-position: 50% 0;
     /* background-color: white; */
-    margin-bottom: 5vh;
+    margin-bottom: -5vh;
   }
   .logo {
     width: 30vw;
   }
   .mainText {
     margin-top: 40px;
-    font-size: 13vw;
+    font-size: 8vw;
     font-weight: 900;
-    line-height: 13vw;
+    line-height: 8vw;
   }
   .subText {
     font-size: 4.5vw;

@@ -5,11 +5,14 @@ import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import * as gtag from "../../lib/gtag";
 import SideNav from "../../components/SideNav";
+import { useRouter } from "next/router";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function Stat({ data }) {
+  const router = useRouter();
+  const { id } = router.query;
   console.log(data);
   const [query, setquery] = useState("");
   useEffect(() => {
@@ -22,7 +25,7 @@ export default function Stat({ data }) {
     // console.log(data);
   }, []);
 
-  const polls = data.polls;
+  const polls = data?.poll;
   var months = [
     "Jan",
     "Feb",
@@ -87,48 +90,39 @@ export default function Stat({ data }) {
           </div>
         </div>
         <div className={styles.points}>
-          {polls.length > 0 ? (
-            polls
-              .filter((item) => {
-                return (
-                  item?.showresults == true &&
-                  item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1
-                );
-              })
-              .map((item) => {
-                return (
-                  <Link href={"/results/categories?id=" + item?.slug}>
-                    <div
-                      onClick={() => {
-                        gtag.event({
-                          action: "OPENED_EVENT",
-                          category: "polls",
-                          label: item.name,
-                          value: item.name,
-                        });
-                      }}
-                      key={item.id}
-                      style={{
-                        background: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.9)), url(${
-                          item.imageURL ? item.imageURL : "/img.png"
-                        })`,
-                        backgroundSize: "100%",
-                        backgroundRepeat: "no-repeat",
-                        backgroundColor: "#eee",
-                      }}
-                      className={styles.point}
-                    >
-                      <div />
-                      <text className={styles.h2}>
-                        {item.name} <br />
-                        <text className={styles.text}>
-                          {item?.categories?.length} categories
-                        </text>
-                      </text>
-                    </div>
-                  </Link>
-                );
-              })
+          {polls?.categories?.length > 0 ? (
+            polls?.categories.map((item) => {
+              return (
+                <Link href={"/results/" + polls?.slug + "/?category=" + item}>
+                  <div
+                    onClick={() => {
+                      gtag.event({
+                        action: "OPENED_EVENT",
+                        category: "polls",
+                        label: item.name,
+                        value: item.name,
+                      });
+                    }}
+                    key={item.id}
+                    style={{
+                      background: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.9)), url(${
+                        item.imageURL ? item.imageURL : "/img.png"
+                      })`,
+                      backgroundSize: "100%",
+                      backgroundRepeat: "no-repeat",
+                      backgroundColor: "#eee",
+                    }}
+                    className={styles.point}
+                  >
+                    <div />
+                    <text className={styles.h2}>
+                      {item} <br />
+                      <text className={styles.text}>Category</text>
+                    </text>
+                  </div>
+                </Link>
+              );
+            })
           ) : (
             <div className={styles.emptycon}>
               <img
@@ -149,12 +143,21 @@ export default function Stat({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("https://tease-backend.onrender.com/admin/getPolls", {
-    method: "GET",
+  const id = context.query.id;
+  let res = await fetch("https://tease-backend.onrender.com/api/getPoll", {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      id: id,
+    }),
   });
-  let data = await res.json();
-  return { props: { data: data } };
+
+  // console.log(res);
+  let data = [];
+  data = await res.json();
+
+  // console.log(data);
+  return { props: { data: data ? data : null } };
 }
