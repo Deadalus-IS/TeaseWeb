@@ -5,7 +5,7 @@ export default function Custom404() {
   return (
     <div className={styles.main}>
       <Link href="/">
-        <img alt="tease africa" src="/logob.png" className={styles.logo} />
+        <img alt="TixVote" src="/logob.png" className={styles.logo} />
       </Link>
       <div className={styles.svg}>
         <svg

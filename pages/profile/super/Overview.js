@@ -58,14 +58,14 @@ export default function Overview() {
       <div className={styles.hlist}>
         <div className={styles.hlistitem}>
           <div>
-            <img alt="tease africa" src="/poll.png" />
+            <img alt="TixVote" src="/poll.png" />
             <text className={styles.hlistitemtext}>Polls</text>
           </div>
           <text className={styles.hlistitemtext1}>{polls?.length}</text>
         </div>
         <div className={styles.hlistitem}>
           <div>
-            <img alt="tease africa" src="/badge.png" />
+            <img alt="TixVote" src="/badge.png" />
             <text className={styles.hlistitemtext}>Total Votes</text>
           </div>
           <text className={styles.hlistitemtext1}>
@@ -74,7 +74,7 @@ export default function Overview() {
         </div>
         <div className={styles.hlistitem}>
           <div>
-            <img alt="tease africa" src="/users.png" />
+            <img alt="TixVote" src="/users.png" />
             <text className={styles.hlistitemtext}>Nominees</text>
           </div>
           <text className={styles.hlistitemtext1}>~</text>
@@ -109,7 +109,7 @@ export default function Overview() {
               <div className={styles.tableitems}>
                 <div className={styles.one}>
                   <img
-                    alt="tease africa"
+                    alt="TixVote"
                     src={item?.coverImage ? item?.coverImage : "/photo.png"}
                   />
                   <div className={styles.oneitem}>
@@ -147,7 +147,7 @@ export default function Overview() {
         <div className={styles.sales}>
           {/* No events, create a new event */}
           <div className={styles.info}>
-            <img alt="tease africa" src="/emptyf.png" />
+            <img alt="TixVote" src="/emptyf.png" />
             <text className={styles.infotxt}>
               No Polls in the system right now.
             </text>

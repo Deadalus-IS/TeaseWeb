@@ -60,41 +60,29 @@ export default function Home(data) {
         <div className={styles.nav} data-aos="fade-down">
           <>
             <Link href="/">
-              <img
-                alt="tease africa"
-                src="/logow.png"
-                className={styles.logo}
-              />
+              <img alt="TixVote" src="/logow.png" className={styles.logo} />
             </Link>
             <Link href="/">
-              <img
-                alt="tease africa"
-                src="/logob.png"
-                className={styles.logo1}
-              />
+              <img alt="TixVote" src="/logob.png" className={styles.logo1} />
             </Link>
           </>
 
           <div className={styles.imgs}>
-            {/* <img alt="tease africa" src="/ios.png" className={styles.app} /> */}
+            {/* <img alt="TixVote" src="/ios.png" className={styles.app} /> */}
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img
-                alt="tease africa"
-                src="/playstore.png"
-                className={styles.app1}
-              />
+              <img alt="TixVote" src="/playstore.png" className={styles.app1} />
             </Link>
           </div>
         </div>
         <div className={styles.imgcon}>
           <img
-            alt="tease africa"
+            alt="TixVote"
             data-aos="zoom-in"
             src={event.coverImage}
             className={styles.imagebg}
           />
           <img
-            alt="tease africa"
+            alt="TixVote"
             // data-aos="zoom-in"
             src={event.coverImage}
             className={styles.image}
@@ -142,7 +130,7 @@ export default function Home(data) {
 
           <div className={styles.organizer}>
             <img
-              alt="tease africa"
+              alt="TixVote"
               src={event.organizer.profileURL}
               className={styles.organizerImage}
             />
@@ -184,7 +172,7 @@ export default function Home(data) {
               ) : (
                 <text className={styles.about}>
                   <img
-                    alt="tease africa"
+                    alt="TixVote"
                     src={event.country.flag}
                     width={20}
                     height={14}
@@ -220,7 +208,7 @@ export default function Home(data) {
         <div className={styles.modalcon} data-aos="zoom-in">
           <div className={styles.modal}>
             <img
-              alt="tease africa"
+              alt="TixVote"
               onClick={() => {
                 setmodal(false);
               }}
@@ -335,7 +323,7 @@ export default function Home(data) {
         <div className={styles.modalcon} data-aos="zoom-in">
           <div className={styles.imgmodal}>
             <img
-              alt="tease africa"
+              alt="TixVote"
               onClick={() => {
                 setimagemodal(false);
               }}
@@ -343,7 +331,7 @@ export default function Home(data) {
               src="/close.png"
             />
             <img
-              alt="tease africa"
+              alt="TixVote"
               onClick={() => {
                 setmodal(false);
               }}

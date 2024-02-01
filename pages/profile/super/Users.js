@@ -81,7 +81,7 @@ export default function Users() {
               <div className={styles.tableitems}>
                 <div className={styles.one}>
                   <img
-                    alt="tease africa"
+                    alt="TixVote"
                     src={item?.coverImage ? item?.coverImage : "/photo.png"}
                   />
                   <div className={styles.oneitem}>
@@ -112,7 +112,7 @@ export default function Users() {
         <div className={styles.sales}>
           {/* No events, create a new event */}
           <div className={styles.info}>
-            <img alt="tease africa" src="/emptyf.png" />
+            <img alt="TixVote" src="/emptyf.png" />
             <text className={styles.infotxt}>No users in the system</text>
           </div>
         </div>

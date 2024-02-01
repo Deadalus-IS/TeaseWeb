@@ -69,14 +69,14 @@ export default function Profile() {
         <div className={styles.hlist}>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/poll.png" />
+              <img alt="TixVote" src="/poll.png" />
               <text className={styles.hlistitemtext}>Polls</text>
             </div>
             <text className={styles.hlistitemtext1}>{polls?.length}</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/badge.png" />
+              <img alt="TixVote" src="/badge.png" />
               <text className={styles.hlistitemtext}>Total Votes</text>
             </div>
             <text className={styles.hlistitemtext1}>
@@ -86,7 +86,7 @@ export default function Profile() {
           <Link href="/results">
             <div className={styles.hlistitem}>
               <div>
-                <img alt="tease africa" src="/pie-chart.png" />
+                <img alt="TixVote" src="/pie-chart.png" />
                 <text className={styles.hlistitemtext}>Results</text>
               </div>
               <text
@@ -129,7 +129,7 @@ export default function Profile() {
                 <div className={styles.tableitems}>
                   <div className={styles.one}>
                     <img
-                      alt="tease africa"
+                      alt="TixVote"
                       src={item?.coverImage ? item?.coverImage : "/photo.png"}
                     />
                     <div className={styles.oneitem}>
@@ -167,7 +167,7 @@ export default function Profile() {
           <div className={styles.sales}>
             {/* No events, create a new event */}
             <div className={styles.info}>
-              <img alt="tease africa" src="/emptyf.png" />
+              <img alt="TixVote" src="/emptyf.png" />
               <text className={styles.infotxt}>
                 You have no polls, create a new poll
               </text>
@@ -179,10 +179,10 @@ export default function Profile() {
         )}
       </main>
       <section className={styles.rightbar}>
-        <div className={styles.searchcon}>
+        {/* <div className={styles.searchcon}>
           <input placeholder="Search for your events" />
-          <img alt="tease africa" src="/loupe.png" />
-        </div>
+          <img alt="TixVote" src="/loupe.png" />
+        </div> */}
 
         <div className={styles.card}>
           <text className={styles.cardtitle}>Balance</text>

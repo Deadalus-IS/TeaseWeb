@@ -23,7 +23,7 @@ export default function Overview() {
         <div className={styles.nav}>
           <Link href="/">
             <img
-              alt="tease africa"
+              alt="TixVote"
               data-aos="zoom-in"
               src="/logow.png"
               className={styles.logo}
@@ -36,7 +36,7 @@ export default function Overview() {
             {/* <text className={styles.navitem}>Download</text> */}
           </div>
           <img
-            alt="tease africa"
+            alt="TixVote"
             onClick={() => {
               document.getElementById("sidemenu").style.left = "0";
             }}
@@ -66,11 +66,7 @@ export default function Overview() {
         <div className={styles.points} data-aos="fade-up">
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Event Creation</text>
             </div>
             <text className={styles.text}>
@@ -83,11 +79,7 @@ export default function Overview() {
           </div>
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Promote & Sell</text>
             </div>
             <text className={styles.text}>
@@ -102,11 +94,7 @@ export default function Overview() {
           </div>
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Check-ins</text>
             </div>
             <text className={styles.text}>
@@ -129,11 +117,7 @@ export default function Overview() {
         <div className={styles.points} data-aos="fade-up">
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Analytics</text>
             </div>
             <text className={styles.text}>
@@ -144,11 +128,7 @@ export default function Overview() {
           </div>
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Report</text>
             </div>
             <text className={styles.text}>
@@ -160,11 +140,7 @@ export default function Overview() {
           </div>
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Organizer App</text>
             </div>
             <text className={styles.text}>
@@ -186,11 +162,7 @@ export default function Overview() {
         <div className={styles.points} data-aos="fade-up">
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Integrate</text>
             </div>
             <text className={styles.text}>
@@ -202,11 +174,7 @@ export default function Overview() {
           </div>
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Custom Links</text>
             </div>
             <text className={styles.text}>
@@ -219,11 +187,7 @@ export default function Overview() {
           </div>
           <div className={styles.point}>
             <div className={styles.head}>
-              <img
-                alt="tease africa"
-                src="/mark.png"
-                className={styles.check}
-              />
+              <img alt="TixVote" src="/mark.png" className={styles.check} />
               <text className={styles.h2}>Seating Plan</text>
             </div>
             <text className={styles.text}>
@@ -261,7 +225,7 @@ export default function Overview() {
               }}
             >
               <span className={styles.accordiontitle}>
-                Who can use Tease Africa?
+                Who can use TixVote?
               </span>
               <span className={styles.icon} aria-hidden="true"></span>
             </button>

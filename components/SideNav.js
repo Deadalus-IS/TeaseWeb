@@ -10,7 +10,7 @@ export default function SideNav() {
       <div className={styles.nav}>
         <Link href="/">
           <img
-            alt="tease africa"
+            alt="TixVote"
             data-aos="zoom-in"
             src="/logob.png"
             className={styles.logo}
@@ -18,7 +18,7 @@ export default function SideNav() {
         </Link>
 
         <img
-          alt="tease africa"
+          alt="TixVote"
           onClick={() => {
             document.getElementById("sidemenu").style.left = "-100vw";
           }}
@@ -60,20 +60,20 @@ export default function SideNav() {
         </Link>
         <div className={styles.socials}>
           <Link href="https://twitter.com/teaseafrica">
-            <img alt="tease africa" src="/tw.png" className={styles.soc} />
+            <img alt="TixVote" src="/tw.png" className={styles.soc} />
           </Link>
           <Link href="https://facebook.com/teaseafrica">
-            <img alt="tease africa" src="/fb.png" className={styles.soc} />
+            <img alt="TixVote" src="/fb.png" className={styles.soc} />
           </Link>
           <Link href="https://www.instagram.com/teaseafrica/">
-            <img alt="tease africa" src="/ig.png" className={styles.soc} />
+            <img alt="TixVote" src="/ig.png" className={styles.soc} />
           </Link>
-          <img alt="tease africa" style={{ width: 30, height: 0 }} />
+          <img alt="TixVote" style={{ width: 30, height: 0 }} />
           <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-            <img alt="tease africa" src="/google.png" className={styles.soc} />
+            <img alt="TixVote" src="/google.png" className={styles.soc} />
           </Link>
           {/* <Link href="https://www.instagram.com/teaseafrica/">
-            <img alt="tease africa" src="/appstore.png" className={styles.soc} />
+            <img alt="TixVote" src="/appstore.png" className={styles.soc} />
           </Link> */}
         </div>
       </div>

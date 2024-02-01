@@ -100,10 +100,10 @@ export default function Super() {
         ) : null}
       </main>
       <section className={styles.rightbar}>
-        <div className={styles.searchcon}>
+        {/* <div className={styles.searchcon}>
           <input placeholder="Search for your events" />
-          <img alt="tease africa" src="/loupe.png" />
-        </div>
+          <img alt="TixVote" src="/loupe.png" />
+        </div> */}
 
         <div className={styles.card}>
           <text className={styles.cardtitle}>Balance</text>

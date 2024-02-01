@@ -23,12 +23,12 @@ export default function Vote({ data }) {
   }, []);
   return (
     <div className={styles.container}>
-      <Head title="Vote | Tease Africa" />
+      <Head title="Vote | TixVote" />
       <main className={styles.main}>
         <div className={styles.nav}>
           <Link href="/">
             <img
-              alt="tease africa"
+              alt="TixVote"
               data-aos="zoom-in"
               src="/logow.png"
               className={styles.logo}
@@ -39,7 +39,7 @@ export default function Vote({ data }) {
             {/* <text className={styles.navitem}>Download</text> */}
           </div>
           <img
-            alt="tease africa"
+            alt="TixVote"
             onClick={() => {
               document.getElementById("sidemenu").style.left = "0";
             }}
@@ -61,7 +61,7 @@ export default function Vote({ data }) {
       <main className={styles.main2}>
         <div className={styles.search}>
           <div>
-            {/* <img alt="tease africa" src="/searchw.png" /> */}
+            {/* <img alt="TixVote" src="/searchw.png" /> */}
             <input
               onChange={(e) => {
                 setquery(e.target.value);

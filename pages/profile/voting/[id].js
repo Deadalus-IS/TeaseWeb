@@ -27,6 +27,7 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 import Transactions from "../../../components/Transactions";
+import { BASE_URL } from "../../../config/api";
 
 export default function PollID({ data }) {
   const [events, setevents] = useState([]);
@@ -141,7 +142,7 @@ export default function PollID({ data }) {
       <main className={styles.main}>
         <div className={styles.top}>
           <div onClick={() => router.back()}>
-            <img alt="tease africa" src="/back.png" />
+            <img alt="TixVote" src="/back.png" />
           </div>
         </div>
         <div className={styles.top2}>
@@ -152,7 +153,7 @@ export default function PollID({ data }) {
         <div className={styles.hlist}>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/poll.png" />
+              <img alt="TixVote" src="/poll.png" />
               <text className={styles.hlistitemtext}>Revenue</text>
             </div>
             <text className={styles.hlistitemtext1}>
@@ -163,14 +164,14 @@ export default function PollID({ data }) {
           </div>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/badge.png" />
+              <img alt="TixVote" src="/badge.png" />
               <text className={styles.hlistitemtext}>Total Votes</text>
             </div>
             <text className={styles.hlistitemtext1}>{poll?.totalVotes}</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/users.png" />
+              <img alt="TixVote" src="/users.png" />
               <text className={styles.hlistitemtext}>Nominees</text>
             </div>
             <text className={styles.hlistitemtext1}>{events?.length}</text>
@@ -274,7 +275,7 @@ export default function PollID({ data }) {
                   <div className={styles.tableitems}>
                     <div className={styles.one}>
                       <img
-                        alt="tease africa"
+                        alt="TixVote"
                         src={
                           item?.nomineeImage ? item?.nomineeImage : "/photo.png"
                         }
@@ -305,7 +306,7 @@ export default function PollID({ data }) {
           <div className={styles.sales}>
             {/* No events, create a new event */}
             <div className={styles.info}>
-              <img alt="tease africa" src="/user.png" />
+              <img alt="TixVote" src="/user.png" />
               <text className={styles.infotxt}>
                 You have no nominees, create a new nominee
               </text>
@@ -321,7 +322,7 @@ export default function PollID({ data }) {
       <section className={styles.rightbar}>
         <div className={styles.searchcon}>
           <input placeholder="Search for your events" />
-          <img alt="tease africa" src="/loupe.png" />
+          <img alt="TixVote" src="/loupe.png" />
         </div>
 
         <div className={styles.card}>
@@ -430,7 +431,7 @@ export default function PollID({ data }) {
                 onClick={() => setaddmode(1)}
                 className={styles.dialogbox}
               >
-                <img alt="tease africa" src="/form.png" />
+                <img alt="TixVote" src="/form.png" />
                 <text className={styles.infotxt}>Add nominees manually</text>
               </div>
               <div
@@ -442,7 +443,7 @@ export default function PollID({ data }) {
                 onClick={() => setaddmode(2)}
                 className={styles.dialogbox}
               >
-                <img alt="tease africa" src="/upload.png" />
+                <img alt="TixVote" src="/upload.png" />
                 <text className={styles.infotxt}>Upload a CSV file</text>
               </div>
             </div>
@@ -536,7 +537,7 @@ export default function PollID({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch("https://tease-backend.onrender.com/api/getPoll", {
+  let res = await fetch(BASE_URL + "/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

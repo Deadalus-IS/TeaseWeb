@@ -23,10 +23,10 @@ export default function Nav({ data }) {
     <div className={styles.nav}>
       <div className={styles.blur} />
 
-      <img alt="tease africa" className={styles.llogo} src="/logob.png" cl />
+      <img alt="TixVote" className={styles.llogo} src="/logob.png" cl />
 
       <img
-        alt="tease africa"
+        alt="TixVote"
         onClick={() => {
           document.getElementById("sidemenu").style.left = "0";
         }}
@@ -76,7 +76,7 @@ export default function Nav({ data }) {
             }
           >
             <img
-              alt="tease africa"
+              alt="TixVote"
               src={
                 "https://avatars.dicebear.com/api/avataaars/" +
                 userContext?.id +

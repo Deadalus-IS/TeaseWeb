@@ -1,8 +1,8 @@
 import Head from "../components/Head";
 import Link from "next/link";
+import AOS from "aos";
 import styles from "../styles/Home.module.css";
 import { useEffect, useContext } from "react";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import { useRouter } from "next/router";
 import SideNav from "../components/SideNav";
@@ -34,36 +34,6 @@ export default function Home({ data }) {
     }
   }, []);
 
-  // console.log(width);
-
-  var months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  let arrevents = events
-    ? [
-        ...events,
-        ...events,
-        ...events,
-        ...events,
-        ...events,
-        ...events,
-        ...events,
-        ...events,
-      ]
-    : null;
-
   useEffect(async () => {
     let res = await localStorage.getItem("user");
     const useRes = JSON.parse(res);
@@ -82,22 +52,31 @@ export default function Home({ data }) {
         <div className={styles.lheading}>
           <div className={styles.lcontent}>
             <div className={styles.ltxt}>
-              <h1 style={{ textAlign: "left" }} className={styles.h1}>
-                Make money with{" "}
-                <text className={styles.deco}>
-                  <span id="spin" className={styles.p}></span>
-                  <text className={styles.blue}>.</text>
-                </text>
+              {/* <div
+                data-w-id="e6a76bfe-0db6-ad1c-ec7f-413e2dddd4d2"
+                class="event-atg"
+                style="transform:translate3d(0px,0px,0px) scale3d(1,1,1) rotateX(0deg) rotateY(0deg) rotateZ(-5deg) skew(0deg,0deg);transform-style:preserve-3d"
+              >
+                <div class="event-tag-inner">
+                  <div class="event-tag-text">Event</div>
+                </div>
+              </div> */}
+              <h1 style={{ textAlign: "center" }} className={styles.h1}>
+                <text className={styles.h1x}>Effortless</text> <br />
+                Voting and Ticketing <br />
+                at Your Fingertips.
               </h1>
-              <p className={styles.subh1}>
-                List them, sell them and make awesome money!
+              <p style={{ textAlign: "center" }} className={styles.subh1}>
+                Get started and user our online ticketing, USSD and online{" "}
+                <br />
+                voting platforms for your next event
               </p>
             </div>
             <div className={styles.imgs}>
               {/* <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img alt="tease africa" src="/playstore.png" className={styles.app1} alt="android" />
+              <img alt="TixVote" src="/playstore.png" className={styles.app1} alt="android" />
             </Link> */}
-              {/* <img alt="tease africa" src="/ios.png" className={styles.app} alt="ios" /> */}
+              {/* <img alt="TixVote" src="/ios.png" className={styles.app} alt="ios" /> */}
               <Link href="/login">
                 <div className={styles.sell}>Get Started</div>
               </Link>
@@ -111,124 +90,6 @@ export default function Home({ data }) {
           </div>
 
           <SideNav />
-          <div className={styles.lstories}>
-            <div className={styles.lstoriesholder}>
-              {arrevents !== null
-                ? arrevents.map((item) => {
-                    return (
-                      <Link href={"/" + item.slug}>
-                        <div key={item?.id} className={styles.lstory}>
-                          <img
-                            alt="tease africa"
-                            src={item.coverImage}
-                            className={styles.image}
-                          />
-                          <div className={styles.lstoryoverlay}>
-                            <div className={styles.date}>
-                              <text className={styles.dateh2}>
-                                {item.date.day}
-                              </text>
-                              <text className={styles.datetext}>
-                                {months[item.date.month - 1]}
-                              </text>
-                            </div>
-                          </div>
-                          <div className={styles.lstoryname}>
-                            <div className={styles.eventdetails}>
-                              <strong className={styles.strong}>
-                                {item.name}
-                              </strong>
-                              <br />
-                              <span className={styles.datte}>
-                                {truncateString(item.about, 50)}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })
-                : null}
-            </div>
-            <div className={styles.lstoriesholder}>
-              {arrevents !== null
-                ? arrevents.map((item) => {
-                    return (
-                      <Link href={"/" + item.slug}>
-                        <div key={item?.id} className={styles.lstory}>
-                          <img
-                            alt="tease africa"
-                            src={item.coverImage}
-                            className={styles.image}
-                            alt="event-image"
-                          />
-                          <div className={styles.lstoryoverlay}>
-                            <div className={styles.date}>
-                              <text className={styles.dateh2}>
-                                {item.date.day}
-                              </text>
-                              <text className={styles.datetext}>
-                                {months[item.date.month - 1]}
-                              </text>
-                            </div>
-                          </div>
-                          <div className={styles.lstoryname}>
-                            <div className={styles.eventdetails}>
-                              <strong className={styles.strong}>
-                                {item.name}
-                              </strong>
-                              <br />
-                              <span className={styles.datte}>
-                                {truncateString(item.about, 50)}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })
-                : null}
-            </div>
-            <div className={styles.lstoriesholder}>
-              {arrevents !== null
-                ? arrevents.map((item) => {
-                    return (
-                      <Link href={"/" + item.slug}>
-                        <div key={item?.id} className={styles.lstory}>
-                          <img
-                            alt="tease africa"
-                            src={item.coverImage}
-                            className={styles.image}
-                            alt="event-image"
-                          />
-                          <div className={styles.lstoryoverlay}>
-                            <div className={styles.date}>
-                              <text className={styles.dateh2}>
-                                {item.date.day}
-                              </text>
-                              <text className={styles.datetext}>
-                                {months[item.date.month - 1]}
-                              </text>
-                            </div>
-                          </div>
-                          <div className={styles.lstoryname}>
-                            <div className={styles.eventdetails}>
-                              <strong className={styles.strong}>
-                                {item.name}
-                              </strong>
-                              <br />
-                              <span className={styles.datte}>
-                                {truncateString(item.about, 50)}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })
-                : null}
-            </div>
-          </div>
 
           {/* <marquee
           width="100%"
@@ -258,14 +119,9 @@ export default function Home({ data }) {
           )}
           <div className={styles.dimgs}>
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img
-                alt="tease africa"
-                src="/playstore.png"
-                className={styles.app1}
-                alt="android"
-              />
+              <img alt="TixVote" src="/playstore.png" className={styles.app1} />
             </Link>
-            {/* <img alt="tease africa" src="/ios.png" className={styles.app} alt="ios" /> */}
+            {/* <img alt="TixVote" src="/ios.png" className={styles.app} alt="ios" /> */}
           </div>
         </main>
         <main className={styles.main2}>
@@ -281,12 +137,7 @@ export default function Home({ data }) {
           <div className={styles.points} data-aos="fade-up">
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Unlimited events</text>
               </div>
               <text className={styles.text}>
@@ -296,12 +147,7 @@ export default function Home({ data }) {
             </div>
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Mobile ticketing</text>
               </div>
               <text className={styles.text}>
@@ -311,12 +157,7 @@ export default function Home({ data }) {
             </div>
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Analytics & report</text>
               </div>
               <text className={styles.text}>
@@ -328,12 +169,7 @@ export default function Home({ data }) {
           <div className={styles.points} data-aos="fade-up">
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Unlimited events</text>
               </div>
               <text className={styles.text}>
@@ -343,12 +179,7 @@ export default function Home({ data }) {
             </div>
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Mobile ticketing</text>
               </div>
               <text className={styles.text}>
@@ -358,12 +189,7 @@ export default function Home({ data }) {
             </div>
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Analytics & report</text>
               </div>
               <text className={styles.text}>
@@ -375,12 +201,7 @@ export default function Home({ data }) {
           <div className={styles.points} data-aos="fade-up">
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Organize Poll</text>
               </div>
               <text className={styles.text}>
@@ -390,12 +211,7 @@ export default function Home({ data }) {
             </div>
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Realtime Dashboard</text>
               </div>
               <text className={styles.text}>
@@ -405,12 +221,7 @@ export default function Home({ data }) {
             </div>
             <div className={styles.point}>
               <div className={styles.head}>
-                <img
-                  alt="tease africa"
-                  src="/mark.png"
-                  className={styles.check}
-                  alt="event-image"
-                />
+                <img alt="TixVote" src="/mark.png" className={styles.check} />
                 <text className={styles.h2}>Cheaper</text>
               </div>
               <text className={styles.text}>
@@ -444,7 +255,7 @@ export default function Home({ data }) {
                 }}
               >
                 <span className={styles.accordiontitle}>
-                  Who can use Tease Africa?
+                  Who can use TixVote?
                 </span>
                 <span className={styles.icon} aria-hidden="true"></span>
               </button>
@@ -602,7 +413,7 @@ export async function getServerSideProps(context) {
 
   // console.log(res);
   let data = [];
-  data = await res.json();
+  // data = await res.json();
 
   // console.log(data);
   return { props: { data: data ? data : [] } };

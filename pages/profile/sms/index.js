@@ -133,14 +133,14 @@ export default function SMS() {
         <div className={styles.hlist}>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/poll.png" />
+              <img alt="TixVote" src="/poll.png" />
               <text className={styles.hlistitemtext}>Total SMS</text>
             </div>
             <text className={styles.hlistitemtext1}>{polls?.length}</text>
           </div>
           <div className={styles.hlistitem}>
             <div>
-              <img alt="tease africa" src="/badge.png" />
+              <img alt="TixVote" src="/badge.png" />
               <text className={styles.hlistitemtext}>Credits Spent</text>
             </div>
             <text className={styles.hlistitemtext1}>
@@ -151,7 +151,7 @@ export default function SMS() {
           <Link href="/results">
             <div className={styles.hlistitem}>
               <div>
-                <img alt="tease africa" src="/pie-chart.png" />
+                <img alt="TixVote" src="/pie-chart.png" />
                 <text className={styles.hlistitemtext}>All Contacts</text>
               </div>
               <text className={styles.hlistitemtext1}>
@@ -229,7 +229,7 @@ export default function SMS() {
           <div className={styles.sales}>
             {/* No events, create a new event */}
             <div className={styles.info}>
-              <img alt="tease africa" src="/emptyf.png" />
+              <img alt="TixVote" src="/emptyf.png" />
               <text className={styles.infotxt}>
                 You have no SMS sent, create a new one
               </text>
@@ -246,10 +246,10 @@ export default function SMS() {
         )}
       </main>
       <section className={styles.rightbar}>
-        <div className={styles.searchcon}>
+        {/* <div className={styles.searchcon}>
           <input placeholder="Search for your events" />
-          <img alt="tease africa" src="/loupe.png" />
-        </div>
+          <img alt="TixVote" src="/loupe.png" />
+        </div> */}
 
         <div className={styles.card}>
           <text className={styles.cardtitle}>Credit</text>

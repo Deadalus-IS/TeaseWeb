@@ -38,12 +38,12 @@ export default function Home({ data }) {
   ];
   return (
     <div className={styles.container}>
-      <Head title="Discover Events | Tease Africa" />
+      <Head title="Discover Events | TixVote" />
       <main className={styles.main}>
         <div className={styles.nav}>
           <Link href="/">
             <img
-              alt="tease africa"
+              alt="TixVote"
               data-aos="zoom-in"
               src="/logow.png"
               className={styles.logo}
@@ -54,7 +54,7 @@ export default function Home({ data }) {
             {/* <text className={styles.navitem}>Download</text> */}
           </div>
           <img
-            alt="tease africa"
+            alt="TixVote"
             onClick={() => {
               document.getElementById("sidemenu").style.left = "0";
             }}
@@ -77,7 +77,7 @@ export default function Home({ data }) {
       <main className={styles.main2}>
         <div className={styles.search}>
           <div>
-            <img alt="tease africa" src="/searchw.png" />
+            <img alt="TixVote" src="/searchw.png" />
             <input
               onChange={(e) => {
                 setquery(e.target.value);
@@ -118,7 +118,7 @@ export default function Home({ data }) {
                       }}
                       className={styles.point}
                     >
-                      {/* <img alt="tease africa" src={item.coverImage} /> */}
+                      {/* <img alt="TixVote" src={item.coverImage} /> */}
                       <div className={styles.head}>
                         <text className={styles.h2}>{item.date.day}</text>
                         <text className={styles.text}>
@@ -138,11 +138,7 @@ export default function Home({ data }) {
               })
           ) : (
             <div className={styles.emptycon}>
-              <img
-                alt="tease africa"
-                src="/empty.png"
-                className={styles.emptyimg}
-              />
+              <img alt="TixVote" src="/empty.png" className={styles.emptyimg} />
               <text className={styles.empty}>No Events Available</text>
             </div>
           )}

@@ -7,9 +7,9 @@ export default function Footer({ styles = styles2, ligth }) {
     <footer className={styles.footer}>
       <div className={styles.left}>
         {ligth == true ? (
-          <img alt="tease africa" src="/logow.png" className={styles.logob} />
+          <img alt="TixVote" src="/logow.png" className={styles.logob} />
         ) : (
-          <img alt="tease africa" src="/logob.png" className={styles.logob} />
+          <img alt="TixVote" src="/logob.png" className={styles.logob} />
         )}
         <text className={styles.text}>
           All-in-one event ticketing system.
@@ -18,23 +18,23 @@ export default function Footer({ styles = styles2, ligth }) {
           tickets for any type of event - All for free.
           <br />
           <br />
-          &copy; Tease Africa 2023
+          &copy; TixVote 2023
           <br />
           Deadalus Intelligence & Systems
           <br />
           <br />
           <img
-            alt="tease africa"
+            alt="TixVote"
             src="https://paystack.com/assets/img/icon/flags/4x3/gh.svg"
             className={styles.gh}
           />
           <img
-            alt="tease africa"
+            alt="TixVote"
             src="https://paystack.com/assets/img/icon/flags/4x3/ng.svg"
             className={styles.gh}
           />
           <img
-            alt="tease africa"
+            alt="TixVote"
             src="https://paystack.com/assets/img/icon/flags/4x3/za.svg"
             className={styles.gh}
           />
@@ -70,47 +70,39 @@ export default function Footer({ styles = styles2, ligth }) {
         {ligth ? (
           <div className={styles.socials}>
             <Link href="https://twitter.com/teaseafrica">
-              <img alt="tease africa" src="/tw2.png" className={styles.soc} />
+              <img alt="TixVote" src="/tw2.png" className={styles.soc} />
             </Link>
             <Link href="https://facebook.com/teaseafrica">
-              <img alt="tease africa" src="/fb2.png" className={styles.soc} />
+              <img alt="TixVote" src="/fb2.png" className={styles.soc} />
             </Link>
             <Link href="https://www.instagram.com/teaseafrica/">
-              <img alt="tease africa" src="/ig2.png" className={styles.soc} />
+              <img alt="TixVote" src="/ig2.png" className={styles.soc} />
             </Link>
-            {/* <img alt="tease africa" style={{ width: 30, height: 0 }} /> */}
+            {/* <img alt="TixVote" style={{ width: 30, height: 0 }} /> */}
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img
-                alt="tease africa"
-                src="/google.png"
-                className={styles.soc}
-              />
+              <img alt="TixVote" src="/google.png" className={styles.soc} />
             </Link>
             {/* <Link href="https://www.instagram.com/teaseafrica/">
-              <img alt="tease africa" src="/appstore.png" className={styles.soc} />
+              <img alt="TixVote" src="/appstore.png" className={styles.soc} />
             </Link> */}
           </div>
         ) : (
           <div className={styles.socials}>
             <Link href="https://twitter.com/teaseafrica">
-              <img alt="tease africa" src="/tw.png" className={styles.soc} />
+              <img alt="TixVote" src="/tw.png" className={styles.soc} />
             </Link>
             <Link href="https://facebook.com/teaseafrica">
-              <img alt="tease africa" src="/fb.png" className={styles.soc} />
+              <img alt="TixVote" src="/fb.png" className={styles.soc} />
             </Link>
             <Link href="https://www.instagram.com/teaseafrica/">
-              <img alt="tease africa" src="/ig.png" className={styles.soc} />
+              <img alt="TixVote" src="/ig.png" className={styles.soc} />
             </Link>
-            {/* <img alt="tease africa" style={{ width: 30, height: 0 }} /> */}
+            {/* <img alt="TixVote" style={{ width: 30, height: 0 }} /> */}
             <Link href="https://play.google.com/store/apps/details?id=africa.tease.organizer">
-              <img
-                alt="tease africa"
-                src="/google.png"
-                className={styles.soc}
-              />
+              <img alt="TixVote" src="/google.png" className={styles.soc} />
             </Link>
             {/* <Link href="/">
-              <img alt="tease africa" src="/appstore.png" className={styles.soc} />
+              <img alt="TixVote" src="/appstore.png" className={styles.soc} />
             </Link> */}
           </div>
         )}

@@ -116,7 +116,7 @@ export default function Vote({ data }) {
               <text className={styles.text}>Powered by:</text>
               <Link href="/">
                 <img
-                  alt="tease africa"
+                  alt="TixVote"
                   data-aos="zoom-in"
                   src="/logob.png"
                   className={styles.logo}

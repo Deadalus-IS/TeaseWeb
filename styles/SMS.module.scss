@@ -278,13 +278,13 @@ $vw-viewport: 1920;
 .card {
   width: 100%;
   height: get-vw(200px);
-  background-color: #0155ef;
+  background-color: #000;
   border-radius: get-vw(10px);
   margin-top: get-vw(40px);
   padding: get-vw(20px);
   display: flex;
   flex-direction: column;
-  background-image: url("/backg.png");
+  // background-image: url("/backg.png");
   background-size: 120%;
   background-repeat: no-repeat;
   background-position-y: -100px;
@@ -401,14 +401,14 @@ $vw-viewport: 1920;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #0155ef;
+  color: #000;
   font-size: get-vw(15px);
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
 }
 .withdraw:hover {
-  background-color: #0155ef;
+  background-color: #000;
   color: #fff;
   border: 2px solid white;
 }
@@ -434,7 +434,7 @@ $vw-viewport: 1920;
   width: get-vw(200px);
   height: get-vw(60px);
   border-radius: get-vw(50px);
-  background-color: #0155ef;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -472,7 +472,7 @@ $vw-viewport: 1920;
   align-items: center;
   flex-direction: column;
   padding: get-vw(20px);
-  // border: #0155ef solid 2px;
+  // border: #000 solid 2px;
   box-shadow: get-vw(5px) get-vw(5px) get-vw(10px) 0 #e6e6e6;
   cursor: pointer;
 }
@@ -496,7 +496,7 @@ $vw-viewport: 1920;
   width: get-vw(250px);
   height: get-vw(75px);
   border-radius: get-vw(50px);
-  background-color: #0155ef;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -535,7 +535,7 @@ $vw-viewport: 1920;
 .transactionimg {
   width: get-vw(70px);
   height: get-vw(70px);
-  background-color: #0155ef;
+  background-color: #000;
   border-radius: get-vw(100px);
   margin-right: get-vw(10px);
   display: flex;

@@ -97,6 +97,8 @@
 .imgs {
   margin-top: -8vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .app {
   width: 10vw;
@@ -108,7 +110,7 @@
   height: 3.3vw;
   margin-right: 20px;
   cursor: not-allowed;
-  background-color: #0155ef;
+  background-color: #FF9304;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -121,26 +123,26 @@
 }
 .sell:hover {
   background-color: #fff;
-  color: #0154ef;
+  color: #FFBF1D;
 }
 .sell2 {
   width: 10vw;
   height: 3.3vw;
   margin-right: 20px;
   cursor: not-allowed;
-  border: #0155ef solid 1.8px;
+  border: #FF9304 solid 1.8px;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1vw;
   font-weight: 600;
-  color: #0155ef;
+  color: #FF9304;
   cursor: pointer;
   transition: 0.1s;
 }
 .sell2:hover {
-  background-color: #05cfff;
+  background-color: #FFB24D;
   color: white;
   border: none;
 }
@@ -154,14 +156,14 @@
   align-items: center;
   font-size: 1.2vw;
   font-weight: 600;
-  color: #0155ef;
+  color: #FF9304;
   cursor: pointer;
   transition: 0.1s;
   padding: 0 10px;
 }
 .sell3:hover {
   background-color: rgba(255, 255, 255, 0.34);
-  color: #0154ef;
+  color: #FFBF1D;
 
 }
 .app1 {
@@ -178,7 +180,7 @@
   height: 50vh;
   width: 100%;
   padding: 10vh 15vw;
-  background-color: #0154ef;
+  background-color: #FFBF1D;
   background-image: url(/app.png);
   background-repeat: no-repeat;
   background-position: 90% 5vh;
@@ -419,7 +421,7 @@
 .blur {
   width: 100%;
   height: 12vh;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(10px);
   position: absolute;
   top: 0;
   left: 0;
@@ -474,11 +476,18 @@
   padding-left: 5vw;
   background-color: white;
   color: black;
+  background-image: url(/blob1.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 0%;
+  background-position-x: 0%;
 }
 .lcontent {
   -ms-flex-align: baseline;
-  align-items: baseline;
-  max-width: 29vw;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0 30vh;
   margin-top: 30vh;
 }
 
@@ -599,12 +608,12 @@
   z-index: 1;
 }
 .deco {
-  border-bottom: #0154ef solid 5px;
+  border-bottom: #FFBF1D solid 5px;
   padding-bottom: 0;
   font-style: italic;
 }
 .blue {
-  color: #0154ef;
+  color: #FFBF1D;
 }
 .h1 {
   font-size: 4.5vw;
@@ -612,6 +621,14 @@
   letter-spacing: -3px;
   line-height: 1;
   margin-bottom: 5vh;
+}
+.h1x {
+  font-size: 2vw;
+  font-weight: bold;
+  letter-spacing: -3px;
+  line-height: 1;
+  margin-bottom: 5vh;
+  color: #FF9304;
 }
 .subh1 {
   font-size: 1.1vw;
@@ -711,7 +728,7 @@
     height: 12vw;
     margin-right: 20px;
     cursor: not-allowed;
-    background-color: #0155ef;
+    background-color: #FF9304;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -723,26 +740,26 @@
     transition: 0.1s;
   }
   .sell:hover {
-    background-color: #05cfff;
+    background-color: #FFB24D;
   }
   .sell2 {
     width: 35vw;
     height: 12vw;
     margin-right: 20px;
     cursor: not-allowed;
-    border: #0155ef solid 1.8px;
+    border: #FF9304 solid 1.8px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 3.3vw;
     font-weight: 600;
-    color: #0155ef;
+    color: #FF9304;
     cursor: pointer;
     transition: 0.1s;
   }
   .sell2:hover {
-    background-color: #05cfff;
+    background-color: #FFB24D;
     color: white;
     border: none;
   }
@@ -760,7 +777,7 @@
     min-height: 70vh;
     width: 100%;
     padding: 10vh 2vw;
-    background-color: #0154ef;
+    background-color: #FFBF1D;
     background-image: url(/app.png);
     background-repeat: no-repeat;
     background-position: 50% 32vh;

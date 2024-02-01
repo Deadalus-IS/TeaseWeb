@@ -21,8 +21,8 @@ export default function DashboardLayout({ children, sidebar = true }) {
       <section className={styles.sidebar}>
         <Link href="/">
           <div className={styles.logo}>
-            <img alt="tease africa" src="/logob.png" />
-            <text>| Organizer</text>
+            <img alt="TixVote" src="/logob.png" />
+            <text>| Portal</text>
           </div>
         </Link>
 
@@ -34,9 +34,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname == "/profile" ? (
-                <img alt="tease africa" src="/dashboard.png" />
+                <img alt="TixVote" src="/dashboard.png" />
               ) : (
-                <img alt="tease africa" src="/dashboard1.png" />
+                <img alt="TixVote" src="/dashboard1.png" />
               )}
               <text>
                 Events{" "}
@@ -55,9 +55,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname.includes("/profile/voting") ? (
-                <img alt="tease africa" src="/vote.png" />
+                <img alt="TixVote" src="/vote.png" />
               ) : (
-                <img alt="tease africa" src="/vote1.png" />
+                <img alt="TixVote" src="/vote1.png" />
               )}
               <text>Voting</text>
             </div>
@@ -75,7 +75,7 @@ export default function DashboardLayout({ children, sidebar = true }) {
                   style={{
                     transform: "scale(1.3)",
                   }}
-                  alt="tease africa"
+                  alt="TixVote"
                   src="/chatting.png"
                 />
               ) : (
@@ -83,7 +83,7 @@ export default function DashboardLayout({ children, sidebar = true }) {
                   style={{
                     transform: "scale(1.3)",
                   }}
-                  alt="tease africa"
+                  alt="TixVote"
                   src="/chatting2.png"
                 />
               )}
@@ -100,9 +100,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
                 }`}
               >
                 {pathname.includes("profile/super") ? (
-                  <img alt="tease africa" src="/admin.png" />
+                  <img alt="TixVote" src="/admin.png" />
                 ) : (
-                  <img alt="tease africa" src="/admin2.png" />
+                  <img alt="TixVote" src="/admin2.png" />
                 )}
                 <text>Super Admin</text>
               </div>
@@ -115,9 +115,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname == "/profile/notification" ? (
-                <img alt="tease africa" src="/notification1.png" />
+                <img alt="TixVote" src="/notification1.png" />
               ) : (
-                <img alt="tease africa" src="/notification.png" />
+                <img alt="TixVote" src="/notification.png" />
               )}
               <text>Notifications</text>
             </div>
@@ -131,9 +131,9 @@ export default function DashboardLayout({ children, sidebar = true }) {
               }`}
             >
               {pathname == "/profile/setting" ? (
-                <img alt="tease africa" src="/setting1.png" />
+                <img alt="TixVote" src="/setting1.png" />
               ) : (
-                <img alt="tease africa" src="/setting.png" />
+                <img alt="TixVote" src="/setting.png" />
               )}
               <text>Settings</text>
             </div>
@@ -145,10 +145,10 @@ export default function DashboardLayout({ children, sidebar = true }) {
 
       {!sidebar ? null : (
         <section className={styles.rightbar}>
-          <div className={styles.searchcon}>
+          {/* <div className={styles.searchcon}>
             <input placeholder="Search for your events" />
-            <img alt="tease africa" src="/loupe.png" />
-          </div>
+            <img alt="TixVote" src="/loupe.png" />
+          </div> */}
 
           <div className={styles.card}>
             <text className={styles.cardtitle}>Balance</text>
