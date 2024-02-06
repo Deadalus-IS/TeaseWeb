@@ -1,10 +1,10 @@
-import { BASE_URL } from "../config/api";
-import { BASE_URL_ADMIN } from "../config/api";
+import { BASE_URL_GET, BASE_URL_POST } from "../config/api";
+import { BASE_URL_ADMIN_GET, BASE_URL_ADMIN_POST } from "../config/api";
 import { eraseCookie } from "./cookies";
 
 const func = {
   createUser: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/createUser", {
+    const response = await fetch(BASE_URL_POST + "/createUser", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -17,7 +17,7 @@ const func = {
   },
 
   getUser: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getUser", {
+    const response = await fetch(BASE_URL_POST + "/getUser", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -30,7 +30,7 @@ const func = {
   },
 
   authUser: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getAuth", {
+    const response = await fetch(BASE_URL_POST + "/getAuth", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -43,7 +43,7 @@ const func = {
   },
 
   getEvents: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getEvents", {
+    const response = await fetch(BASE_URL_POST + "/getEvents", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -55,7 +55,7 @@ const func = {
   },
 
   reqOrganizer: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/organizerRequest", {
+    const response = await fetch(BASE_URL_POST + "/organizerRequest", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -68,7 +68,7 @@ const func = {
   },
 
   createEvent: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/createEvent", {
+    const response = await fetch(BASE_URL_POST + "/createEvent", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -80,7 +80,7 @@ const func = {
     return response.json();
   },
   getEventsBy: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getEventsBy", {
+    const response = await fetch(BASE_URL_POST + "/getEventsBy", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -92,7 +92,7 @@ const func = {
     return response.json();
   },
   buyTicket: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/buyTicket", {
+    const response = await fetch(BASE_URL_POST + "/buyTicket", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const func = {
     return response.json();
   },
   getTicket: async (data) => {
-    const response = await fetch(BASE_URL + "/getTicket/" + data, {
+    const response = await fetch(BASE_URL_GET + "/getTicket/" + data, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -116,7 +116,7 @@ const func = {
     return response.json();
   },
   withdraw: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/requestWithdrawal", {
+    const response = await fetch(BASE_URL_POST + "/requestWithdrawal", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -128,7 +128,7 @@ const func = {
     return response.json();
   },
   checkSlug: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/checkSlug/" + data.id, {
+    const response = await fetch(BASE_URL_GET + "/checkSlug/" + data.id, {
       method: "GET",
     });
 
@@ -147,7 +147,7 @@ const func = {
   },
 
   getPolls: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getPolls/" + data?.id, {
+    const response = await fetch(BASE_URL_GET + "/getPolls/" + data?.id, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -159,7 +159,7 @@ const func = {
   },
 
   createPoll: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/createPolls", {
+    const response = await fetch(BASE_URL_POST + "/createPolls", {
       method: "Post", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -172,7 +172,7 @@ const func = {
   },
 
   addNominee: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/addNominee", {
+    const response = await fetch(BASE_URL_POST + "/addNominee", {
       method: "Post", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -185,7 +185,7 @@ const func = {
   },
 
   getNomineesBy: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getNomineesBy", {
+    const response = await fetch(BASE_URL_POST + "/getNomineesBy", {
       method: "Post", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -197,7 +197,7 @@ const func = {
     return response.json();
   },
   castVote: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/castVote", {
+    const response = await fetch(BASE_URL_POST + "/castVote", {
       method: "Post", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -209,7 +209,7 @@ const func = {
     return response.json();
   },
   getTransactions: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/transactions/" + data?.id, {
+    const response = await fetch(BASE_URL_GET + "/transactions/" + data?.id, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -222,7 +222,7 @@ const func = {
   },
 
   voteWithdraw: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/withdrawalRequestVote", {
+    const response = await fetch(BASE_URL_POST + "/withdrawalRequestVote", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -235,7 +235,7 @@ const func = {
   },
 
   getTransactionsAdmin: async (data = {}) => {
-    const response = await fetch(BASE_URL_ADMIN + "/getTransactions/", {
+    const response = await fetch(BASE_URL_ADMIN_POST + "/getTransactions/", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -248,7 +248,7 @@ const func = {
   },
 
   getPollsAdmin: async (data = {}) => {
-    const response = await fetch(BASE_URL_ADMIN + "/getPolls/", {
+    const response = await fetch(BASE_URL_ADMIN_POST + "/getPolls/", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -261,7 +261,7 @@ const func = {
   },
 
   getEventsAdmin: async (data = {}) => {
-    const response = await fetch(BASE_URL_ADMIN + "/getEvents/", {
+    const response = await fetch(BASE_URL_ADMIN_POST + "/getEvents/", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -274,7 +274,7 @@ const func = {
   },
 
   getUsersAdmin: async (data = {}) => {
-    const response = await fetch(BASE_URL_ADMIN + "/getUsers/", {
+    const response = await fetch(BASE_URL_ADMIN_POST + "/getUsers/", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -286,7 +286,7 @@ const func = {
     return response.json();
   },
   getApprovalsAdmin: async (data = {}) => {
-    const response = await fetch(BASE_URL_ADMIN + "/getApprovals/", {
+    const response = await fetch(BASE_URL_ADMIN_POST + "/getApprovals/", {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -298,7 +298,7 @@ const func = {
     return response.json();
   },
   getSMS: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/getSMSBy/" + data?.id, {
+    const response = await fetch(BASE_URL_GET + "/getSMSBy/" + data?.id, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -310,7 +310,7 @@ const func = {
     return response.json();
   },
   sendSMS: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/SendSMS", {
+    const response = await fetch(BASE_URL_POST + "/SendSMS", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -322,7 +322,7 @@ const func = {
     return response.json();
   },
   buyCredit: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/buyCredit", {
+    const response = await fetch(BASE_URL_POST + "/buyCredit", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -334,7 +334,7 @@ const func = {
     return response.json();
   },
   showResults: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/showResults", {
+    const response = await fetch(BASE_URL_POST + "/showResults", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -346,7 +346,7 @@ const func = {
     return response.json();
   },
   stopEvent: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/stopEvent", {
+    const response = await fetch(BASE_URL_POST + "/stopEvent", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -358,7 +358,7 @@ const func = {
     return response.json();
   },
   approveEvent: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/approveEvent", {
+    const response = await fetch(BASE_URL_POST + "/approveEvent", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       headers: {
@@ -370,7 +370,7 @@ const func = {
     return response.json();
   },
   deletePoll: async (data = {}) => {
-    const response = await fetch(BASE_URL + "/deletePoll/" + data.id, {
+    const response = await fetch(BASE_URL_GET + "/deletePoll/" + data.id, {
       method: "GET",
     });
 
