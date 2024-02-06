@@ -152,7 +152,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("http://185.211.6.166:34913//api/getEvents", {
+  let res = await fetch("http://185.211.6.166:36073//api/getEvents", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

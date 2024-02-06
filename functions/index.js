@@ -97,7 +97,7 @@ const func = {
       headers: {
         "Content-Type": "application/json",
         Origin: "*",
-        // "Access-Control-Allow-Origin": "http://185.211.6.166:34913/"
+        // "Access-Control-Allow-Origin": "http://185.211.6.166:36073/"
       },
       body: JSON.stringify(data),
     });
