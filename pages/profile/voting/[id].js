@@ -27,7 +27,7 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 import Transactions from "../../../components/Transactions";
-import { BASE_URL } from "../../../config/api";
+import { BASE_URL, BASE_URL_POST } from "../../../config/api";
 
 export default function PollID({ data }) {
   const [events, setevents] = useState([]);
@@ -537,7 +537,7 @@ export default function PollID({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch(BASE_URL + "/getPoll", {
+  let res = await fetch(BASE_URL_POST + "/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

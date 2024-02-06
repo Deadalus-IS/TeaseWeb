@@ -10,7 +10,7 @@ import { UserContext } from "../../context";
 import func from "../../functions";
 import { useRouter } from "next/router";
 import { toaster } from "evergreen-ui";
-import { BASE_URL } from "../../config/api";
+import { BASE_URL, BASE_URL_POST } from "../../config/api";
 
 export default function Vote({ data }) {
   let { userContext, setuserContext } = useContext(UserContext);
@@ -136,7 +136,7 @@ export default function Vote({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch(BASE_URL + "/getNominee", {
+  let res = await fetch(BASE_URL_POST + "/getNominee", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

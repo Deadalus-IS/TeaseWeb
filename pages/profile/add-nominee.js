@@ -8,7 +8,7 @@ import { UserContext } from "../../context";
 import { useRouter } from "next/router";
 import { toaster, Spinner } from "evergreen-ui";
 import Headd from "../../components/Head";
-import { BASE_URL } from "../../config/api";
+import { BASE_URL, BASE_URL_POST } from "../../config/api";
 import {
   getDownloadURL,
   getStorage,
@@ -252,7 +252,7 @@ export default function AddNominee({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.query.id;
-  let res = await fetch(BASE_URL + "/getPoll", {
+  let res = await fetch(BASE_URL_POST + "/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
