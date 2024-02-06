@@ -8,6 +8,7 @@ import SideNav from "../../components/SideNav";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BASE_URL } from "../../config/api";
 
 export default function Vote({ data }) {
   console.log(data);
@@ -82,7 +83,7 @@ export default function Vote({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("/api/post/admin/getPolls", {
+  let res = await fetch(BASE_URL + "/admin/getPolls", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

@@ -4,6 +4,7 @@
 
 // second server http://api.tixvote.com:443/
 
+export const BASE_URL = "http://tixvote.com/api/post/";
 export const BASE_URL_GET = "/api/get/api";
 export const BASE_URL_POST = "/api/post/api";
 export const BASE_URL_ADMIN_GET = "/api/get/admin";

@@ -136,7 +136,7 @@ export default function Vote({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch(BASE_URL_POST + "/getNominee", {
+  let res = await fetch(BASE_URL + "/api/getNominee", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

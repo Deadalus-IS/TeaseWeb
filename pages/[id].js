@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { toaster } from "evergreen-ui";
 import func from "../functions";
+import { BASE_URL } from "../config/api";
 
 export default function Home(data) {
   useEffect(() => {
@@ -350,7 +351,7 @@ export async function getServerSideProps(context) {
 
   //   console.log(id);
 
-  let res = await fetch("/api/post/api/getEventsById", {
+  let res = await fetch(BASE_URL + "/api/getEventsById", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

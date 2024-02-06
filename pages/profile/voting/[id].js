@@ -59,6 +59,8 @@ export default function PollID({ data }) {
   console.log(data);
   let poll = data ? data?.poll : {};
 
+  console.log(poll);
+
   useEffect(async () => {
     let res = localStorage.getItem("user");
     const useRes = JSON.parse(res);
@@ -537,7 +539,7 @@ export default function PollID({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch(BASE_URL_POST + "/getPoll", {
+  let res = await fetch(BASE_URL + "/api/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

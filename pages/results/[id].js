@@ -13,6 +13,7 @@ import "aos/dist/aos.css";
 import { UserContext } from "../../context";
 import { useContext } from "react";
 import func from "../../functions";
+import { BASE_URL } from "../../config/api";
 
 export default function StatID({ data }) {
   const router = useRouter();
@@ -185,7 +186,7 @@ export default function StatID({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch("/api/post/api/getPoll", {
+  let res = await fetch(BASE_URL + "/api/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

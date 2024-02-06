@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { BASE_URL } from "../../config/api";
 
 export default function Stat({ data }) {
   const router = useRouter();
@@ -139,7 +140,7 @@ export default function Stat({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.query.id;
-  let res = await fetch("/api/post//api/getPoll", {
+  let res = await fetch(BASE_URL + "/api/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

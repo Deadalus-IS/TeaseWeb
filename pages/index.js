@@ -404,13 +404,6 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("/api/post/api/getEvents", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
   // console.log(res);
   let data = [];
   // data = await res.json();
