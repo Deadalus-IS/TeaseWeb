@@ -350,16 +350,13 @@ export async function getServerSideProps(context) {
 
   //   console.log(id);
 
-  let res = await fetch(
-    "https://tease-backend.onrender.com/api/getEventsById",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id: id }),
-    }
-  );
+  let res = await fetch("http://185.211.6.166:34913//api/getEventsById", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id: id }),
+  });
 
   let data = await res.json();
   if (data.status == false) {

@@ -145,7 +145,7 @@ export default function Stat({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("https://tease-backend.onrender.com/admin/getPolls", {
+  let res = await fetch("http://185.211.6.166:34913//admin/getPolls", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

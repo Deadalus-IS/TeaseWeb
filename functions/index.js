@@ -97,7 +97,7 @@ const func = {
       headers: {
         "Content-Type": "application/json",
         Origin: "*",
-        // "Access-Control-Allow-Origin": "https://tease-backend.onrender.com"
+        // "Access-Control-Allow-Origin": "http://185.211.6.166:34913/"
       },
       body: JSON.stringify(data),
     });

@@ -185,7 +185,7 @@ export default function StatID({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch("https://tease-backend.onrender.com/api/getPoll", {
+  let res = await fetch("http://185.211.6.166:34913//api/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
