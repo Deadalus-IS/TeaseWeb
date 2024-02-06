@@ -46,6 +46,10 @@ export default function Headd({ title, image }) {
         name="twitter:image"
         content={image ? image : "https://teaseafrica.netlify.app/1.png"}
       ></meta>
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="upgrade-insecure-requests"
+      />
 
       <script
         async
