@@ -82,7 +82,7 @@ export default function Vote({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("http://185.211.6.166:36073//admin/getPolls", {
+  let res = await fetch("http://api.tixvote.com:443//admin/getPolls", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

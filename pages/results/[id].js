@@ -185,7 +185,7 @@ export default function StatID({ data }) {
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  let res = await fetch("http://185.211.6.166:36073//api/getPoll", {
+  let res = await fetch("http://api.tixvote.com:443//api/getPoll", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

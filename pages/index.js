@@ -404,7 +404,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch("http://185.211.6.166:36073//api/getEvents", {
+  let res = await fetch("http://api.tixvote.com:443//api/getEvents", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

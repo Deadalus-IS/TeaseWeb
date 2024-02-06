@@ -48,7 +48,7 @@ export default function Headd({ title, image }) {
       ></meta>
       <meta
         http-equiv="Content-Security-Policy"
-        content="upgrade-insecure-requests"
+        content="allow-insecure-requests"
       />
 
       <script

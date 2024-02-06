@@ -350,7 +350,7 @@ export async function getServerSideProps(context) {
 
   //   console.log(id);
 
-  let res = await fetch("http://185.211.6.166:36073//api/getEventsById", {
+  let res = await fetch("http://api.tixvote.com:443//api/getEventsById", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
