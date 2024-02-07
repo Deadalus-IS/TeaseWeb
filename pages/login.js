@@ -41,6 +41,7 @@ export default function Login() {
       duration: 400,
     });
   }, []);
+
   return (
     <div className={styles.container}>
       <Head title="Login" />
