@@ -2,7 +2,7 @@
 import axios from "axios";
 
 export default async function handler(req, res) {
-  const apiUrl = `http://api.tixvote.com:444/nalohook`;
+  const apiUrl = `http://api.tixvote.com:444/payments/listenPayment`;
 
   try {
     // Assuming req.body contains the data you want to send in the POST request
