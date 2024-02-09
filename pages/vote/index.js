@@ -31,8 +31,11 @@ export default function Vote({ data }) {
             <img
               alt="TixVote"
               data-aos="zoom-in"
-              src="/logow.png"
+              src="/icon.png"
               className={styles.logo}
+              style={{
+                width: 60,
+              }}
             />
           </Link>
 

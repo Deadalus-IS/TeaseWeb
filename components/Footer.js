@@ -18,6 +18,9 @@ export default function Footer({ styles = styles2, ligth }) {
           tickets for any type of event - All for free.
           <br />
           <br />
+          Formally Tease Africa
+          <br />
+          <br />
           &copy; TixVote 2023
           <br />
           Deadalus Intelligence & Systems
@@ -61,8 +64,11 @@ export default function Footer({ styles = styles2, ligth }) {
           <text className={styles.link}>Privacy Policy</text>
         </Link>
         <text className={styles.quicklink}></text>
-        <Link href="mailto:teaseafrica@gmail.com">
-          <text className={styles.link}>teaseafrica@gmail.com</text>
+        <Link href="mailto:akotosel6@gmail.com">
+          <text className={styles.link}>akotosel6@gmail.com</text>
+        </Link>
+        <Link href="tel:+233247956850">
+          <text className={styles.link}>+233247956850</text>
         </Link>
         <Link href="tel:+233504277427">
           <text className={styles.link}>+233504277427</text>

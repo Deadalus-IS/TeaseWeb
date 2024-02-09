@@ -110,10 +110,10 @@ function MyApp({ Component, pageProps }) {
         ) : null} */}
 
         <FloatingWhatsApp
-          phoneNumber="+233593152134"
-          accountName="Selorm"
+          phoneNumber="+233247956850"
+          accountName="Sir. Sam"
           statusMessage="We reply instantly"
-          avatar="https://pbs.twimg.com/profile_images/1589367199344517120/XmRb9tT5_400x400.jpg"
+          avatar="https://i.ibb.co/M9VytPf/Screenshot-2024-02-09-115558.png"
         />
       </div>
     </UserContext.Provider>

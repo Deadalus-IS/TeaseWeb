@@ -55,8 +55,8 @@ export default function SideNav() {
         <Link href="mailto:teaseafrica@gmail.com">
           <text className={styles.link}>hello@tease.africa</text>
         </Link>
-        <Link href="tel:+233208589528">
-          <text className={styles.link}>+233208589528</text>
+        <Link href="tel:+233247956850">
+          <text className={styles.link}>+233247956850</text>
         </Link>
         <div className={styles.socials}>
           <Link href="https://twitter.com/teaseafrica">

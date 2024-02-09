@@ -25,8 +25,11 @@ export default function Overview() {
             <img
               alt="TixVote"
               data-aos="zoom-in"
-              src="/logow.png"
+              src="/icon.png"
               className={styles.logo}
+              style={{
+                width: 60,
+              }}
             />
           </Link>
           <div className={styles.navlinks}>
@@ -50,11 +53,11 @@ export default function Overview() {
           Grow your events
         </text>
         <text data-aos="zoom-in" className={styles.subText}>
-          Tease gives you the toolkit you need to take your events to the next
+          TixVote gives you the toolkit you need to take your events to the next
           level.
           <br />
           <br />
-          <strong>How TeaseAfrica works</strong>
+          <strong>How TixVote works</strong>
         </text>
       </main>
       <main className={styles.main2}>
@@ -167,7 +170,7 @@ export default function Overview() {
             </div>
             <text className={styles.text}>
               Sell tickets from your own website.
-              <br /> Embed the full Tease checkout experience on your own
+              <br /> Embed the full TixVote checkout experience on your own
               website to make it easier for your customers to discover your
               event.
             </text>
@@ -231,7 +234,7 @@ export default function Overview() {
             </button>
             <div className={styles.accordioncontent}>
               <p>
-                Tease is available to anyone to discover and buy tickets or to
+                TixVote is available to anyone to discover and buy tickets or to
                 create events with our event management tools.
               </p>
             </div>

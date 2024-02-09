@@ -46,8 +46,11 @@ export default function Home({ data }) {
             <img
               alt="TixVote"
               data-aos="zoom-in"
-              src="/logow.png"
+              src="/icon.png"
               className={styles.logo}
+              style={{
+                width: 60,
+              }}
             />
           </Link>
 
@@ -88,7 +91,7 @@ export default function Home({ data }) {
           </div>
         </div>
         <div className={styles.points}>
-          {events.length > 0 ? (
+          {events?.length > 0 ? (
             events
               .filter((item) => {
                 return (
@@ -153,7 +156,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps(context) {
-  let res = await fetch(BASE_URL + "/api/getEvents", {
+  let res = await fetch(BASE_URL + "api/getEvents", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
