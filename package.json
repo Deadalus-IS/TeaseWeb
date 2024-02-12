@@ -11,14 +11,17 @@
     "aos": "^3.0.0-beta.6",
     "apexcharts": "^3.35.0",
     "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "evergreen-ui": "^6.6.3",
     "firebase": "^9.6.1",
     "next": "12.0.7",
+    "querystring": "^0.2.1",
     "react": "17.0.2",
     "react-apexcharts": "^1.4.0",
     "react-dom": "17.0.2",
     "react-floating-whatsapp": "^5.0.6",
-    "sass": "^1.50.1"
+    "sass": "^1.50.1",
+    "url": "^0.11.3"
   }
 }

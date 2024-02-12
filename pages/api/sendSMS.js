@@ -1,5 +1,6 @@
 // pages/api/sendMessage.js
 import Cors from "cors";
+import { parse } from "url";
 
 function initMiddleware(middleware) {
   return (req, res) =>
@@ -22,6 +23,7 @@ const cors = initMiddleware(
 
 export default async function handler(req, res) {
   await cors(req, res);
+
   if (req.method === "POST") {
     const { phoneNumber, message } = req.body;
 
