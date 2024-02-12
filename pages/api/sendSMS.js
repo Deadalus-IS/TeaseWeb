@@ -23,9 +23,9 @@ const cors = initMiddleware(
 
 export default async function handler(req, res) {
   await cors(req, res);
-
+  console.log(req.body);
   if (req.method === "POST") {
-    const { phoneNumber, message } = req.body;
+    const { phoneNumber, message } = JSON.parse(req.body);
 
     if (!phoneNumber) {
       return res
