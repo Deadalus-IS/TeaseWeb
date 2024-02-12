@@ -2,12 +2,17 @@
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
-    const { phoneNumber } = req.query;
+    const { phoneNumber, message } = req.query;
 
     if (!phoneNumber) {
       return res
         .status(400)
         .json({ error: "Phone number is required as a parameter" });
+    }
+    if (!message) {
+      return res
+        .status(400)
+        .json({ error: "Message is required as a parameter" });
     }
 
     const url = "https://devapi.fayasms.com/messages";
@@ -18,7 +23,7 @@ export default async function handler(req, res) {
 
     const data = {
       sender: "Cirlorm",
-      message: "Hello world",
+      message: message,
       recipients: [phoneNumber],
     };
 
