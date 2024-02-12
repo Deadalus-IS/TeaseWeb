@@ -37,6 +37,7 @@ export default function Home({ data }) {
     "Nov",
     "Dec",
   ];
+
   return (
     <div className={styles.container}>
       <Head title="Discover Events | TixVote" />
