@@ -15,70 +15,70 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const path = useRouter().pathname;
 
-  // useEffect(() => {
-  //   const run = async () => {
-  //     setloading(true);
-  //     let token = getCookie("auth");
-  //     // console.log("auth" + token);
+  useEffect(() => {
+    const run = async () => {
+      setloading(true);
+      let token = getCookie("auth");
+      // console.log("auth" + token);
 
-  //     if (!token) {
-  //       if (path.includes("profile")) {
-  //         router.push("/login").then(() => {
-  //           setloading(false);
-  //           setIsLogged(false);
-  //         });
-  //       }
-  //       setloading(false);
-  //       return;
-  //     }
+      if (!token) {
+        if (path.includes("profile")) {
+          router.push("/login").then(() => {
+            setloading(false);
+            setIsLogged(false);
+          });
+        }
+        setloading(false);
+        return;
+      }
 
-  //     let userRes = await func.getUser({
-  //       id: token,
-  //     });
+      let userRes = await func.getUser({
+        id: token,
+      });
 
-  //     let data = userRes;
+      let data = userRes;
 
-  //     if (!data.status) {
-  //       setloading(false);
-  //       setIsLogged(false);
-  //     }
+      if (!data.status) {
+        setloading(false);
+        setIsLogged(false);
+      }
 
-  //     if (data.status) {
-  //       setIsLogged(true);
-  //       // console.log(data.user);
-  //       setuserContext(data.user);
+      if (data.status) {
+        setIsLogged(true);
+        // console.log(data.user);
+        setuserContext(data.user);
 
-  //       if (!data.user?.admin && path.includes("profile/super")) {
-  //         router.push("/profile");
-  //         setloading(false);
-  //       }
-  //       if (
-  //         path.includes("profile") ||
-  //         path.includes("create") ||
-  //         path.includes("vote") ||
-  //         path.includes("results")
-  //       ) {
-  //         setloading(false);
-  //       } else if (path.includes("login") || path.includes("signup")) {
-  //         router.push("/profile");
-  //         setloading(false);
-  //       } else {
-  //         router.push("/").then(() => {
-  //           setloading(false);
-  //         });
-  //       }
-  //     } else {
-  //       if (path !== "/" || path == "/terms" || path == "/privacy") {
-  //         router.push("/login").then(() => {
-  //           setloading(false);
-  //           setIsLogged(false);
-  //         });
-  //       }
-  //     }
-  //   };
+        if (!data.user?.admin && path.includes("profile/super")) {
+          router.push("/profile");
+          setloading(false);
+        }
+        if (
+          path.includes("profile") ||
+          path.includes("create") ||
+          path.includes("vote") ||
+          path.includes("results")
+        ) {
+          setloading(false);
+        } else if (path.includes("login") || path.includes("signup")) {
+          router.push("/profile");
+          setloading(false);
+        } else {
+          router.push("/").then(() => {
+            setloading(false);
+          });
+        }
+      } else {
+        if (path !== "/" || path == "/terms" || path == "/privacy") {
+          router.push("/login").then(() => {
+            setloading(false);
+            setIsLogged(false);
+          });
+        }
+      }
+    };
 
-  //   run();
-  // }, []);
+    run();
+  }, []);
 
   if (loading) {
     return (
